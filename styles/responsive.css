@@ -1,0 +1,514 @@
+/**
+ * Responsive Styles for Mobile and Tablet Devices
+ * Ensures optimal viewing experience across all screen sizes
+ */
+
+/* ============================================
+   TABLETS (768px and below)
+   ============================================ */
+
+@media (max-width: 768px) {
+    /* Typography adjustments */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    /* Header */
+    .header-container {
+        padding: var(--spacing-md) var(--spacing-md);
+        gap: var(--spacing-md);
+        flex-wrap: wrap;
+    }
+
+    .brand-name {
+        font-size: 1.5rem;
+    }
+
+    /* Main Navigation - Hide on smaller screens */
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--color-white);
+        box-shadow: var(--shadow-lg);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height var(--transition-normal);
+        z-index: 999;
+    }
+
+    .main-nav.active {
+        max-height: 500px;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 0;
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .nav-item {
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        display: block;
+        padding: var(--spacing-md) 0;
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .nav-link.dropdown-toggle::after {
+        float: right;
+        margin-left: 0;
+    }
+
+    /* Dropdown menu for mobile */
+    .dropdown-menu {
+        position: static;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        border-left: 3px solid var(--color-accent);
+        background-color: var(--color-background);
+        margin: 0;
+        border-radius: 0;
+        transition: max-height var(--transition-normal);
+    }
+
+    .dropdown-menu.active {
+        max-height: 300px;
+    }
+
+    .dropdown-link {
+        padding: var(--spacing-sm) var(--spacing-md);
+        padding-left: var(--spacing-lg);
+        font-size: 0.95rem;
+    }
+
+    /* Mobile Menu Toggle - Show */
+    .mobile-menu-toggle {
+        display: flex;
+        order: 3;
+    }
+
+    .mobile-menu-toggle.active .hamburger:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .mobile-menu-toggle.active .hamburger:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-toggle.active .hamburger:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Header CTAs - Stack on smaller tablets */
+    .header-ctas {
+        flex-direction: column;
+        width: 100%;
+        order: 4;
+        gap: var(--spacing-sm);
+    }
+
+    .header-ctas .btn {
+        width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+        flex-direction: column;
+        min-height: auto;
+        padding: var(--spacing-xl) var(--spacing-md);
+        text-align: center;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .hero-image {
+        min-height: 250px;
+        width: 100%;
+    }
+
+    .hero-ctas {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    /* About Section */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .about-image {
+        min-height: 300px;
+    }
+
+    /* Services Grid */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* General Section Padding */
+    section {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    section h2 {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    /* Contact Info */
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-links {
+        align-items: center;
+    }
+
+    .copyright {
+        grid-column: 1;
+    }
+
+    /* Button Sizing */
+    .btn {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.95rem;
+    }
+
+    .btn-large {
+        padding: var(--spacing-md) var(--spacing-lg);
+        width: 100%;
+    }
+}
+
+/* ============================================
+   MOBILE PHONES (480px and below)
+   ============================================ */
+
+@media (max-width: 480px) {
+    /* Root spacing adjustments */
+    :root {
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 2rem;
+        --spacing-xxl: 2.5rem;
+    }
+
+    /* Typography */
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    body {
+        font-size: 15px;
+    }
+
+    /* Header */
+    .header-container {
+        padding: var(--spacing-sm);
+        flex-wrap: wrap;
+    }
+
+    .brand-name {
+        font-size: 1.25rem;
+    }
+
+    .brand-tagline {
+        font-size: 0.65rem;
+    }
+
+    /* Hero */
+    .hero {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-image {
+        min-height: 200px;
+    }
+
+    /* About Section */
+    .about-image {
+        min-height: 250px;
+    }
+
+    .about-text p {
+        font-size: 0.95rem;
+    }
+
+    /* Services Section */
+    .services-section {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    .service-icon {
+        font-size: 2.5rem;
+    }
+
+    /* Contact Section */
+    .contact-section {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    .info-block {
+        padding: var(--spacing-md);
+    }
+
+    .info-block p {
+        font-size: 0.95rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    .footer-content p,
+    .footer-links a {
+        font-size: 0.9rem;
+    }
+
+    .copyright {
+        font-size: 0.85rem;
+    }
+
+    /* General section padding */
+    section {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    /* CTA Buttons - Full width */
+    .header-ctas .btn {
+        width: 100%;
+    }
+
+    .btn {
+        padding: 0.75rem var(--spacing-md);
+        font-size: 0.9rem;
+    }
+
+    .btn-large {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    /* Benefits list */
+    .benefits-list {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits-list li {
+        padding: var(--spacing-md);
+        font-size: 0.95rem;
+    }
+
+    /* Mobile menu */
+    .main-nav.active {
+        max-height: 400px;
+    }
+
+    .nav-list {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .nav-link {
+        padding: var(--spacing-sm) 0;
+        font-size: 0.95rem;
+    }
+
+    .dropdown-link {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        padding-left: var(--spacing-lg);
+        font-size: 0.9rem;
+    }
+
+    /* Contact info - stack phone and email */
+    .info-block strong {
+        display: inline;
+        margin-bottom: 0;
+    }
+
+    .info-block strong::after {
+        content: ' ';
+    }
+
+    /* Why choose us - tighter spacing */
+    .benefits-list li {
+        border-left-width: 3px;
+    }
+}
+
+/* ============================================
+   LARGE SCREENS (1200px and above)
+   ============================================ */
+
+@media (min-width: 1200px) {
+    .section-container {
+        padding: 0 var(--spacing-lg);
+    }
+
+    .about-content {
+        gap: var(--spacing-xxl);
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .benefits-list {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/* ============================================
+   EXTRA LARGE SCREENS (1600px and above)
+   ============================================ */
+
+@media (min-width: 1600px) {
+    :root {
+        --spacing-xxl: 5rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.25rem;
+    }
+
+    .hero h2 {
+        font-size: 3.5rem;
+    }
+
+    section {
+        padding: var(--spacing-xxl) var(--spacing-xl);
+    }
+}
+
+/* ============================================
+   ORIENTATION CHANGES
+   ============================================ */
+
+@media (orientation: landscape) and (max-height: 600px) {
+    .hero {
+        min-height: auto;
+        padding: var(--spacing-lg);
+    }
+
+    .hero-image {
+        min-height: 300px;
+    }
+
+    section {
+        padding: var(--spacing-lg);
+    }
+}
+
+/* ============================================
+   HIGH CONTRAST MODE (Accessibility)
+   ============================================ */
+
+@media (prefers-contrast: more) {
+    :root {
+        --color-primary: #1a3a5c;
+        --color-primary-dark: #0d1f2d;
+        --color-text: #000;
+        --color-text-light: #333;
+    }
+
+    .btn-primary {
+        border: 2px solid var(--color-primary);
+    }
+
+    .nav-link {
+        border-bottom: 2px solid transparent;
+    }
+
+    .nav-link:hover {
+        border-bottom: 2px solid var(--color-accent);
+    }
+}
+
+/* ============================================
+   DARK MODE PREFERENCE (Future enhancement)
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+    /* Light mode styles are default */
+    /* Dark mode can be implemented here in future versions */
+}
+
+/* ============================================
+   PRINT MEDIA
+   ============================================ */
+
+@media print {
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    .btn {
+        border: 1px solid #000;
+    }
+
+    section {
+        page-break-inside: avoid;
+    }
+}
