@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glasses & Frames | C Fast Optometry</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 16px; line-height: 1.6; color: #333; background-color: #fff; }
+        a { color: #2c5aa0; text-decoration: none; }
+        h1, h2, h3 { color: #2c5aa0; margin-bottom: 0.5em; font-weight: 600; }
+        h1 { font-size: 2.5rem; } h2 { font-size: 2rem; } h3 { font-size: 1.25rem; }
+        p { margin-bottom: 1em; color: #666; line-height: 1.8; }
+        .header { background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .header-container { max-width: 1200px; margin: 0 auto; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+        .brand-name { font-size: 1.75rem; font-weight: 700; color: #2c5aa0; margin: 0; }
+        .nav-list { display: flex; gap: 2rem; list-style: none; }
+        .nav-link { color: #333; font-weight: 500; padding: 0.5rem 1rem; }
+        .header-ctas { display: flex; gap: 1.5rem; }
+        .btn { display: inline-block; padding: 1rem 1.5rem; border-radius: 8px; font-weight: 600; text-decoration: none; cursor: pointer; background-color: #2c5aa0; color: #fff; }
+        .btn:hover { background-color: #1f3f5a; }
+        section { padding: 4rem 2rem; }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        section h2 { text-align: center; margin-bottom: 3rem; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .feature { background-color: #e8f0f8; padding: 1.5rem; border-radius: 8px; }
+        .feature h3 { margin-top: 0; }
+        .footer { background-color: #2c5aa0; color: #fff; padding: 3rem 2rem; margin-top: 4rem; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .copyright { grid-column: 1 / -1; text-align: center; color: rgba(255,255,255,0.7); padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <h1 class="brand-name">Gildman Glasses</h1>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about-dr-fast.html" class="nav-link">About</a></li>
+                    <li><a href="eye-exams.html" class="nav-link">Services</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-ctas">
+                <a href="book-appointment.html" class="btn">Book Appointment</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="section-container">
+                <h2>Glasses & Frames</h2>
+
+                <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">We offer a wide selection of fashionable and high-quality eyeglass frames to suit every style, face shape, and budget. Our expert staff can help you find frames that not only look great but also provide optimal vision correction.</p>
+
+                <div class="feature-grid">
+                    <div class="feature">
+                        <h3>Designer Frames</h3>
+                        <p>Latest styles from top designers to keep you looking your best while correcting your vision.</p>
+                    </div>
+
+                    <div class="feature">
+                        <h3>Budget-Friendly Options</h3>
+                        <p>Quality eyeglasses at affordable prices without compromising on style or durability.</p>
+                    </div>
+
+                    <div class="feature">
+                        <h3>Specialty Lenses</h3>
+                        <p>Anti-glare, scratch-resistant, progressive, and blue light blocking lens options available.</p>
+                    </div>
+
+                    <div class="feature">
+                        <h3>Custom Fitting</h3>
+                        <p>Professional fitting and adjustment to ensure your glasses are comfortable and provide optimal vision.</p>
+                    </div>
+
+                    <div class="feature">
+                        <h3>Frame Styles</h3>
+                        <p>Choose from classic, modern, bold, or trendy styles that match your personality and face shape.</p>
+                    </div>
+
+                    <div class="feature">
+                        <h3>Children's Frames</h3>
+                        <p>Durable and stylish frames designed specifically for children's needs and active lifestyles.</p>
+                    </div>
+                </div>
+
+                <p style="text-align: center; margin-top: 2rem;">
+                    <a href="book-appointment.html" class="btn">Get Your New Glasses</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div><h3 style="color: #fff; margin-bottom: 1rem;">C Fast Optometry</h3><p>Professional Eye Care</p></div>
+            <div><a href="contact.html" style="color: rgba(255,255,255,0.8); display: block;">Contact</a></div>
+            <p class="copyright">&copy; 2025 C Fast Optometry. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

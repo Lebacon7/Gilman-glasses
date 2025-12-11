@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance & Payment | C Fast Optometry</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 16px; line-height: 1.6; color: #333; background-color: #fff; }
+        a { color: #2c5aa0; text-decoration: none; }
+        h1, h2, h3 { color: #2c5aa0; margin-bottom: 0.5em; font-weight: 600; }
+        h1 { font-size: 2.5rem; } h2 { font-size: 2rem; } h3 { font-size: 1.25rem; }
+        p { margin-bottom: 1em; color: #666; line-height: 1.8; }
+        .header { background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .header-container { max-width: 1200px; margin: 0 auto; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+        .brand-name { font-size: 1.75rem; font-weight: 700; color: #2c5aa0; margin: 0; }
+        .nav-list { display: flex; gap: 2rem; list-style: none; }
+        .nav-link { color: #333; font-weight: 500; padding: 0.5rem 1rem; }
+        .header-ctas { display: flex; gap: 1.5rem; }
+        .btn { display: inline-block; padding: 1rem 1.5rem; border-radius: 8px; font-weight: 600; text-decoration: none; cursor: pointer; background-color: #2c5aa0; color: #fff; }
+        .btn:hover { background-color: #1f3f5a; }
+        section { padding: 4rem 2rem; }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        section h2 { text-align: center; margin-bottom: 3rem; }
+        .info-box { background-color: #e8f0f8; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; }
+        .info-box h3 { margin-top: 0; }
+        .footer { background-color: #2c5aa0; color: #fff; padding: 3rem 2rem; margin-top: 4rem; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .copyright { grid-column: 1 / -1; text-align: center; color: rgba(255,255,255,0.7); padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <h1 class="brand-name">Gildman Glasses</h1>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about-dr-fast.html" class="nav-link">About</a></li>
+                    <li><a href="eye-exams.html" class="nav-link">Services</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-ctas">
+                <a href="book-appointment.html" class="btn">Book Appointment</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="section-container">
+                <h2>Insurance & Payment Options</h2>
+
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div class="info-box">
+                        <h3>Insurance Coverage</h3>
+                        <p>We accept most major health insurance plans. We are an in-network provider for many insurance companies, which can help reduce your out-of-pocket costs. Please bring your insurance card to your appointment.</p>
+                        <p>If you have questions about your coverage or whether we participate in your plan, please contact us before your visit.</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>Vision Insurance</h3>
+                        <p>We accept vision insurance plans that cover eye exams, glasses, and contact lenses. Vision insurance benefits typically provide discounts on eyeglasses and contact lenses, as well as coverage for annual eye exams.</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>Payment Methods</h3>
+                        <p>We accept the following payment methods:
+                        <ul style="list-style: none; padding-left: 0; margin: 1rem 0;">
+                            <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem;"><span style="position: absolute; left: 0; color: #27ae60;">✓</span> Cash</li>
+                            <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem;"><span style="position: absolute; left: 0; color: #27ae60;">✓</span> Debit/Credit Cards</li>
+                            <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem;"><span style="position: absolute; left: 0; color: #27ae60;">✓</span> Health Savings Accounts (HSA)</li>
+                            <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem;"><span style="position: absolute; left: 0; color: #27ae60;">✓</span> Flexible Spending Accounts (FSA)</li>
+                        </ul></p>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>Financial Assistance</h3>
+                        <p>We understand that eye care is an important investment in your health. We offer flexible payment plans to help make quality eye care accessible and affordable for all patients. Contact us to discuss payment options.</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>Billing Questions</h3>
+                        <p>If you have questions about your bill or insurance coverage, please don't hesitate to contact us. Our staff is happy to help explain charges and discuss payment options.</p>
+                    </div>
+                </div>
+
+                <p style="text-align: center; margin-top: 2rem;">
+                    <a href="contact.html" class="btn">Contact Us for Billing Questions</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div><h3 style="color: #fff; margin-bottom: 1rem;">C Fast Optometry</h3><p>Professional Eye Care</p></div>
+            <div><a href="contact.html" style="color: rgba(255,255,255,0.8); display: block;">Contact</a></div>
+            <p class="copyright">&copy; 2025 C Fast Optometry. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

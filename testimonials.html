@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials | C Fast Optometry</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 16px; line-height: 1.6; color: #333; background-color: #fff; }
+        a { color: #2c5aa0; text-decoration: none; }
+        h1, h2, h3 { color: #2c5aa0; margin-bottom: 0.5em; font-weight: 600; }
+        h1 { font-size: 2.5rem; } h2 { font-size: 2rem; }
+        p { margin-bottom: 1em; color: #666; line-height: 1.8; }
+        .header { background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .header-container { max-width: 1200px; margin: 0 auto; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+        .brand-name { font-size: 1.75rem; font-weight: 700; color: #2c5aa0; margin: 0; }
+        .nav-list { display: flex; gap: 2rem; list-style: none; }
+        .nav-link { color: #333; font-weight: 500; padding: 0.5rem 1rem; }
+        .header-ctas { display: flex; gap: 1.5rem; }
+        .btn { display: inline-block; padding: 1rem 1.5rem; border-radius: 8px; font-weight: 600; text-decoration: none; cursor: pointer; background-color: #2c5aa0; color: #fff; }
+        .btn:hover { background-color: #1f3f5a; }
+        section { padding: 4rem 2rem; }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        section h2 { text-align: center; margin-bottom: 3rem; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto; }
+        .testimonial { background-color: #e8f0f8; padding: 2rem; border-radius: 8px; border-left: 4px solid #27ae60; }
+        .testimonial p { margin-bottom: 1rem; font-style: italic; color: #555; }
+        .testimonial-author { font-weight: 600; color: #2c5aa0; }
+        .footer { background-color: #2c5aa0; color: #fff; padding: 3rem 2rem; margin-top: 4rem; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .copyright { grid-column: 1 / -1; text-align: center; color: rgba(255,255,255,0.7); padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <h1 class="brand-name">Gildman Glasses</h1>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about-dr-fast.html" class="nav-link">About</a></li>
+                    <li><a href="eye-exams.html" class="nav-link">Services</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-ctas">
+                <a href="book-appointment.html" class="btn">Book Appointment</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="section-container">
+                <h2>Patient Testimonials</h2>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial">
+                        <p>"Dr. Fast was incredibly thorough with my eye exam and took time to explain everything. I felt completely comfortable and well-informed."</p>
+                        <div class="testimonial-author">Sarah M.</div>
+                    </div>
+
+                    <div class="testimonial">
+                        <p>"Best eye care experience I've had. The staff is friendly, and Dr. Fast is very knowledgeable and professional. Highly recommended!"</p>
+                        <div class="testimonial-author">John T.</div>
+                    </div>
+
+                    <div class="testimonial">
+                        <p>"I've been a patient for several years and always receive excellent care. The practice is clean, professional, and the service is outstanding."</p>
+                        <div class="testimonial-author">Linda R.</div>
+                    </div>
+
+                    <div class="testimonial">
+                        <p>"Dr. Fast caught a potential problem during my exam that I wasn't aware of. Their attention to detail is exceptional and truly cares about patient health."</p>
+                        <div class="testimonial-author">Michael W.</div>
+                    </div>
+
+                    <div class="testimonial">
+                        <p>"Great experience from start to finish. The office environment is welcoming and Dr. Fast explains everything clearly. Would definitely recommend to friends and family."</p>
+                        <div class="testimonial-author">Patricia L.</div>
+                    </div>
+
+                    <div class="testimonial">
+                        <p>"Professional, caring, and efficient. Dr. Fast provided excellent service and my prescription is perfect. Thank you for taking such good care of my vision!"</p>
+                        <div class="testimonial-author">David K.</div>
+                    </div>
+                </div>
+
+                <p style="text-align: center; margin-top: 3rem;">
+                    <a href="book-appointment.html" class="btn">Schedule Your Visit Today</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div><h3 style="color: #fff; margin-bottom: 1rem;">C Fast Optometry</h3><p>Professional Eye Care</p></div>
+            <div><a href="contact.html" style="color: rgba(255,255,255,0.8); display: block;">Contact</a></div>
+            <p class="copyright">&copy; 2025 C Fast Optometry. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

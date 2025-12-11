@@ -10,1222 +10,211 @@
     <title>C Fast Optometry | Professional Eye Care by Dr. Fast</title>
 
     <style>
-        /**
-         * C Fast Optometry - Complete Stylesheet
-         * All-in-one CSS including reset, main styles, and responsive design
-         */
-
-        /* ============================================
-           CSS RESET & NORMALIZATION
-           ============================================ */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            font-size: 16px;
-            line-height: 1.6;
-            color: #333;
-            background-color: #ffffff;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        ul, ol {
-            list-style: none;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-            transition: color 0.3s ease, background-color 0.3s ease;
-        }
-
-        a:focus-visible {
-            outline: 2px solid #2c5aa0;
-            outline-offset: 2px;
-        }
-
-        button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font: inherit;
-        }
-
-        button:focus-visible {
-            outline: 2px solid #2c5aa0;
-            outline-offset: 2px;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 600;
-            line-height: 1.2;
-            margin-bottom: 0.5em;
-        }
-
-        h1 { font-size: 2.5rem; }
-        h2 { font-size: 2rem; }
-        h3 { font-size: 1.5rem; }
-        h4 { font-size: 1.25rem; }
-        h5 { font-size: 1.1rem; }
-        h6 { font-size: 1rem; }
-
-        p {
-            margin-bottom: 1em;
-        }
-
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: #2c5aa0;
-            color: white;
-            padding: 8px;
-            text-decoration: none;
-            z-index: 100;
-        }
-
-        .skip-link:focus {
-            top: 0;
-        }
-
-        input, select, textarea {
-            font: inherit;
-            padding: 8px 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: #2c5aa0;
-            box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
-        }
-
-        /* ============================================
-           ROOT VARIABLES
-           ============================================ */
-
-        :root {
-            --color-primary: #2c5aa0;
-            --color-primary-dark: #1f3f5a;
-            --color-primary-light: #e8f0f8;
-            --color-accent: #27ae60;
-            --color-accent-light: #d5f4e6;
-            --color-text: #333;
-            --color-text-light: #666;
-            --color-border: #ddd;
-            --color-background: #f5f5f5;
-            --color-white: #ffffff;
-
-            --spacing-xs: 0.5rem;
-            --spacing-sm: 1rem;
-            --spacing-md: 1.5rem;
-            --spacing-lg: 2rem;
-            --spacing-xl: 3rem;
-            --spacing-xxl: 4rem;
-
-            --radius-sm: 4px;
-            --radius-md: 8px;
-            --radius-lg: 12px;
-
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* ============================================
-           TYPOGRAPHY
-           ============================================ */
-
-        body {
-            color: var(--color-text);
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            color: var(--color-primary);
-            font-weight: 600;
-            margin-bottom: var(--spacing-md);
-        }
-
-        p {
-            color: var(--color-text-light);
-            line-height: 1.8;
-        }
-
-        strong {
-            color: var(--color-text);
-            font-weight: 600;
-        }
-
-        /* ============================================
-           HEADER & NAVIGATION
-           ============================================ */
-
-        .header {
-            background-color: var(--color-white);
-            box-shadow: var(--shadow-md);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: var(--spacing-md) var(--spacing-lg);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: var(--spacing-lg);
-        }
-
-        .logo {
-            flex-shrink: 0;
-        }
-
-        .brand-name {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--color-primary);
-            margin: 0;
-            line-height: 1;
-        }
-
-        .brand-tagline {
-            font-size: 0.75rem;
-            color: var(--color-accent);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 4px 0 0 0;
-            font-weight: 600;
-        }
-
-        .main-nav {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .nav-list {
-            display: flex;
-            gap: var(--spacing-lg);
-            list-style: none;
-        }
-
-        .nav-item {
-            position: relative;
-        }
-
-        .nav-link {
-            color: var(--color-text);
-            font-weight: 500;
-            padding: var(--spacing-xs) var(--spacing-sm);
-            display: inline-block;
-            position: relative;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--color-accent);
-            transition: width 0.2s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .nav-link.dropdown-toggle::after {
-            content: '▼';
-            font-size: 0.6rem;
-            position: static;
-            margin-left: 6px;
-            display: inline-block;
-            transition: transform 0.2s ease;
-            width: auto;
-            height: auto;
-            background: none;
-        }
-
-        .nav-link.dropdown-toggle[aria-expanded="true"]::after {
-            transform: rotate(180deg);
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: var(--color-white);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-lg);
-            min-width: 220px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
-            list-style: none;
-            z-index: 999;
-            margin-top: var(--spacing-sm);
-        }
-
-        .dropdown-menu.active {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown-link {
-            display: block;
-            padding: var(--spacing-sm) var(--spacing-md);
-            color: var(--color-text);
-            font-weight: 500;
-            text-decoration: none;
-            transition: background-color 0.2s ease, color 0.2s ease;
-        }
-
-        .dropdown-link:hover {
-            background-color: var(--color-primary-light);
-            color: var(--color-primary);
-        }
-
-        .dropdown-link:focus {
-            outline: 2px solid var(--color-primary);
-            outline-offset: -2px;
-        }
-
-        .header-ctas {
-            display: flex;
-            gap: var(--spacing-md);
-            flex-shrink: 0;
-        }
-
-        .mobile-menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: var(--spacing-sm);
-        }
-
-        .hamburger {
-            width: 25px;
-            height: 3px;
-            background-color: var(--color-primary);
-            border-radius: 2px;
-            transition: all 0.2s ease;
-        }
-
-        /* ============================================
-           BUTTONS
-           ============================================ */
-
-        .btn {
-            display: inline-block;
-            padding: var(--spacing-sm) var(--spacing-md);
-            border-radius: var(--radius-md);
-            font-weight: 600;
-            text-decoration: none;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            border: 2px solid transparent;
-            font-size: 1rem;
-            white-space: nowrap;
-        }
-
-        .btn:focus-visible {
-            outline: 2px solid var(--color-primary);
-            outline-offset: 2px;
-        }
-
-        .btn-primary {
-            background-color: var(--color-primary);
-            color: var(--color-white);
-            border-color: var(--color-primary);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--color-primary-dark);
-            border-color: var(--color-primary-dark);
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-2px);
-        }
-
-        .btn-primary:active {
-            transform: translateY(0);
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn-secondary {
-            background-color: var(--color-accent);
-            color: var(--color-white);
-            border-color: var(--color-accent);
-        }
-
-        .btn-secondary:hover {
-            background-color: #229954;
-            border-color: #229954;
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary:active {
-            transform: translateY(0);
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--color-primary);
-            border-color: var(--color-primary);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--color-primary-light);
-            color: var(--color-primary);
-        }
-
-        .btn-large {
-            padding: var(--spacing-md) var(--spacing-lg);
-            font-size: 1.1rem;
-        }
-
-        /* ============================================
-           HERO SECTION
-           ============================================ */
-
-        .hero {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-            color: var(--color-white);
-            padding: var(--spacing-xxl) var(--spacing-lg);
-            min-height: 500px;
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-xxl);
-            max-width: 100%;
-        }
-
-        .hero-content {
-            flex: 1;
-            z-index: 2;
-        }
-
-        .hero h2 {
-            color: var(--color-white);
-            font-size: 3rem;
-            margin-bottom: var(--spacing-md);
-        }
-
-        .hero p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.25rem;
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: var(--spacing-md);
-            flex-wrap: wrap;
-        }
-
-        .hero-image {
-            flex: 1;
-            min-height: 400px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: var(--radius-lg);
-            border: 2px dashed rgba(255, 255, 255, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-image::before {
-            content: '📷';
-            position: absolute;
-            opacity: 0.3;
-        }
-
-        /* ============================================
-           SECTIONS
-           ============================================ */
-
-        section {
-            padding: var(--spacing-xxl) var(--spacing-lg);
-        }
-
-        .section-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        section h2 {
-            text-align: center;
-            margin-bottom: var(--spacing-xl);
-            color: var(--color-primary);
-        }
-
-        .about-section {
-            background-color: var(--color-white);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-xl);
-            align-items: center;
-        }
-
-        .about-image {
-            min-height: 400px;
-            background-color: var(--color-primary-light);
-            border-radius: var(--radius-lg);
-            border: 2px solid var(--color-border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            color: var(--color-border);
-            position: relative;
-        }
-
-        .about-image::before {
-            content: '👨‍⚕️';
-            opacity: 0.5;
-        }
-
-        .about-text p {
-            margin-bottom: var(--spacing-md);
-            line-height: 1.8;
-        }
-
-        .services-section {
-            background-color: var(--color-background);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-lg);
-        }
-
-        .service-card {
-            background-color: var(--color-white);
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-md);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: var(--spacing-md);
-            display: inline-block;
-        }
-
-        .service-card h3 {
-            color: var(--color-primary);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .service-card p {
-            color: var(--color-text-light);
-            margin-bottom: 0;
-        }
-
-        .why-choose-us {
-            background-color: var(--color-primary-light);
-        }
-
-        .why-choose-us h2 {
-            color: var(--color-primary);
-        }
-
-        .benefits-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-lg);
-            list-style: none;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .benefits-list li {
-            background-color: var(--color-white);
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-md);
-            border-left: 4px solid var(--color-accent);
-            line-height: 1.8;
-            color: var(--color-text-light);
-        }
-
-        .benefits-list strong {
-            color: var(--color-primary);
-            display: block;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, var(--color-accent) 0%, #1e8449 100%);
-            color: var(--color-white);
-            text-align: center;
-            padding: var(--spacing-xxl) var(--spacing-lg);
-        }
-
-        .cta-section h2 {
-            color: var(--color-white);
-        }
-
-        .cta-section p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.1rem;
-            margin-bottom: var(--spacing-xl);
-        }
-
-        .contact-section {
-            background-color: var(--color-white);
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--spacing-xl);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .info-block {
-            background-color: var(--color-primary-light);
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-md);
-            border: 1px solid var(--color-border);
-        }
-
-        .info-block h3 {
-            color: var(--color-primary);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .info-block p {
-            color: var(--color-text);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .info-block a {
-            color: var(--color-primary);
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .info-block a:hover {
-            text-decoration: underline;
-        }
-
-        /* ============================================
-           FOOTER
-           ============================================ */
-
-        .footer {
-            background-color: var(--color-primary);
-            color: var(--color-white);
-            padding: var(--spacing-xl) var(--spacing-lg);
-            margin-top: var(--spacing-xxl);
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-lg);
-        }
-
-        .footer-content h3 {
-            color: var(--color-white);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .footer-content p {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 0;
-        }
-
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-sm);
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--color-white);
-        }
-
-        .copyright {
-            grid-column: 1 / -1;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.7);
-            padding-top: var(--spacing-lg);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin: 0;
-        }
-
-        /* ============================================
-           RESPONSIVE DESIGN - TABLETS (768px)
-           ============================================ */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #333; background-color: #fff; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        ul, ol { list-style: none; }
+        a { color: inherit; text-decoration: none; transition: color 0.3s ease, background-color 0.3s ease; }
+        a:focus-visible { outline: 2px solid #2c5aa0; outline-offset: 2px; }
+        button { background: none; border: none; cursor: pointer; font: inherit; }
+        button:focus-visible { outline: 2px solid #2c5aa0; outline-offset: 2px; }
+        img { max-width: 100%; height: auto; display: block; }
+        h1, h2, h3, h4, h5, h6 { font-weight: 600; line-height: 1.2; margin-bottom: 0.5em; color: #2c5aa0; }
+        h1 { font-size: 2.5rem; } h2 { font-size: 2rem; } h3 { font-size: 1.5rem; } h4 { font-size: 1.25rem; } h5 { font-size: 1.1rem; } h6 { font-size: 1rem; }
+        p { margin-bottom: 1em; color: #666; line-height: 1.8; }
+        strong { color: #333; font-weight: 600; }
+
+        .skip-link { position: absolute; top: -40px; left: 0; background: #2c5aa0; color: white; padding: 8px; text-decoration: none; z-index: 100; }
+        .skip-link:focus { top: 0; }
+
+        .header { background-color: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .header-container { max-width: 1200px; margin: 0 auto; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+        .logo { flex-shrink: 0; }
+        .brand-name { font-size: 1.75rem; font-weight: 700; color: #2c5aa0; margin: 0; line-height: 1; }
+        .brand-tagline { font-size: 0.75rem; color: #27ae60; text-transform: uppercase; letter-spacing: 1px; margin: 4px 0 0 0; font-weight: 600; }
+
+        .main-nav { flex: 1; display: flex; justify-content: center; }
+        .nav-list { display: flex; gap: 2rem; list-style: none; }
+        .nav-item { position: relative; }
+        .nav-link { color: #333; font-weight: 500; padding: 0.5rem 1rem; display: inline-block; position: relative; background: none; border: none; cursor: pointer; font-size: 1rem; }
+        .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: #27ae60; transition: width 0.2s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .nav-link.dropdown-toggle::after { content: ''; width: auto; height: auto; background: none; position: static; margin-left: 0; }
+
+        .dropdown { position: relative; }
+        .dropdown-menu { position: absolute; top: 100%; left: 0; background-color: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 10px 15px rgba(0,0,0,0.1); min-width: 220px; opacity: 0; visibility: hidden; transform: translateY(-10px); transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease; list-style: none; z-index: 999; margin-top: 1rem; }
+        .dropdown-menu.active { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-link { display: block; padding: 1rem 1.5rem; color: #333; font-weight: 500; text-decoration: none; transition: background-color 0.2s ease, color 0.2s ease; }
+        .dropdown-link:hover { background-color: #e8f0f8; color: #2c5aa0; }
+
+        .header-ctas { display: flex; gap: 1.5rem; flex-shrink: 0; }
+        .mobile-menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; cursor: pointer; padding: 1rem; }
+        .hamburger { width: 25px; height: 3px; background-color: #2c5aa0; border-radius: 2px; transition: all 0.2s ease; }
+
+        .btn { display: inline-block; padding: 1rem 1.5rem; border-radius: 8px; font-weight: 600; text-decoration: none; text-align: center; cursor: pointer; transition: all 0.2s ease; border: 2px solid transparent; font-size: 1rem; white-space: nowrap; }
+        .btn:focus-visible { outline: 2px solid #2c5aa0; outline-offset: 2px; }
+        .btn-primary { background-color: #2c5aa0; color: #fff; border-color: #2c5aa0; }
+        .btn-primary:hover { background-color: #1f3f5a; border-color: #1f3f5a; box-shadow: 0 10px 15px rgba(0,0,0,0.1); transform: translateY(-2px); }
+        .btn-secondary { background-color: #27ae60; color: #fff; border-color: #27ae60; }
+        .btn-secondary:hover { background-color: #229954; border-color: #229954; box-shadow: 0 10px 15px rgba(0,0,0,0.1); transform: translateY(-2px); }
+        .btn-outline { background-color: transparent; color: #2c5aa0; border-color: #2c5aa0; }
+        .btn-outline:hover { background-color: #e8f0f8; }
+        .btn-large { padding: 1.5rem 2rem; font-size: 1.1rem; }
+
+        .hero { background: linear-gradient(135deg, #2c5aa0 0%, #1f3f5a 100%); color: #fff; padding: 4rem 2rem; min-height: 500px; display: flex; align-items: center; gap: 4rem; }
+        .hero-content { flex: 1; z-index: 2; }
+        .hero h2 { color: #fff; font-size: 3rem; margin-bottom: 1.5rem; }
+        .hero p { color: rgba(255,255,255,0.9); font-size: 1.25rem; margin-bottom: 2rem; }
+        .hero-ctas { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+        .hero-image { flex: 1; min-height: 400px; background-color: rgba(255,255,255,0.1); border-radius: 12px; border: 2px dashed rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.2); position: relative; overflow: hidden; }
+
+        section { padding: 4rem 2rem; }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        section h2 { text-align: center; margin-bottom: 3rem; }
+
+        .about-section { background-color: #fff; }
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .about-image { min-height: 400px; background-color: #e8f0f8; border-radius: 12px; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; font-size: 5rem; color: #ddd; }
+        .about-text p { margin-bottom: 1.5rem; }
+
+        .services-section { background-color: #f5f5f5; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .service-card { background-color: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; text-align: center; }
+        .service-card:hover { transform: translateY(-8px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+        .service-card h3 { color: #2c5aa0; margin-bottom: 1.5rem; }
+        .service-card p { color: #666; margin-bottom: 0; }
+
+        .why-choose-us { background-color: #e8f0f8; }
+        .benefits-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; list-style: none; max-width: 1200px; margin: 0 auto; }
+        .benefits-list li { background-color: #fff; padding: 2rem; border-radius: 8px; border-left: 4px solid #27ae60; line-height: 1.8; color: #666; }
+        .benefits-list strong { color: #2c5aa0; display: block; margin-bottom: 1rem; }
+
+        .cta-section { background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%); color: #fff; text-align: center; padding: 4rem 2rem; }
+        .cta-section h2 { color: #fff; }
+        .cta-section p { color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 3rem; }
+
+        .contact-section { background-color: #fff; }
+        .contact-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; max-width: 1200px; margin: 0 auto; }
+        .info-block { background-color: #e8f0f8; padding: 2rem; border-radius: 8px; border: 1px solid #ddd; }
+        .info-block h3 { color: #2c5aa0; margin-bottom: 1.5rem; }
+        .info-block p { color: #333; margin-bottom: 1rem; }
+        .info-block a { color: #2c5aa0; font-weight: 600; }
+        .info-block a:hover { text-decoration: underline; }
+
+        .footer { background-color: #2c5aa0; color: #fff; padding: 3rem 2rem; margin-top: 4rem; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .footer-content h3 { color: #fff; margin-bottom: 1rem; }
+        .footer-content p { color: rgba(255,255,255,0.8); margin-bottom: 0; }
+        .footer-links { display: flex; flex-direction: column; gap: 1rem; }
+        .footer-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
+        .footer-links a:hover { color: #fff; }
+        .copyright { grid-column: 1 / -1; text-align: center; color: rgba(255,255,255,0.7); padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); margin: 0; }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.5rem; }
-            h3 { font-size: 1.25rem; }
-
-            .header-container {
-                padding: var(--spacing-md);
-                gap: var(--spacing-md);
-                flex-wrap: wrap;
-            }
-
-            .brand-name {
-                font-size: 1.5rem;
-            }
-
-            .main-nav {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background-color: var(--color-white);
-                box-shadow: var(--shadow-lg);
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease;
-                z-index: 999;
-            }
-
-            .main-nav.active {
-                max-height: 500px;
-            }
-
-            .nav-list {
-                flex-direction: column;
-                gap: 0;
-                padding: var(--spacing-lg) var(--spacing-md);
-            }
-
-            .nav-item {
-                border-bottom: 1px solid var(--color-border);
-            }
-
-            .nav-item:last-child {
-                border-bottom: none;
-            }
-
-            .nav-link {
-                display: block;
-                padding: var(--spacing-md) 0;
-                width: 100%;
-                text-align: left;
-            }
-
-            .nav-link::after {
-                display: none;
-            }
-
-            .nav-link.dropdown-toggle::after {
-                float: right;
-                margin-left: 0;
-            }
-
-            .dropdown-menu {
-                position: static;
-                max-height: 0;
-                overflow: hidden;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                box-shadow: none;
-                border: none;
-                border-left: 3px solid var(--color-accent);
-                background-color: var(--color-background);
-                margin: 0;
-                border-radius: 0;
-                transition: max-height 0.3s ease;
-            }
-
-            .dropdown-menu.active {
-                max-height: 300px;
-            }
-
-            .dropdown-link {
-                padding: var(--spacing-sm) var(--spacing-md);
-                padding-left: var(--spacing-lg);
-                font-size: 0.95rem;
-            }
-
-            .mobile-menu-toggle {
-                display: flex;
-                order: 3;
-            }
-
-            .mobile-menu-toggle.active .hamburger:nth-child(1) {
-                transform: rotate(45deg) translate(8px, 8px);
-            }
-
-            .mobile-menu-toggle.active .hamburger:nth-child(2) {
-                opacity: 0;
-            }
-
-            .mobile-menu-toggle.active .hamburger:nth-child(3) {
-                transform: rotate(-45deg) translate(7px, -6px);
-            }
-
-            .header-ctas {
-                flex-direction: column;
-                width: 100%;
-                order: 4;
-                gap: var(--spacing-sm);
-            }
-
-            .header-ctas .btn {
-                width: 100%;
-            }
-
-            .hero {
-                flex-direction: column;
-                min-height: auto;
-                padding: var(--spacing-xl) var(--spacing-md);
-                text-align: center;
-            }
-
-            .hero h2 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .hero-image {
-                min-height: 250px;
-                width: 100%;
-            }
-
-            .hero-ctas {
-                justify-content: center;
-                flex-direction: column;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: var(--spacing-lg);
-            }
-
-            .about-image {
-                min-height: 300px;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: var(--spacing-xl) var(--spacing-md);
-            }
-
-            section h2 {
-                margin-bottom: var(--spacing-lg);
-            }
-
-            .contact-info {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .footer-links {
-                align-items: center;
-            }
-
-            .copyright {
-                grid-column: 1;
-            }
-
-            .btn {
-                padding: var(--spacing-sm) var(--spacing-md);
-                font-size: 0.95rem;
-            }
-
-            .btn-large {
-                padding: var(--spacing-md) var(--spacing-lg);
-                width: 100%;
-            }
+            h1 { font-size: 2rem; } h2 { font-size: 1.5rem; } h3 { font-size: 1.25rem; }
+            .header-container { padding: 1.5rem; gap: 1.5rem; flex-wrap: wrap; }
+            .brand-name { font-size: 1.5rem; }
+            .main-nav { position: absolute; top: 100%; left: 0; right: 0; background-color: #fff; box-shadow: 0 10px 15px rgba(0,0,0,0.1); max-height: 0; overflow: hidden; transition: max-height 0.3s ease; z-index: 999; }
+            .main-nav.active { max-height: 500px; }
+            .nav-list { flex-direction: column; gap: 0; padding: 2rem 1.5rem; }
+            .nav-item { border-bottom: 1px solid #ddd; }
+            .nav-item:last-child { border-bottom: none; }
+            .nav-link { display: block; padding: 1.5rem 0; width: 100%; text-align: left; }
+            .dropdown-menu { position: static; max-height: 0; overflow: hidden; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; border-left: 3px solid #27ae60; background-color: #f5f5f5; margin: 0; border-radius: 0; transition: max-height 0.3s ease; }
+            .dropdown-menu.active { max-height: 300px; }
+            .dropdown-link { padding: 1rem 1.5rem; padding-left: 2rem; font-size: 0.95rem; }
+            .mobile-menu-toggle { display: flex; order: 3; }
+            .mobile-menu-toggle.active .hamburger:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); }
+            .mobile-menu-toggle.active .hamburger:nth-child(2) { opacity: 0; }
+            .mobile-menu-toggle.active .hamburger:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+            .header-ctas { flex-direction: column; width: 100%; order: 4; gap: 1rem; }
+            .header-ctas .btn { width: 100%; }
+            .hero { flex-direction: column; min-height: auto; padding: 3rem 1.5rem; text-align: center; }
+            .hero h2 { font-size: 2rem; } .hero p { font-size: 1.1rem; }
+            .hero-image { min-height: 250px; width: 100%; }
+            .hero-ctas { justify-content: center; flex-direction: column; }
+            .about-content { grid-template-columns: 1fr; gap: 2rem; }
+            .about-image { min-height: 300px; }
+            .services-grid { grid-template-columns: 1fr; }
+            section { padding: 3rem 1.5rem; }
+            section h2 { margin-bottom: 2rem; }
+            .contact-info { grid-template-columns: 1fr; }
+            .footer-container { grid-template-columns: 1fr; text-align: center; }
+            .footer-links { align-items: center; }
+            .btn { padding: 1rem 1.5rem; font-size: 0.95rem; }
+            .btn-large { padding: 1.5rem 2rem; width: 100%; }
         }
-
-        /* ============================================
-           RESPONSIVE DESIGN - MOBILE (480px)
-           ============================================ */
 
         @media (max-width: 480px) {
-            :root {
-                --spacing-lg: 1.5rem;
-                --spacing-xl: 2rem;
-                --spacing-xxl: 2.5rem;
-            }
-
-            h1 { font-size: 1.75rem; }
-            h2 { font-size: 1.25rem; }
-            h3 { font-size: 1.1rem; }
+            h1 { font-size: 1.75rem; } h2 { font-size: 1.25rem; } h3 { font-size: 1.1rem; }
             body { font-size: 15px; }
-
-            .header-container {
-                padding: var(--spacing-sm);
-                flex-wrap: wrap;
-            }
-
-            .brand-name {
-                font-size: 1.25rem;
-            }
-
-            .brand-tagline {
-                font-size: 0.65rem;
-            }
-
-            .hero {
-                padding: var(--spacing-lg) var(--spacing-sm);
-            }
-
-            .hero h2 {
-                font-size: 1.5rem;
-                line-height: 1.3;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .hero-image {
-                min-height: 200px;
-            }
-
-            .about-image {
-                min-height: 250px;
-            }
-
-            .about-text p {
-                font-size: 0.95rem;
-            }
-
-            .services-section {
-                padding: var(--spacing-lg) var(--spacing-sm);
-            }
-
-            .service-icon {
-                font-size: 2.5rem;
-            }
-
-            .contact-section {
-                padding: var(--spacing-lg) var(--spacing-sm);
-            }
-
-            .info-block {
-                padding: var(--spacing-md);
-            }
-
-            .info-block p {
-                font-size: 0.95rem;
-            }
-
-            .footer {
-                padding: var(--spacing-lg) var(--spacing-sm);
-            }
-
-            .footer-content p,
-            .footer-links a {
-                font-size: 0.9rem;
-            }
-
-            .copyright {
-                font-size: 0.85rem;
-            }
-
-            section {
-                padding: var(--spacing-lg) var(--spacing-sm);
-            }
-
-            .header-ctas .btn {
-                width: 100%;
-            }
-
-            .btn {
-                padding: 0.75rem var(--spacing-md);
-                font-size: 0.9rem;
-            }
-
-            .btn-large {
-                padding: var(--spacing-md) var(--spacing-sm);
-            }
-
-            .benefits-list {
-                grid-template-columns: 1fr;
-            }
-
-            .benefits-list li {
-                padding: var(--spacing-md);
-                font-size: 0.95rem;
-            }
-
-            .main-nav.active {
-                max-height: 400px;
-            }
-
-            .nav-list {
-                padding: var(--spacing-md) var(--spacing-sm);
-            }
-
-            .nav-link {
-                padding: var(--spacing-sm) 0;
-                font-size: 0.95rem;
-            }
-
-            .dropdown-link {
-                padding: var(--spacing-xs) var(--spacing-sm);
-                padding-left: var(--spacing-lg);
-                font-size: 0.9rem;
-            }
-
-            .info-block strong {
-                display: inline;
-                margin-bottom: 0;
-            }
-
-            .info-block strong::after {
-                content: ' ';
-            }
-
-            .benefits-list li {
-                border-left-width: 3px;
-            }
-        }
-
-        /* ============================================
-           ACCESSIBILITY
-           ============================================ */
-
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-        }
-
-        @media (prefers-contrast: more) {
-            :root {
-                --color-primary: #1a3a5c;
-                --color-primary-dark: #0d1f2d;
-                --color-text: #000;
-                --color-text-light: #333;
-            }
-
-            .btn-primary {
-                border: 2px solid var(--color-primary);
-            }
-
-            .nav-link {
-                border-bottom: 2px solid transparent;
-            }
-
-            .nav-link:hover {
-                border-bottom: 2px solid var(--color-accent);
-            }
-        }
-
-        /* ============================================
-           PRINT STYLES
-           ============================================ */
-
-        @media print {
-            .header, .footer, .mobile-menu-toggle {
-                display: none;
-            }
-
-            body {
-                background-color: var(--color-white);
-                color: var(--color-text);
-            }
-
-            a {
-                color: var(--color-primary);
-            }
-
-            section {
-                page-break-inside: avoid;
-            }
+            .hero { padding: 2rem 1rem; } .hero h2 { font-size: 1.5rem; line-height: 1.3; }
+            .hero-image { min-height: 200px; }
+            .about-image { min-height: 250px; }
+            .about-text p { font-size: 0.95rem; }
+            .services-section { padding: 2rem 1rem; }
+            .info-block { padding: 1.5rem; } .info-block p { font-size: 0.95rem; }
+            .footer { padding: 2rem 1rem; }
+            section { padding: 2rem 1rem; }
+            .btn { padding: 0.75rem 1.5rem; font-size: 0.9rem; }
+            .btn-large { padding: 1.5rem 1rem; }
+            .benefits-list { grid-template-columns: 1fr; }
+            .benefits-list li { padding: 1.5rem; font-size: 0.95rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Header with navigation and CTAs -->
     <header class="header" role="banner">
         <div class="header-container">
-            <!-- Logo/Brand -->
             <div class="logo">
                 <h1 class="brand-name">Gildman Glasses</h1>
                 <p class="brand-tagline">C Fast Optometry</p>
             </div>
 
-            <!-- Primary Navigation -->
             <nav class="main-nav" role="navigation" aria-label="Main Navigation">
                 <ul class="nav-list">
-                    <!-- About Me Dropdown -->
                     <li class="nav-item dropdown">
-                        <button class="nav-link dropdown-toggle"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                                aria-controls="about-menu">
-                            About Me
-                        </button>
+                        <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="about-menu">About Me</button>
                         <ul class="dropdown-menu" id="about-menu" role="menu">
-                            <li role="none">
-                                <a href="#dr-fast" class="dropdown-link" role="menuitem">About Dr. Fast</a>
-                            </li>
-                            <li role="none">
-                                <a href="#qualifications" class="dropdown-link" role="menuitem">Qualifications</a>
-                            </li>
-                            <li role="none">
-                                <a href="#philosophy" class="dropdown-link" role="menuitem">Our Philosophy</a>
-                            </li>
-                            <li role="none">
-                                <a href="#testimonials" class="dropdown-link" role="menuitem">Testimonials</a>
-                            </li>
+                            <li><a href="about-dr-fast.html" class="dropdown-link">About Dr. Fast</a></li>
+                            <li><a href="qualifications.html" class="dropdown-link">Qualifications</a></li>
+                            <li><a href="philosophy.html" class="dropdown-link">Our Philosophy</a></li>
+                            <li><a href="testimonials.html" class="dropdown-link">Testimonials</a></li>
                         </ul>
                     </li>
 
-                    <!-- Services Dropdown -->
                     <li class="nav-item dropdown">
-                        <button class="nav-link dropdown-toggle"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                                aria-controls="services-menu">
-                            Services
-                        </button>
+                        <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="services-menu">Services</button>
                         <ul class="dropdown-menu" id="services-menu" role="menu">
-                            <li role="none">
-                                <a href="#eye-exams" class="dropdown-link" role="menuitem">Comprehensive Eye Exams</a>
-                            </li>
-                            <li role="none">
-                                <a href="#glasses" class="dropdown-link" role="menuitem">Glasses & Frames</a>
-                            </li>
-                            <li role="none">
-                                <a href="#contacts" class="dropdown-link" role="menuitem">Contact Lenses</a>
-                            </li>
-                            <li role="none">
-                                <a href="#treatment" class="dropdown-link" role="menuitem">Eye Disease Treatment</a>
-                            </li>
-                            <li role="none">
-                                <a href="#specialty" class="dropdown-link" role="menuitem">Specialty Services</a>
-                            </li>
+                            <li><a href="eye-exams.html" class="dropdown-link">Comprehensive Eye Exams</a></li>
+                            <li><a href="glasses-frames.html" class="dropdown-link">Glasses & Frames</a></li>
+                            <li><a href="contact-lenses.html" class="dropdown-link">Contact Lenses</a></li>
+                            <li><a href="eye-disease-treatment.html" class="dropdown-link">Eye Disease Treatment</a></li>
+                            <li><a href="specialty-services.html" class="dropdown-link">Specialty Services</a></li>
                         </ul>
                     </li>
 
-                    <!-- Patient Resources Dropdown -->
                     <li class="nav-item dropdown">
-                        <button class="nav-link dropdown-toggle"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                                aria-controls="resources-menu">
-                            Patient Resources
-                        </button>
+                        <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="resources-menu">Patient Resources</button>
                         <ul class="dropdown-menu" id="resources-menu" role="menu">
-                            <li role="none">
-                                <a href="#insurance" class="dropdown-link" role="menuitem">Insurance & Payment</a>
-                            </li>
-                            <li role="none">
-                                <a href="#forms" class="dropdown-link" role="menuitem">Patient Forms</a>
-                            </li>
-                            <li role="none">
-                                <a href="#faq" class="dropdown-link" role="menuitem">FAQ</a>
-                            </li>
-                            <li role="none">
-                                <a href="#contact" class="dropdown-link" role="menuitem">Contact Us</a>
-                            </li>
-                            <li role="none">
-                                <a href="#hours" class="dropdown-link" role="menuitem">Hours & Directions</a>
-                            </li>
+                            <li><a href="insurance-payment.html" class="dropdown-link">Insurance & Payment</a></li>
+                            <li><a href="patient-forms.html" class="dropdown-link">Patient Forms</a></li>
+                            <li><a href="faq.html" class="dropdown-link">FAQ</a></li>
+                            <li><a href="contact.html" class="dropdown-link">Contact Us</a></li>
+                            <li><a href="hours-directions.html" class="dropdown-link">Hours & Directions</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
 
-            <!-- CTA Buttons - Primary Actions -->
             <div class="header-ctas">
-                <a href="#book-appointment" class="btn btn-primary" aria-label="Book an appointment with Dr. Fast">
-                    📅 Book Appointment
-                </a>
-                <a href="#pay-bill" class="btn btn-secondary" aria-label="Pay your bill online">
-                    💳 Pay Bill
-                </a>
+                <a href="book-appointment.html" class="btn btn-primary">Book Appointment</a>
+                <a href="pay-bill.html" class="btn btn-secondary">Pay Bill</a>
             </div>
 
-            <!-- Mobile Menu Toggle -->
-            <button class="mobile-menu-toggle"
-                    id="mobile-menu-toggle"
-                    aria-controls="main-nav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation menu">
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation menu">
                 <span class="hamburger"></span>
                 <span class="hamburger"></span>
                 <span class="hamburger"></span>
@@ -1233,80 +222,68 @@
         </div>
     </header>
 
-    <!-- Main Content Area -->
     <main id="main-content" role="main">
-        <!-- Hero Section -->
         <section class="hero" aria-label="Welcome to C Fast Optometry">
             <div class="hero-content">
                 <h2>Professional Eye Care You Can Trust</h2>
                 <p>Expert optometry services for the whole family at C Fast Optometry</p>
                 <div class="hero-ctas">
-                    <a href="#book-appointment" class="btn btn-primary btn-large">
-                        Schedule Your Eye Exam Today
-                    </a>
-                    <a href="#contact" class="btn btn-outline">
-                        Learn More
-                    </a>
+                    <a href="book-appointment.html" class="btn btn-primary btn-large">Schedule Your Eye Exam Today</a>
+                    <a href="contact.html" class="btn btn-outline">Learn More</a>
                 </div>
             </div>
-            <div class="hero-image" aria-label="Professional optometry clinic"></div>
+            <div class="hero-image"></div>
         </section>
 
-        <!-- About Dr. Fast Section -->
-        <section id="dr-fast" class="about-section" aria-labelledby="about-heading">
+        <section class="about-section">
             <div class="section-container">
-                <h2 id="about-heading">About Dr. Fast</h2>
+                <h2>Welcome to C Fast Optometry</h2>
                 <div class="about-content">
-                    <div class="about-image" aria-label="Portrait of Dr. Fast"></div>
+                    <div class="about-image"></div>
                     <div class="about-text">
-                        <p>Dr. Fast brings years of experience and dedication to patient care at C Fast Optometry. With a commitment to using the latest technology and techniques, Dr. Fast provides comprehensive eye care to patients of all ages.</p>
-                        <p>At Gildman Glasses, we believe that quality eye care should be accessible, affordable, and personalized to each patient's unique needs.</p>
-                        <a href="#book-appointment" class="btn btn-primary">Book Your Appointment</a>
+                        <p>At C Fast Optometry, we specialize in providing comprehensive eye care services to our community. Dr. Fast is dedicated to ensuring every patient receives personalized attention and the highest quality of care.</p>
+                        <p>With state-of-the-art technology and a passion for patient care, we offer a full range of optometry services for patients of all ages. From routine eye exams to specialty treatments, we're here to help you maintain healthy vision.</p>
+                        <p>Visit our About page to learn more about Dr. Fast's experience, qualifications, and our practice philosophy.</p>
+                        <a href="about-dr-fast.html" class="btn btn-primary">Learn About Dr. Fast</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Services Overview Section -->
-        <section id="services" class="services-section" aria-labelledby="services-heading">
+        <section class="services-section">
             <div class="section-container">
-                <h2 id="services-heading">Our Services</h2>
+                <h2>Our Services</h2>
                 <div class="services-grid">
-                    <!-- Service Card 1 -->
-                    <article class="service-card" aria-label="Comprehensive Eye Exams">
-                        <div class="service-icon">👁️</div>
+                    <article class="service-card">
                         <h3>Comprehensive Eye Exams</h3>
                         <p>Thorough eye examinations to detect vision problems and eye health issues early.</p>
+                        <a href="eye-exams.html" class="btn btn-outline" style="margin-top: 1rem;">Learn More</a>
                     </article>
 
-                    <!-- Service Card 2 -->
-                    <article class="service-card" aria-label="Glasses and Frames">
-                        <div class="service-icon">👓</div>
+                    <article class="service-card">
                         <h3>Glasses & Frames</h3>
                         <p>Wide selection of fashionable and quality eyeglass frames for every style and budget.</p>
+                        <a href="glasses-frames.html" class="btn btn-outline" style="margin-top: 1rem;">Learn More</a>
                     </article>
 
-                    <!-- Service Card 3 -->
-                    <article class="service-card" aria-label="Contact Lenses">
-                        <div class="service-icon">💎</div>
+                    <article class="service-card">
                         <h3>Contact Lenses</h3>
                         <p>Professional fitting and prescription for comfortable contact lens wear.</p>
+                        <a href="contact-lenses.html" class="btn btn-outline" style="margin-top: 1rem;">Learn More</a>
                     </article>
 
-                    <!-- Service Card 4 -->
-                    <article class="service-card" aria-label="Eye Disease Treatment">
-                        <div class="service-icon">⚕️</div>
+                    <article class="service-card">
                         <h3>Eye Disease Treatment</h3>
                         <p>Diagnosis and management of conditions like glaucoma, cataracts, and macular degeneration.</p>
+                        <a href="eye-disease-treatment.html" class="btn btn-outline" style="margin-top: 1rem;">Learn More</a>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Why Choose Us Section -->
-        <section class="why-choose-us" aria-labelledby="why-heading">
+        <section class="why-choose-us">
             <div class="section-container">
-                <h2 id="why-heading">Why Choose C Fast Optometry?</h2>
+                <h2>Why Choose C Fast Optometry?</h2>
                 <ul class="benefits-list">
                     <li>
                         <strong>Patient-Centered Care:</strong> Your vision and comfort are our top priorities.
@@ -1327,44 +304,15 @@
             </div>
         </section>
 
-        <!-- Call to Action Section -->
-        <section class="cta-section" aria-labelledby="cta-heading">
+        <section class="cta-section">
             <div class="section-container">
-                <h2 id="cta-heading">Ready to Improve Your Vision?</h2>
+                <h2>Ready to Improve Your Vision?</h2>
                 <p>Book your comprehensive eye exam with Dr. Fast today.</p>
-                <a href="#book-appointment" class="btn btn-primary btn-large">Book Appointment Now</a>
-            </div>
-        </section>
-
-        <!-- Contact Information Section -->
-        <section id="contact" class="contact-section" aria-labelledby="contact-heading">
-            <div class="section-container">
-                <h2 id="contact-heading">Contact & Hours</h2>
-                <div class="contact-info">
-                    <div class="info-block">
-                        <h3>Business Hours</h3>
-                        <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
-                        <p>Saturday: 10:00 AM - 3:00 PM</p>
-                        <p>Sunday: Closed</p>
-                    </div>
-                    <div class="info-block">
-                        <h3>Get in Touch</h3>
-                        <p>
-                            <strong>Phone:</strong> <a href="tel:+1234567890">(123) 456-7890</a>
-                        </p>
-                        <p>
-                            <strong>Email:</strong> <a href="mailto:info@cfastoptometry.com">info@cfastoptometry.com</a>
-                        </p>
-                        <p>
-                            <strong>Address:</strong> [Your Address Here]
-                        </p>
-                    </div>
-                </div>
+                <a href="book-appointment.html" class="btn btn-primary btn-large">Book Appointment Now</a>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer" role="contentinfo">
         <div class="footer-container">
             <div class="footer-content">
@@ -1372,293 +320,54 @@
                 <p>Gildman Glasses - Professional Eye Care by Dr. Fast</p>
             </div>
             <div class="footer-links">
-                <a href="#privacy">Privacy Policy</a>
-                <a href="#terms">Terms of Service</a>
-                <a href="#accessibility">Accessibility</a>
-                <a href="mailto:info@cfastoptometry.com">Contact</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="hours-directions.html">Hours & Directions</a>
+                <a href="faq.html">FAQ</a>
             </div>
             <p class="copyright">&copy; 2025 C Fast Optometry. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- JavaScript - All-in-One Script -->
     <script>
-        /**
-         * C Fast Optometry - All-in-One JavaScript
-         * Handles dropdown menus, mobile navigation, and accessibility
-         */
-
         document.addEventListener('DOMContentLoaded', function() {
-            initializeDropdowns();
-            initializeMobileMenu();
-            setupAccessibility();
-        });
-
-        // ============================================
-        // DROPDOWN MENU FUNCTIONALITY
-        // ============================================
-
-        function initializeDropdowns() {
             const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            const mobileToggle = document.getElementById('mobile-menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
 
             dropdownToggles.forEach(toggle => {
                 toggle.addEventListener('click', function(e) {
                     e.preventDefault();
-                    toggleDropdown(this);
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    dropdownToggles.forEach(t => t.setAttribute('aria-expanded', 'false'));
+                    document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('active'));
+                    if (!isExpanded) {
+                        this.setAttribute('aria-expanded', 'true');
+                        document.getElementById(this.getAttribute('aria-controls')).classList.add('active');
+                    }
                 });
+            });
 
-                toggle.addEventListener('keydown', function(e) {
-                    handleDropdownKeyboard(e, this);
-                });
+            mobileToggle.addEventListener('click', function() {
+                const isActive = mobileToggle.classList.contains('active');
+                mobileToggle.classList.toggle('active');
+                mainNav.classList.toggle('active');
+                mobileToggle.setAttribute('aria-expanded', !isActive);
             });
 
             document.addEventListener('click', function(e) {
                 if (!e.target.closest('.dropdown')) {
-                    closeAllDropdowns();
+                    dropdownToggles.forEach(t => t.setAttribute('aria-expanded', 'false'));
+                    document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('active'));
                 }
             });
 
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
-                    closeAllDropdowns();
+                    dropdownToggles.forEach(t => t.setAttribute('aria-expanded', 'false'));
+                    document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('active'));
                 }
             });
-        }
-
-        function toggleDropdown(toggle) {
-            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-            const menuId = toggle.getAttribute('aria-controls');
-            const menu = document.getElementById(menuId);
-
-            if (!menu) return;
-
-            closeAllDropdowns();
-
-            if (!isExpanded) {
-                toggle.setAttribute('aria-expanded', 'true');
-                menu.classList.add('active');
-                const firstLink = menu.querySelector('a');
-                if (firstLink) {
-                    firstLink.focus();
-                }
-            } else {
-                toggle.setAttribute('aria-expanded', 'false');
-                menu.classList.remove('active');
-                toggle.focus();
-            }
-        }
-
-        function closeAllDropdowns() {
-            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-            const dropdownMenus = document.querySelectorAll('.dropdown-menu');
-
-            dropdownToggles.forEach(toggle => {
-                toggle.setAttribute('aria-expanded', 'false');
-            });
-
-            dropdownMenus.forEach(menu => {
-                menu.classList.remove('active');
-            });
-        }
-
-        function handleDropdownKeyboard(e, toggle) {
-            const menuId = toggle.getAttribute('aria-controls');
-            const menu = document.getElementById(menuId);
-
-            if (!menu) return;
-
-            switch(e.key) {
-                case 'Enter':
-                case ' ':
-                    e.preventDefault();
-                    toggleDropdown(toggle);
-                    break;
-                case 'ArrowDown':
-                    e.preventDefault();
-                    if (toggle.getAttribute('aria-expanded') === 'false') {
-                        toggleDropdown(toggle);
-                    } else {
-                        const firstLink = menu.querySelector('a');
-                        if (firstLink) firstLink.focus();
-                    }
-                    break;
-                case 'ArrowUp':
-                    e.preventDefault();
-                    closeAllDropdowns();
-                    toggle.focus();
-                    break;
-            }
-        }
-
-        // ============================================
-        // MOBILE MENU FUNCTIONALITY
-        // ============================================
-
-        function initializeMobileMenu() {
-            const mobileToggle = document.getElementById('mobile-menu-toggle');
-            const mainNav = document.querySelector('.main-nav');
-
-            if (!mobileToggle || !mainNav) return;
-
-            mobileToggle.addEventListener('click', function() {
-                const isActive = mobileToggle.classList.contains('active');
-
-                if (!isActive) {
-                    mobileToggle.classList.add('active');
-                    mainNav.classList.add('active');
-                    mobileToggle.setAttribute('aria-expanded', 'true');
-                } else {
-                    mobileToggle.classList.remove('active');
-                    mainNav.classList.remove('active');
-                    mobileToggle.setAttribute('aria-expanded', 'false');
-                }
-            });
-
-            const navLinks = mainNav.querySelectorAll('a, button');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    if (!this.classList.contains('dropdown-toggle')) {
-                        mobileToggle.classList.remove('active');
-                        mainNav.classList.remove('active');
-                        mobileToggle.setAttribute('aria-expanded', 'false');
-                    }
-                });
-            });
-
-            const mobileDropdownToggles = mainNav.querySelectorAll('.dropdown-toggle');
-            mobileDropdownToggles.forEach(toggle => {
-                toggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    toggleMobileDropdown(this);
-                });
-            });
-
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && mobileToggle.classList.contains('active')) {
-                    mobileToggle.classList.remove('active');
-                    mainNav.classList.remove('active');
-                    mobileToggle.setAttribute('aria-expanded', 'false');
-                }
-            });
-
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 768) {
-                    mobileToggle.classList.remove('active');
-                    mainNav.classList.remove('active');
-                    mobileToggle.setAttribute('aria-expanded', 'false');
-                    closeAllDropdowns();
-                }
-            });
-        }
-
-        function toggleMobileDropdown(toggle) {
-            const menuId = toggle.getAttribute('aria-controls');
-            const menu = document.getElementById(menuId);
-
-            if (!menu) return;
-
-            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-
-            if (!isExpanded) {
-                toggle.setAttribute('aria-expanded', 'true');
-                menu.classList.add('active');
-            } else {
-                toggle.setAttribute('aria-expanded', 'false');
-                menu.classList.remove('active');
-            }
-        }
-
-        // ============================================
-        // ACCESSIBILITY FEATURES
-        // ============================================
-
-        function setupAccessibility() {
-            const skipLink = document.querySelector('.skip-link');
-            if (skipLink) {
-                skipLink.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const mainContent = document.getElementById('main-content');
-                    if (mainContent) {
-                        mainContent.focus();
-                        mainContent.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            }
-
-            setupDropdownItemNavigation();
-
-            document.addEventListener('keydown', function() {
-                document.body.classList.add('keyboard-nav');
-            });
-
-            document.addEventListener('mousedown', function() {
-                document.body.classList.remove('keyboard-nav');
-            });
-
-            announcementRegion();
-        }
-
-        function setupDropdownItemNavigation() {
-            const dropdownLinks = document.querySelectorAll('.dropdown-link');
-
-            dropdownLinks.forEach((link, index) => {
-                link.addEventListener('keydown', function(e) {
-                    const menu = this.closest('.dropdown-menu');
-                    const links = Array.from(menu.querySelectorAll('a'));
-                    const currentIndex = links.indexOf(this);
-
-                    switch(e.key) {
-                        case 'ArrowDown':
-                            e.preventDefault();
-                            const nextLink = links[currentIndex + 1];
-                            if (nextLink) nextLink.focus();
-                            break;
-                        case 'ArrowUp':
-                            e.preventDefault();
-                            const prevLink = links[currentIndex - 1];
-                            if (prevLink) {
-                                prevLink.focus();
-                            } else {
-                                const menuId = menu.id;
-                                const toggleBtn = document.querySelector(`[aria-controls="${menuId}"]`);
-                                if (toggleBtn) toggleBtn.focus();
-                            }
-                            break;
-                        case 'Escape':
-                            e.preventDefault();
-                            const menuId = menu.id;
-                            const toggleBtn = document.querySelector(`[aria-controls="${menuId}"]`);
-                            if (toggleBtn) {
-                                toggleBtn.setAttribute('aria-expanded', 'false');
-                                menu.classList.remove('active');
-                                toggleBtn.focus();
-                            }
-                            break;
-                    }
-                });
-            });
-        }
-
-        function announcementRegion() {
-            let announcer = document.getElementById('announcer');
-            if (!announcer) {
-                announcer = document.createElement('div');
-                announcer.id = 'announcer';
-                announcer.className = 'sr-only';
-                announcer.setAttribute('role', 'status');
-                announcer.setAttribute('aria-live', 'polite');
-                announcer.setAttribute('aria-atomic', 'true');
-                announcer.style.position = 'absolute';
-                announcer.style.left = '-10000px';
-                announcer.style.width = '1px';
-                announcer.style.height = '1px';
-                announcer.style.overflow = 'hidden';
-                document.body.appendChild(announcer);
-            }
-        }
-
-        // Console message
-        console.log('C Fast Optometry - Website Ready ✓');
+        });
     </script>
 </body>
 </html>

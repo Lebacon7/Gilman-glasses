@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay Your Bill | C Fast Optometry</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 16px; line-height: 1.6; color: #333; background-color: #fff; }
+        a { color: #2c5aa0; text-decoration: none; }
+        h1, h2, h3 { color: #2c5aa0; margin-bottom: 0.5em; font-weight: 600; }
+        h1 { font-size: 2.5rem; } h2 { font-size: 2rem; }
+        p { margin-bottom: 1em; color: #666; line-height: 1.8; }
+        .header { background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .header-container { max-width: 1200px; margin: 0 auto; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+        .brand-name { font-size: 1.75rem; font-weight: 700; color: #2c5aa0; margin: 0; }
+        .nav-list { display: flex; gap: 2rem; list-style: none; }
+        .nav-link { color: #333; font-weight: 500; padding: 0.5rem 1rem; }
+        .header-ctas { display: flex; gap: 1.5rem; }
+        .btn { display: inline-block; padding: 1rem 1.5rem; border-radius: 8px; font-weight: 600; text-decoration: none; cursor: pointer; background-color: #2c5aa0; color: #fff; }
+        .btn:hover { background-color: #1f3f5a; }
+        section { padding: 4rem 2rem; }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        section h2 { text-align: center; margin-bottom: 3rem; }
+        .payment-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 900px; margin: 2rem auto; }
+        .payment-option { background-color: #e8f0f8; padding: 2rem; border-radius: 8px; text-align: center; }
+        .payment-option h3 { margin-top: 0; }
+        .payment-option .btn { display: inline-block; margin-top: 1rem; }
+        .footer { background-color: #2c5aa0; color: #fff; padding: 3rem 2rem; margin-top: 4rem; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .copyright { grid-column: 1 / -1; text-align: center; color: rgba(255,255,255,0.7); padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <h1 class="brand-name">Gildman Glasses</h1>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about-dr-fast.html" class="nav-link">About</a></li>
+                    <li><a href="eye-exams.html" class="nav-link">Services</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-ctas">
+                <a href="book-appointment.html" class="btn">Book Appointment</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="section-container">
+                <h2>Pay Your Bill</h2>
+
+                <p style="text-align: center; margin-bottom: 2rem; color: #666;">
+                    Thank you for choosing C Fast Optometry. Please select your preferred payment method.
+                </p>
+
+                <div class="payment-options">
+                    <div class="payment-option">
+                        <h3>Online Payment</h3>
+                        <p>Pay your bill securely online using your debit or credit card.</p>
+                        <p style="font-size: 0.9rem; color: #999;">[Payment gateway integration would go here]</p>
+                        <a href="#" class="btn">Pay Online</a>
+                    </div>
+
+                    <div class="payment-option">
+                        <h3>Payment by Phone</h3>
+                        <p>Call us to pay your bill over the phone with a credit or debit card.</p>
+                        <p style="font-size: 0.9rem; color: #999;">Available during business hours</p>
+                        <a href="tel:1234567890" class="btn">Call (123) 456-7890</a>
+                    </div>
+
+                    <div class="payment-option">
+                        <h3>In-Office Payment</h3>
+                        <p>Pay your bill in person at our office. We accept cash, cards, and checks.</p>
+                        <p style="font-size: 0.9rem; color: #999;">Monday - Saturday</p>
+                        <a href="hours-directions.html" class="btn">Get Directions</a>
+                    </div>
+                </div>
+
+                <p style="text-align: center; margin-top: 2rem; padding: 1.5rem; background-color: #e8f0f8; border-radius: 8px;">
+                    Have questions about your bill? <a href="contact.html" style="color: #2c5aa0; font-weight: 600;">Contact us</a> for assistance.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div><h3 style="color: #fff; margin-bottom: 1rem;">C Fast Optometry</h3><p>Professional Eye Care</p></div>
+            <div><a href="contact.html" style="color: rgba(255,255,255,0.8); display: block;">Contact</a></div>
+            <p class="copyright">&copy; 2025 C Fast Optometry. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
