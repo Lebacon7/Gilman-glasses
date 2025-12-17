@@ -324,10 +324,10 @@ const siteData = {
   },
 
   // Eye Disease Treatment (eye-disease-treatment.html)
-  eyeDiseaseTraitement: {
+  eyeDiseasetreatment: {
     pageTitle: "Eye Disease Treatment & Management",
     subtitle: "Early detection and treatment of eye diseases can help preserve your vision. Dr. Fast provides comprehensive diagnosis and management of common eye conditions.",
-    conditions: [
+    treatments: [
       {
         title: "Glaucoma",
         description: "A condition characterized by increased intraocular pressure that can damage the optic nerve. Early detection through comprehensive eye exams and treatment can help prevent vision loss."
