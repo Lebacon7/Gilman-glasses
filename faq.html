@@ -50,48 +50,10 @@
     <main>
         <section>
             <div class="section-container">
-                <h2>Frequently Asked Questions</h2>
+                <h2 data-content="faq.pageTitle">Frequently Asked Questions</h2>
 
-                <div style="max-width: 900px; margin: 0 auto;">
-                    <div class="faq-item">
-                        <h3>How often should I have my eyes examined?</h3>
-                        <p>Adults with no vision problems should have an eye exam every 1-2 years. Those over 60 should have annual exams. People with eye conditions or risk factors should follow Dr. Fast's recommendations.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3>Do you accept insurance?</h3>
-                        <p>Yes, we accept most major health and vision insurance plans. Please bring your insurance card to your appointment. Contact us if you're unsure about your coverage.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3>How long does an eye exam take?</h3>
-                        <p>A comprehensive eye exam typically takes 45 minutes to an hour, depending on any additional testing that may be needed.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3>Can I get a prescription for glasses and contacts from the same exam?</h3>
-                        <p>Yes, your eye exam prescription can be used for both glasses and contacts. However, contact lens fitting requires additional measurements and fitting.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3>What should I bring to my appointment?</h3>
-                        <p>Bring your insurance card, photo ID, list of current medications, and any relevant medical history. If you wear glasses or contacts, bring them along.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3>Do you offer emergency appointments?</h3>
-                        <p>Yes, we try to accommodate emergency appointments for acute eye problems. Call us immediately if you experience sudden vision changes or eye pain.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3>How long are glasses prescriptions valid?</h3>
-                        <p>Glasses prescriptions are typically valid for one year. Outdated prescriptions may not provide optimal vision correction.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3>What is my prescription number?</h3>
-                        <p>We'll provide you with a copy of your prescription after your exam. You can use this to purchase glasses or contacts from any retailer.</p>
-                    </div>
+                <div id="faqContainer" style="max-width: 900px; margin: 0 auto;">
+                    <!-- FAQ items will be populated from data.js -->
                 </div>
 
                 <p style="text-align: center; margin-top: 2rem;">
@@ -108,5 +70,31 @@
             <p class="copyright">&copy; 2025 C Fast Optometry. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="data.js"></script>
+    <script>
+        // Populate content from data.js
+        document.addEventListener('DOMContentLoaded', function() {
+            const pageData = siteData.faq;
+
+            // Populate all elements with data-content attributes
+            document.querySelectorAll('[data-content]').forEach(element => {
+                const path = element.getAttribute('data-content');
+                const value = path.split('.').reduce((obj, key) => obj?.[key], siteData);
+                if (value) element.textContent = value;
+            });
+
+            // Populate FAQ items
+            const faqContainer = document.getElementById('faqContainer');
+            if (faqContainer && pageData.faqs) {
+                faqContainer.innerHTML = pageData.faqs.map(faq =>
+                    `<div class="faq-item">
+                        <h3>${faq.question}</h3>
+                        <p>${faq.answer}</p>
+                    </div>`
+                ).join('');
+            }
+        });
+    </script>
 </body>
 </html>

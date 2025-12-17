@@ -54,35 +54,26 @@
     <main>
         <section>
             <div class="section-container">
-                <h2>Hours & Directions</h2>
+                <h2 data-content="hoursDirections.pageTitle">Hours & Directions</h2>
 
                 <div class="info-grid">
                     <div class="info-box">
-                        <h3>Business Hours</h3>
-                        <table class="hours-table">
-                            <tr><td>Monday</td><td>9:00 AM - 5:00 PM</td></tr>
-                            <tr><td>Tuesday</td><td>9:00 AM - 5:00 PM</td></tr>
-                            <tr><td>Wednesday</td><td>9:00 AM - 5:00 PM</td></tr>
-                            <tr><td>Thursday</td><td>9:00 AM - 5:00 PM</td></tr>
-                            <tr><td>Friday</td><td>9:00 AM - 5:00 PM</td></tr>
-                            <tr><td>Saturday</td><td>10:00 AM - 3:00 PM</td></tr>
-                            <tr><td>Sunday</td><td>Closed</td></tr>
+                        <h3 data-content="hoursDirections.hoursTitle">Business Hours</h3>
+                        <table class="hours-table" id="hoursTable">
+                            <!-- Hours will be populated from data.js -->
                         </table>
                     </div>
 
                     <div class="info-box">
-                        <h3>Contact Information</h3>
-                        <p><strong>Phone:</strong> <a href="tel:1234567890">(123) 456-7890</a></p>
-                        <p><strong>Email:</strong> <a href="mailto:info@cfastoptometry.com">info@cfastoptometry.com</a></p>
-                        <p><strong>Address:</strong><br>
-                        C Fast Optometry<br>
-                        [Street Address]<br>
-                        [City], [State] [ZIP]</p>
+                        <h3 data-content="hoursDirections.addressTitle">Contact Information</h3>
+                        <div id="contactInfo">
+                            <!-- Contact info will be populated from data.js -->
+                        </div>
                     </div>
                 </div>
 
-                <p style="text-align: center; margin-top: 2rem; padding: 1.5rem; background-color: #e8f0f8; border-radius: 8px;">
-                    For emergency eye care or urgent vision problems, please call us immediately at <a href="tel:1234567890" style="color: #2c5aa0; font-weight: 600;">(123) 456-7890</a>
+                <p id="emergencyInfo" style="text-align: center; margin-top: 2rem; padding: 1.5rem; background-color: #e8f0f8; border-radius: 8px;">
+                    <!-- Emergency info will be populated from data.js -->
                 </p>
 
                 <p style="text-align: center; margin-top: 2rem;">
@@ -99,5 +90,50 @@
             <p class="copyright">&copy; 2025 C Fast Optometry. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="data.js"></script>
+    <script>
+        // Populate content from data.js
+        document.addEventListener('DOMContentLoaded', function() {
+            const pageData = siteData.hoursDirections;
+            const globalData = siteData.global;
+
+            // Populate all elements with data-content attributes
+            document.querySelectorAll('[data-content]').forEach(element => {
+                const path = element.getAttribute('data-content');
+                const value = path.split('.').reduce((obj, key) => obj?.[key], siteData);
+                if (value) element.textContent = value;
+            });
+
+            // Populate hours table
+            const hoursTable = document.getElementById('hoursTable');
+            if (hoursTable && globalData.hours) {
+                const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+                hoursTable.innerHTML = days.map(day => {
+                    const dayKey = day.toLowerCase();
+                    return `<tr><td>${day}</td><td>${globalData.hours[dayKey]}</td></tr>`;
+                }).join('');
+            }
+
+            // Populate contact info
+            const contactInfo = document.getElementById('contactInfo');
+            if (contactInfo && globalData) {
+                contactInfo.innerHTML = `
+                    <p><strong>Phone:</strong> <a href="tel:${globalData.phone.replace(/[^0-9]/g, '')}">${globalData.phone}</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:${globalData.email}">${globalData.email}</a></p>
+                    <p><strong>Address:</strong><br>
+                    ${globalData.businessName}<br>
+                    ${globalData.address}<br>
+                    ${globalData.city}, ${globalData.state} ${globalData.zip}</p>
+                `;
+            }
+
+            // Populate emergency info
+            const emergencyInfo = document.getElementById('emergencyInfo');
+            if (emergencyInfo && pageData.emergencyInfo && globalData.phone) {
+                emergencyInfo.innerHTML = `${pageData.emergencyInfo} <a href="tel:${globalData.phone.replace(/[^0-9]/g, '')}" style="color: #2c5aa0; font-weight: 600;">${globalData.phone}</a>`;
+            }
+        });
+    </script>
 </body>
 </html>

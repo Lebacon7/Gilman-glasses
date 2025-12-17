@@ -50,39 +50,36 @@
     <main>
         <section>
             <div class="section-container">
-                <h2>Insurance & Payment Options</h2>
+                <h2 data-content="insurancePayment.pageTitle">Insurance & Payment Options</h2>
 
                 <div style="max-width: 900px; margin: 0 auto;">
                     <div class="info-box">
                         <h3>Insurance Coverage</h3>
-                        <p>We accept most major health insurance plans. We are an in-network provider for many insurance companies, which can help reduce your out-of-pocket costs. Please bring your insurance card to your appointment.</p>
-                        <p>If you have questions about your coverage or whether we participate in your plan, please contact us before your visit.</p>
+                        <p data-content="insurancePayment.insuranceInfo">We accept most major health insurance plans. We are an in-network provider for many insurance companies, which can help reduce your out-of-pocket costs. Please bring your insurance card to your appointment.</p>
+                        <p data-content="insurancePayment.insuranceQuestion">If you have questions about your coverage or whether we participate in your plan, please contact us before your visit.</p>
                     </div>
 
                     <div class="info-box">
                         <h3>Vision Insurance</h3>
-                        <p>We accept vision insurance plans that cover eye exams, glasses, and contact lenses. Vision insurance benefits typically provide discounts on eyeglasses and contact lenses, as well as coverage for annual eye exams.</p>
+                        <p data-content="insurancePayment.visionInsuranceInfo">We accept vision insurance plans that cover eye exams, glasses, and contact lenses. Vision insurance benefits typically provide discounts on eyeglasses and contact lenses, as well as coverage for annual eye exams.</p>
                     </div>
 
                     <div class="info-box">
                         <h3>Payment Methods</h3>
                         <p>We accept the following payment methods:
-                        <ul style="list-style: none; padding-left: 0; margin: 1rem 0;">
-                            <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem;"><span style="position: absolute; left: 0; color: #27ae60;">✓</span> Cash</li>
-                            <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem;"><span style="position: absolute; left: 0; color: #27ae60;">✓</span> Debit/Credit Cards</li>
-                            <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem;"><span style="position: absolute; left: 0; color: #27ae60;">✓</span> Health Savings Accounts (HSA)</li>
-                            <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem;"><span style="position: absolute; left: 0; color: #27ae60;">✓</span> Flexible Spending Accounts (FSA)</li>
+                        <ul id="paymentMethodsList" style="list-style: none; padding-left: 0; margin: 1rem 0;">
+                            <!-- Payment methods will be populated from data.js -->
                         </ul></p>
                     </div>
 
                     <div class="info-box">
                         <h3>Financial Assistance</h3>
-                        <p>We understand that eye care is an important investment in your health. We offer flexible payment plans to help make quality eye care accessible and affordable for all patients. Contact us to discuss payment options.</p>
+                        <p data-content="insurancePayment.financialAssistance">We understand that eye care is an important investment in your health. We offer flexible payment plans to help make quality eye care accessible and affordable for all patients. Contact us to discuss payment options.</p>
                     </div>
 
                     <div class="info-box">
                         <h3>Billing Questions</h3>
-                        <p>If you have questions about your bill or insurance coverage, please don't hesitate to contact us. Our staff is happy to help explain charges and discuss payment options.</p>
+                        <p data-content="insurancePayment.billingQuestion">If you have questions about your bill or insurance coverage, please don't hesitate to contact us. Our staff is happy to help explain charges and discuss payment options.</p>
                     </div>
                 </div>
 
@@ -100,5 +97,28 @@
             <p class="copyright">&copy; 2025 C Fast Optometry. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="data.js"></script>
+    <script>
+        // Populate content from data.js
+        document.addEventListener('DOMContentLoaded', function() {
+            const pageData = siteData.insurancePayment;
+
+            // Populate all elements with data-content attributes
+            document.querySelectorAll('[data-content]').forEach(element => {
+                const path = element.getAttribute('data-content');
+                const value = path.split('.').reduce((obj, key) => obj?.[key], siteData);
+                if (value) element.textContent = value;
+            });
+
+            // Populate payment methods list
+            const methodsList = document.getElementById('paymentMethodsList');
+            if (methodsList && pageData.paymentMethods) {
+                methodsList.innerHTML = pageData.paymentMethods.map(method =>
+                    `<li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem;"><span style="position: absolute; left: 0; color: #27ae60;">✓</span> ${method}</li>`
+                ).join('');
+            }
+        });
+    </script>
 </body>
 </html>

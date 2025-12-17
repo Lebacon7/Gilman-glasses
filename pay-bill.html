@@ -52,37 +52,18 @@
     <main>
         <section>
             <div class="section-container">
-                <h2>Pay Your Bill</h2>
+                <h2 data-content="payBill.pageTitle">Pay Your Bill</h2>
 
-                <p style="text-align: center; margin-bottom: 2rem; color: #666;">
+                <p data-content="payBill.subtitle" style="text-align: center; margin-bottom: 2rem; color: #666;">
                     Thank you for choosing C Fast Optometry. Please select your preferred payment method.
                 </p>
 
-                <div class="payment-options">
-                    <div class="payment-option">
-                        <h3>Online Payment</h3>
-                        <p>Pay your bill securely online using your debit or credit card.</p>
-                        <p style="font-size: 0.9rem; color: #999;">[Payment gateway integration would go here]</p>
-                        <a href="#" class="btn">Pay Online</a>
-                    </div>
-
-                    <div class="payment-option">
-                        <h3>Payment by Phone</h3>
-                        <p>Call us to pay your bill over the phone with a credit or debit card.</p>
-                        <p style="font-size: 0.9rem; color: #999;">Available during business hours</p>
-                        <a href="tel:1234567890" class="btn">Call (123) 456-7890</a>
-                    </div>
-
-                    <div class="payment-option">
-                        <h3>In-Office Payment</h3>
-                        <p>Pay your bill in person at our office. We accept cash, cards, and checks.</p>
-                        <p style="font-size: 0.9rem; color: #999;">Monday - Saturday</p>
-                        <a href="hours-directions.html" class="btn">Get Directions</a>
-                    </div>
+                <div class="payment-options" id="paymentOptions">
+                    <!-- Payment options will be populated from data.js -->
                 </div>
 
-                <p style="text-align: center; margin-top: 2rem; padding: 1.5rem; background-color: #e8f0f8; border-radius: 8px;">
-                    Have questions about your bill? <a href="contact.html" style="color: #2c5aa0; font-weight: 600;">Contact us</a> for assistance.
+                <p id="questionsText" style="text-align: center; margin-top: 2rem; padding: 1.5rem; background-color: #e8f0f8; border-radius: 8px;">
+                    <!-- Questions text will be populated from data.js -->
                 </p>
             </div>
         </section>
@@ -95,5 +76,49 @@
             <p class="copyright">&copy; 2025 C Fast Optometry. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="data.js"></script>
+    <script>
+        // Populate content from data.js
+        document.addEventListener('DOMContentLoaded', function() {
+            const pageData = siteData.payBill;
+            const globalData = siteData.global;
+
+            // Populate all elements with data-content attributes
+            document.querySelectorAll('[data-content]').forEach(element => {
+                const path = element.getAttribute('data-content');
+                const value = path.split('.').reduce((obj, key) => obj?.[key], siteData);
+                if (value) element.textContent = value;
+            });
+
+            // Populate payment options
+            const paymentOptionsContainer = document.getElementById('paymentOptions');
+            if (paymentOptionsContainer && pageData.paymentOptions) {
+                paymentOptionsContainer.innerHTML = pageData.paymentOptions.map((option, index) => {
+                    let buttonHref = '#';
+                    if (index === 1) {
+                        // Payment by Phone - use phone number
+                        buttonHref = `tel:${globalData.phone.replace(/[^0-9]/g, '')}`;
+                    } else if (index === 2) {
+                        // In-Office Payment - link to directions
+                        buttonHref = 'hours-directions.html';
+                    }
+
+                    return `<div class="payment-option">
+                        <h3>${option.title}</h3>
+                        <p>${option.description}</p>
+                        <p style="font-size: 0.9rem; color: #999;">${option.note}</p>
+                        <a href="${buttonHref}" class="btn">${option.buttonText}</a>
+                    </div>`;
+                }).join('');
+            }
+
+            // Populate questions text
+            const questionsText = document.getElementById('questionsText');
+            if (questionsText && pageData.questionsText) {
+                questionsText.innerHTML = `${pageData.questionsText} <a href="contact.html" style="color: #2c5aa0; font-weight: 600;">Contact us</a> for assistance.`;
+            }
+        });
+    </script>
 </body>
 </html>

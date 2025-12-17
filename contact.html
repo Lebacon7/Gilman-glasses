@@ -51,28 +51,10 @@
     <main>
         <section>
             <div class="section-container">
-                <h2>Contact Us</h2>
+                <h2 data-content="contact.pageTitle">Contact Us</h2>
 
-                <div class="contact-grid">
-                    <div class="contact-method">
-                        <h3>Phone</h3>
-                        <p><a href="tel:1234567890" style="font-weight: 600; font-size: 1.1rem;">(123) 456-7890</a></p>
-                        <p>Call us during business hours to speak with our staff or schedule an appointment.</p>
-                    </div>
-
-                    <div class="contact-method">
-                        <h3>Email</h3>
-                        <p><a href="mailto:info@cfastoptometry.com" style="font-weight: 600; font-size: 1.1rem;">info@cfastoptometry.com</a></p>
-                        <p>Send us an email with your questions or appointment requests. We'll respond within 24 hours.</p>
-                    </div>
-
-                    <div class="contact-method">
-                        <h3>Visit Us</h3>
-                        <p>C Fast Optometry<br>
-                        [Street Address]<br>
-                        [City], [State] [ZIP]</p>
-                        <p>Visit us in person during our business hours.</p>
-                    </div>
+                <div class="contact-grid" id="contactGrid">
+                    <!-- Contact methods will be populated from data.js -->
                 </div>
 
                 <p style="text-align: center; margin-top: 2rem;">
@@ -89,5 +71,47 @@
             <p class="copyright">&copy; 2025 C Fast Optometry. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="data.js"></script>
+    <script>
+        // Populate content from data.js
+        document.addEventListener('DOMContentLoaded', function() {
+            const pageData = siteData.contact;
+            const globalData = siteData.global;
+
+            // Populate all elements with data-content attributes
+            document.querySelectorAll('[data-content]').forEach(element => {
+                const path = element.getAttribute('data-content');
+                const value = path.split('.').reduce((obj, key) => obj?.[key], siteData);
+                if (value) element.textContent = value;
+            });
+
+            // Populate contact methods
+            const contactGrid = document.getElementById('contactGrid');
+            if (contactGrid && pageData && globalData) {
+                contactGrid.innerHTML = `
+                    <div class="contact-method">
+                        <h3>Phone</h3>
+                        <p><a href="tel:${globalData.phone.replace(/[^0-9]/g, '')}" style="font-weight: 600; font-size: 1.1rem;">${globalData.phone}</a></p>
+                        <p>${pageData.phoneDescription}</p>
+                    </div>
+
+                    <div class="contact-method">
+                        <h3>Email</h3>
+                        <p><a href="mailto:${globalData.email}" style="font-weight: 600; font-size: 1.1rem;">${globalData.email}</a></p>
+                        <p>${pageData.emailDescription}</p>
+                    </div>
+
+                    <div class="contact-method">
+                        <h3>Visit Us</h3>
+                        <p>${globalData.businessName}<br>
+                        ${globalData.address}<br>
+                        ${globalData.city}, ${globalData.state} ${globalData.zip}</p>
+                        <p>${pageData.visitDescription}</p>
+                    </div>
+                `;
+            }
+        });
+    </script>
 </body>
 </html>

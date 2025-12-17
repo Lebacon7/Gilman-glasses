@@ -55,69 +55,57 @@
     <main>
         <section>
             <div class="section-container">
-                <h2>Book Your Appointment</h2>
+                <h2 data-content="bookAppointment.pageTitle">Book Your Appointment</h2>
 
-                <p style="text-align: center; margin-bottom: 2rem; color: #666;">
+                <p data-content="bookAppointment.subtitle" style="text-align: center; margin-bottom: 2rem; color: #666;">
                     Schedule an appointment with Dr. Fast. Please fill out the form below and we'll contact you to confirm your appointment time.
                 </p>
 
                 <form class="booking-form">
                     <div class="form-group">
-                        <label for="name">Full Name</label>
+                        <label for="name" data-content="bookAppointment.formLabels.name">Full Name</label>
                         <input type="text" id="name" name="name" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Email Address</label>
+                        <label for="email" data-content="bookAppointment.formLabels.email">Email Address</label>
                         <input type="email" id="email" name="email" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="phone">Phone Number</label>
+                        <label for="phone" data-content="bookAppointment.formLabels.phone">Phone Number</label>
                         <input type="tel" id="phone" name="phone" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="service">Preferred Service</label>
+                        <label for="service" data-content="bookAppointment.formLabels.service">Preferred Service</label>
                         <select id="service" name="service" required>
-                            <option value="">Select a service</option>
-                            <option value="exam">Comprehensive Eye Exam</option>
-                            <option value="glasses">Glasses Fitting</option>
-                            <option value="contacts">Contact Lens Fitting</option>
-                            <option value="followup">Follow-up Visit</option>
-                            <option value="other">Other</option>
+                            <!-- Options will be populated from data.js -->
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="date">Preferred Date</label>
+                        <label for="date" data-content="bookAppointment.formLabels.date">Preferred Date</label>
                         <input type="date" id="date" name="date" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="time">Preferred Time</label>
+                        <label for="time" data-content="bookAppointment.formLabels.time">Preferred Time</label>
                         <select id="time" name="time" required>
-                            <option value="">Select a time</option>
-                            <option value="9:00 AM">9:00 AM</option>
-                            <option value="10:00 AM">10:00 AM</option>
-                            <option value="11:00 AM">11:00 AM</option>
-                            <option value="1:00 PM">1:00 PM</option>
-                            <option value="2:00 PM">2:00 PM</option>
-                            <option value="3:00 PM">3:00 PM</option>
-                            <option value="4:00 PM">4:00 PM</option>
+                            <!-- Options will be populated from data.js -->
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="message">Additional Information</label>
-                        <textarea id="message" name="message" rows="4" placeholder="Any special requests or health concerns?"></textarea>
+                        <label for="message" data-content="bookAppointment.formLabels.message">Additional Information</label>
+                        <textarea id="message" name="message" rows="4" data-placeholder="bookAppointment.messagePlaceholder"></textarea>
                     </div>
 
-                    <button type="submit" class="submit-btn">Request Appointment</button>
+                    <button type="submit" class="submit-btn" data-content="bookAppointment.submitButton">Request Appointment</button>
                 </form>
 
-                <p style="text-align: center; margin-top: 2rem; color: #666;">
-                    Or call us at <a href="tel:1234567890" style="color: #2c5aa0; font-weight: 600;">(123) 456-7890</a> to schedule your appointment.
+                <p id="orCallText" style="text-align: center; margin-top: 2rem; color: #666;">
+                    <!-- Or call text will be populated from data.js -->
                 </p>
             </div>
         </section>
@@ -130,5 +118,52 @@
             <p class="copyright">&copy; 2025 C Fast Optometry. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="data.js"></script>
+    <script>
+        // Populate content from data.js
+        document.addEventListener('DOMContentLoaded', function() {
+            const pageData = siteData.bookAppointment;
+            const globalData = siteData.global;
+
+            // Populate all elements with data-content attributes
+            document.querySelectorAll('[data-content]').forEach(element => {
+                const path = element.getAttribute('data-content');
+                const value = path.split('.').reduce((obj, key) => obj?.[key], siteData);
+                if (value) element.textContent = value;
+            });
+
+            // Populate placeholder attributes
+            document.querySelectorAll('[data-placeholder]').forEach(element => {
+                const path = element.getAttribute('data-placeholder');
+                const value = path.split('.').reduce((obj, key) => obj?.[key], siteData);
+                if (value) element.placeholder = value;
+            });
+
+            // Populate service options
+            const serviceSelect = document.getElementById('service');
+            if (serviceSelect && pageData.serviceOptions) {
+                serviceSelect.innerHTML = '<option value="">Select a service</option>' +
+                    pageData.serviceOptions.map(option =>
+                        `<option value="${option.value}">${option.label}</option>`
+                    ).join('');
+            }
+
+            // Populate time options
+            const timeSelect = document.getElementById('time');
+            if (timeSelect && pageData.timeOptions) {
+                timeSelect.innerHTML = '<option value="">Select a time</option>' +
+                    pageData.timeOptions.map(time =>
+                        `<option value="${time}">${time}</option>`
+                    ).join('');
+            }
+
+            // Populate or call text
+            const orCallText = document.getElementById('orCallText');
+            if (orCallText && pageData.orCallText && globalData.phone) {
+                orCallText.innerHTML = `${pageData.orCallText} <a href="tel:${globalData.phone.replace(/[^0-9]/g, '')}" style="color: #2c5aa0; font-weight: 600;">${globalData.phone}</a> to schedule your appointment.`;
+            }
+        });
+    </script>
 </body>
 </html>

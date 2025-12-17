@@ -52,37 +52,12 @@
     <main>
         <section>
             <div class="section-container">
-                <h2>Patient Testimonials</h2>
+                <h2 data-content="testimonials.pageTitle">Patient Testimonials</h2>
 
-                <div class="testimonials-grid">
+                <div class="testimonials-grid" id="testimonialsList">
                     <div class="testimonial">
                         <p>"Dr. Fast was incredibly thorough with my eye exam and took time to explain everything. I felt completely comfortable and well-informed."</p>
                         <div class="testimonial-author">Sarah M.</div>
-                    </div>
-
-                    <div class="testimonial">
-                        <p>"Best eye care experience I've had. The staff is friendly, and Dr. Fast is very knowledgeable and professional. Highly recommended!"</p>
-                        <div class="testimonial-author">John T.</div>
-                    </div>
-
-                    <div class="testimonial">
-                        <p>"I've been a patient for several years and always receive excellent care. The practice is clean, professional, and the service is outstanding."</p>
-                        <div class="testimonial-author">Linda R.</div>
-                    </div>
-
-                    <div class="testimonial">
-                        <p>"Dr. Fast caught a potential problem during my exam that I wasn't aware of. Their attention to detail is exceptional and truly cares about patient health."</p>
-                        <div class="testimonial-author">Michael W.</div>
-                    </div>
-
-                    <div class="testimonial">
-                        <p>"Great experience from start to finish. The office environment is welcoming and Dr. Fast explains everything clearly. Would definitely recommend to friends and family."</p>
-                        <div class="testimonial-author">Patricia L.</div>
-                    </div>
-
-                    <div class="testimonial">
-                        <p>"Professional, caring, and efficient. Dr. Fast provided excellent service and my prescription is perfect. Thank you for taking such good care of my vision!"</p>
-                        <div class="testimonial-author">David K.</div>
                     </div>
                 </div>
 
@@ -100,5 +75,38 @@
             <p class="copyright">&copy; 2025 C Fast Optometry. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="data.js"></script>
+    <script>
+        function getNestedValue(obj, path) {
+            return path.split('.').reduce((current, prop) => current && current[prop], obj);
+        }
+
+        function populateContent() {
+            document.querySelectorAll('[data-content]').forEach(element => {
+                const path = element.getAttribute('data-content');
+                const value = getNestedValue(siteData, path);
+                if (value) {
+                    element.textContent = value;
+                }
+            });
+            populateTestimonials();
+        }
+
+        function populateTestimonials() {
+            const container = document.getElementById('testimonialsList');
+            if (!container) return;
+            const items = getNestedValue(siteData, 'testimonials.items');
+            if (!items) return;
+            container.innerHTML = items.map(item => `
+                <div class="testimonial">
+                    <p>"${item.quote}"</p>
+                    <div class="testimonial-author">${item.author}</div>
+                </div>
+            `).join('');
+        }
+
+        document.addEventListener('DOMContentLoaded', populateContent);
+    </script>
 </body>
 </html>
