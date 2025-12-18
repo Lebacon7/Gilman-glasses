@@ -4,46 +4,142 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Forms | C Fast Optometry</title>
-    <style>
+        <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 16px; line-height: 1.6; color: #333; background-color: #fff; }
-        a { color: #2c5aa0; text-decoration: none; }
-        h1, h2, h3 { color: #2c5aa0; margin-bottom: 0.5em; font-weight: 600; }
-        h1 { font-size: 2.5rem; } h2 { font-size: 2rem; }
+        html { scroll-behavior: smooth; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #333; background-color: #fff; }
+        ul, ol { list-style: none; }
+        a { color: inherit; text-decoration: none; transition: color 0.3s ease, background-color 0.3s ease; }
+        a:focus-visible { outline: 2px solid #2c5aa0; outline-offset: 2px; }
+        button { background: none; border: none; cursor: pointer; font: inherit; }
+        button:focus-visible { outline: 2px solid #2c5aa0; outline-offset: 2px; }
+        img { max-width: 100%; height: auto; display: block; }
+        h1, h2, h3, h4, h5, h6 { font-weight: 600; line-height: 1.2; margin-bottom: 0.5em; color: #2c5aa0; }
+        h1 { font-size: 2.5rem; } h2 { font-size: 2rem; } h3 { font-size: 1.5rem; } h4 { font-size: 1.25rem; }
         p { margin-bottom: 1em; color: #666; line-height: 1.8; }
-        .header { background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        strong { color: #333; font-weight: 600; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #2c5aa0; color: white; padding: 8px; text-decoration: none; z-index: 100; }
+        .skip-link:focus { top: 0; }
+
+        .header { background-color: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
         .header-container { max-width: 1200px; margin: 0 auto; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
-        .brand-name { font-size: 1.75rem; font-weight: 700; color: #2c5aa0; margin: 0; }
+        .logo { flex-shrink: 0; }
+        .brand-name { font-size: 1.75rem; font-weight: 700; color: #2c5aa0; margin: 0; line-height: 1; }
+        .brand-tagline { font-size: 0.75rem; color: #27ae60; text-transform: uppercase; letter-spacing: 1px; margin: 4px 0 0 0; font-weight: 600; }
+
+        .main-nav { flex: 1; display: flex; justify-content: center; }
         .nav-list { display: flex; gap: 2rem; list-style: none; }
-        .nav-link { color: #333; font-weight: 500; padding: 0.5rem 1rem; }
-        .header-ctas { display: flex; gap: 1.5rem; }
-        .btn { display: inline-block; padding: 1rem 1.5rem; border-radius: 8px; font-weight: 600; text-decoration: none; cursor: pointer; background-color: #2c5aa0; color: #fff; }
-        .btn:hover { background-color: #1f3f5a; }
-        section { padding: 4rem 2rem; }
-        .section-container { max-width: 1200px; margin: 0 auto; }
-        section h2 { text-align: center; margin-bottom: 3rem; }
-        .form-item { background-color: #e8f0f8; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; }
-        .form-item h3 { margin-top: 0; }
-        .footer { background-color: #2c5aa0; color: #fff; padding: 3rem 2rem; margin-top: 4rem; }
-        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .copyright { grid-column: 1 / -1; text-align: center; color: rgba(255,255,255,0.7); padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        .nav-item { position: relative; }
+        .nav-link { color: #333; font-weight: 500; padding: 0.5rem 1rem; display: inline-block; position: relative; background: none; border: none; cursor: pointer; font-size: 1rem; }
+        .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: #27ae60; transition: width 0.2s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .nav-link.dropdown-toggle::after { content: ''; width: auto; height: auto; background: none; position: static; margin-left: 0; }
+
+        .dropdown { position: relative; }
+        .dropdown-menu { position: absolute; top: 100%; left: 0; background-color: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 10px 15px rgba(0,0,0,0.1); min-width: 220px; opacity: 0; visibility: hidden; transform: translateY(-10px); transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease; list-style: none; z-index: 999; margin-top: 1rem; }
+        .dropdown-menu.active { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-link { display: block; padding: 1rem 1.5rem; color: #333; font-weight: 500; text-decoration: none; transition: background-color 0.2s ease, color 0.2s ease; }
+        .dropdown-link:hover { background-color: #e8f0f8; color: #2c5aa0; }
+
+        .header-ctas { display: flex; gap: 1.5rem; flex-shrink: 0; }
+        .mobile-menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; cursor: pointer; padding: 1rem; }
+        .hamburger { width: 25px; height: 3px; background-color: #2c5aa0; border-radius: 2px; transition: all 0.2s ease; }
+
+        .btn { display: inline-block; padding: 1rem 1.5rem; border-radius: 8px; font-weight: 600; text-decoration: none; text-align: center; cursor: pointer; transition: all 0.2s ease; border: 2px solid transparent; font-size: 1rem; white-space: nowrap; }
+        .btn:focus-visible { outline: 2px solid #2c5aa0; outline-offset: 2px; }
+        .btn-primary { background-color: #2c5aa0; color: #fff; border-color: #2c5aa0; }
+        .btn-primary:hover { background-color: #1f3f5a; border-color: #1f3f5a; box-shadow: 0 10px 15px rgba(0,0,0,0.1); transform: translateY(-2px); }
+        .btn-secondary { background-color: #27ae60; color: #fff; border-color: #27ae60; }
+        .btn-secondary:hover { background-color: #229954; border-color: #229954; box-shadow: 0 10px 15px rgba(0,0,0,0.1); transform: translateY(-2px); }
+        .btn-outline { background-color: transparent; color: #2c5aa0; border-color: #2c5aa0; }
+        .btn-outline:hover { background-color: #e8f0f8; }
+        .btn-large { padding: 1.5rem 2rem; font-size: 1.1rem; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; } h2 { font-size: 1.5rem; } h3 { font-size: 1.25rem; }
+            .header-container { padding: 1.5rem; gap: 1.5rem; flex-wrap: wrap; }
+            .brand-name { font-size: 1.5rem; }
+            .main-nav { position: absolute; top: 100%; left: 0; right: 0; background-color: #fff; box-shadow: 0 10px 15px rgba(0,0,0,0.1); max-height: 0; overflow: hidden; transition: max-height 0.3s ease; z-index: 999; }
+            .main-nav.active { max-height: 500px; }
+            .nav-list { flex-direction: column; gap: 0; padding: 2rem 1.5rem; }
+            .nav-item { border-bottom: 1px solid #ddd; }
+            .nav-item:last-child { border-bottom: none; }
+            .nav-link { display: block; padding: 1.5rem 0; width: 100%; text-align: left; }
+            .dropdown-menu { position: static; max-height: 0; overflow: hidden; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; border-left: 3px solid #27ae60; background-color: #f5f5f5; margin: 0; border-radius: 0; transition: max-height 0.3s ease; }
+            .dropdown-menu.active { max-height: 300px; }
+            .dropdown-link { padding: 1rem 1.5rem; padding-left: 2rem; font-size: 0.95rem; }
+            .mobile-menu-toggle { display: flex; order: 3; }
+            .mobile-menu-toggle.active .hamburger:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); }
+            .mobile-menu-toggle.active .hamburger:nth-child(2) { opacity: 0; }
+            .mobile-menu-toggle.active .hamburger:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+            .header-ctas { flex-direction: column; width: 100%; order: 4; gap: 1rem; }
+            .header-ctas .btn { width: 100%; }
+            .btn { padding: 1rem 1.5rem; font-size: 0.95rem; }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.75rem; } h2 { font-size: 1.25rem; } h3 { font-size: 1.1rem; }
+            body { font-size: 15px; }
+            .btn { padding: 0.75rem 1.5rem; font-size: 0.9rem; }
+        }
     </style>
 </head>
 <body>
-    <header class="header">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header" role="banner">
         <div class="header-container">
-            <h1 class="brand-name">Gildman Glasses</h1>
-            <nav>
+            <div class="logo">
+                <h1 class="brand-name" data-content="global.businessName">Gildman Glasses</h1>
+                <p class="brand-tagline" data-content="global.tagline">C Fast Optometry</p>
+            </div>
+
+            <nav class="main-nav" role="navigation" aria-label="Main Navigation">
                 <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="about-dr-fast.html" class="nav-link">About</a></li>
-                    <li><a href="eye-exams.html" class="nav-link">Services</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item dropdown">
+                        <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="about-menu">About Me</button>
+                        <ul class="dropdown-menu" id="about-menu" role="menu">
+                            <li><a href="about-dr-fast.html" class="dropdown-link">About Dr. Fast</a></li>
+                            <li><a href="qualifications.html" class="dropdown-link">Qualifications</a></li>
+                            <li><a href="philosophy.html" class="dropdown-link">Our Philosophy</a></li>
+                            <li><a href="testimonials.html" class="dropdown-link">Testimonials</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="services-menu">Services</button>
+                        <ul class="dropdown-menu" id="services-menu" role="menu">
+                            <li><a href="eye-exams.html" class="dropdown-link">Comprehensive Eye Exams</a></li>
+                            <li><a href="glasses-frames.html" class="dropdown-link">Glasses & Frames</a></li>
+                            <li><a href="contact-lenses.html" class="dropdown-link">Contact Lenses</a></li>
+                            <li><a href="eye-disease-treatment.html" class="dropdown-link">Eye Disease Treatment</a></li>
+                            <li><a href="specialty-services.html" class="dropdown-link">Specialty Services</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="resources-menu">Patient Resources</button>
+                        <ul class="dropdown-menu" id="resources-menu" role="menu">
+                            <li><a href="insurance-payment.html" class="dropdown-link">Insurance & Payment</a></li>
+                            <li><a href="patient-forms.html" class="dropdown-link">Patient Forms</a></li>
+                            <li><a href="faq.html" class="dropdown-link">FAQ</a></li>
+                            <li><a href="contact.html" class="dropdown-link">Contact Us</a></li>
+                            <li><a href="hours-directions.html" class="dropdown-link">Hours & Directions</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
+
             <div class="header-ctas">
-                <a href="book-appointment.html" class="btn">Book Appointment</a>
+                <a href="book-appointment.html" class="btn btn-primary">Book Appointment</a>
+                <a href="pay-bill.html" class="btn btn-secondary">Pay Bill</a>
             </div>
+
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation menu">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
         </div>
     </header>
 
@@ -76,7 +172,51 @@
     <script src="data.js"></script>
     <script>
         // Populate content from data.js
+        
+        function initializeDropdowns() {
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            const mobileToggle = document.getElementById('mobile-menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    dropdownToggles.forEach(t => t.setAttribute('aria-expanded', 'false'));
+                    document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('active'));
+                    if (!isExpanded) {
+                        this.setAttribute('aria-expanded', 'true');
+                        document.getElementById(this.getAttribute('aria-controls')).classList.add('active');
+                    }
+                });
+            });
+
+            mobileToggle.addEventListener('click', function() {
+                const isActive = mobileToggle.classList.contains('active');
+                mobileToggle.classList.toggle('active');
+                mainNav.classList.toggle('active');
+                mobileToggle.setAttribute('aria-expanded', !isActive);
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.dropdown')) {
+                    dropdownToggles.forEach(t => t.setAttribute('aria-expanded', 'false'));
+                    document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('active'));
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    dropdownToggles.forEach(t => t.setAttribute('aria-expanded', 'false'));
+                    document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('active'));
+                }
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
+            populateContent();
+            initializeDropdowns();
+        } {
             const pageData = siteData.patientForms;
             const globalData = siteData.global;
 
