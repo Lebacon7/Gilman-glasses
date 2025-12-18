@@ -549,6 +549,74 @@ const siteData = {
       }
     ],
     questionsText: "Have questions about your bill? Contact us for assistance."
+  },
+
+  // Staff Page (staff.html)
+  staff: {
+    pageTitle: "Meet Our Team",
+    subtitle: "Our experienced and compassionate eye care professionals are dedicated to providing you with the best vision care.",
+    members: [
+      {
+        name: "Dr. Fast",
+        title: "Optometrist, Owner",
+        bio: "Dr. Fast is a licensed optometrist with over 15 years of experience in comprehensive eye care. Dedicated to patient satisfaction and the latest in eye care technology.",
+        imageAlt: "Dr. Fast, Optometrist"
+      },
+      {
+        name: "[Team Member Name]",
+        title: "Optician",
+        bio: "Expert in eyeglass fitting and lens selection with a passion for helping patients find the perfect frames.",
+        imageAlt: "Team member - Optician"
+      },
+      {
+        name: "[Team Member Name]",
+        title: "Optometry Technician",
+        bio: "Skilled in patient care and diagnostic testing, ensuring every patient receives thorough eye examinations.",
+        imageAlt: "Team member - Technician"
+      },
+      {
+        name: "[Team Member Name]",
+        title: "Front Desk Specialist",
+        bio: "Friendly and professional, dedicated to making your visit smooth and welcoming from the moment you arrive.",
+        imageAlt: "Team member - Front Desk"
+      },
+      {
+        name: "[Team Member Name]",
+        title: "Optician",
+        bio: "Knowledgeable in contact lens fitting and specialized lens options for unique vision needs.",
+        imageAlt: "Team member - Contact Lens Specialist"
+      },
+      {
+        name: "[Team Member Name]",
+        title: "Patient Services Coordinator",
+        bio: "Here to assist with insurance questions, scheduling, and ensuring your complete satisfaction with our services.",
+        imageAlt: "Team member - Patient Services"
+      },
+      {
+        name: "[Team Member Name]",
+        title: "Optometry Technician",
+        bio: "Trained in the latest diagnostic equipment and committed to providing accurate and detailed eye exams.",
+        imageAlt: "Team member - Tech"
+      },
+      {
+        name: "[Team Member Name]",
+        title: "Frame Specialist",
+        bio: "Fashion-forward and detail-oriented, helping you select frames that suit your style and vision needs perfectly.",
+        imageAlt: "Team member - Frame Specialist"
+      },
+      {
+        name: "[Team Member Name]",
+        title: "Administrative Assistant",
+        bio: "Ensures smooth office operations and is always ready to help with your needs and questions.",
+        imageAlt: "Team member - Admin"
+      },
+      {
+        name: "[Team Member Name]",
+        title: "Optician",
+        bio: "Passionate about lens technology and helping patients understand their prescription and vision options.",
+        imageAlt: "Team member - Optician"
+      }
+    ]
   }
 };
 

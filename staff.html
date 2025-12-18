@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about Dr. Fast's background, experience, and commitment to patient care at C Fast Optometry.">
-    <title>About Dr. Fast | C Fast Optometry</title>
+    <title>Meet Our Team | C Fast Optometry</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -52,18 +51,6 @@
         .btn-primary:hover { background-color: #1f3f5a; border-color: #1f3f5a; box-shadow: 0 10px 15px rgba(0,0,0,0.1); transform: translateY(-2px); }
         .btn-secondary { background-color: #27ae60; color: #fff; border-color: #27ae60; }
         .btn-secondary:hover { background-color: #229954; border-color: #229954; box-shadow: 0 10px 15px rgba(0,0,0,0.1); transform: translateY(-2px); }
-        .btn-outline { background-color: transparent; color: #2c5aa0; border-color: #2c5aa0; }
-        .btn-outline:hover { background-color: #e8f0f8; }
-        .btn-large { padding: 1.5rem 2rem; font-size: 1.1rem; }
-
-        section { padding: 4rem 2rem; }
-        .section-container { max-width: 1200px; margin: 0 auto; }
-        section h2 { text-align: center; margin-bottom: 3rem; }
-        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-        .content-image { min-height: 400px; background-color: #e8f0f8; border-radius: 12px; }
-        .footer { background-color: #2c5aa0; color: #fff; padding: 3rem 2rem; }
-        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .copyright { grid-column: 1 / -1; text-align: center; color: rgba(255,255,255,0.7); padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
 
         @media (max-width: 768px) {
             h1 { font-size: 2rem; } h2 { font-size: 1.5rem; } h3 { font-size: 1.25rem; }
@@ -84,17 +71,33 @@
             .mobile-menu-toggle.active .hamburger:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
             .header-ctas { flex-direction: column; width: 100%; order: 4; gap: 1rem; }
             .header-ctas .btn { width: 100%; }
-            .content-grid { grid-template-columns: 1fr; }
-            section { padding: 3rem 1.5rem; }
             .btn { padding: 1rem 1.5rem; font-size: 0.95rem; }
         }
 
         @media (max-width: 480px) {
             h1 { font-size: 1.75rem; } h2 { font-size: 1.25rem; } h3 { font-size: 1.1rem; }
             body { font-size: 15px; }
-            section { padding: 2rem 1rem; }
             .btn { padding: 0.75rem 1.5rem; font-size: 0.9rem; }
         }
+
+        section { padding: 4rem 2rem; }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        section h2 { text-align: center; margin-bottom: 1rem; }
+        .subtitle { text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+
+        .staff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .staff-card { background-color: #f9f9f9; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .staff-card:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.15); }
+        .staff-image { width: 100%; height: 280px; background: linear-gradient(135deg, #e8f0f8 0%, #d4e0f0 100%); display: flex; align-items: center; justify-content: center; color: #2c5aa0; font-size: 3rem; }
+        .staff-image img { width: 100%; height: 100%; object-fit: cover; }
+        .staff-content { padding: 2rem; }
+        .staff-name { font-size: 1.3rem; color: #2c5aa0; margin-bottom: 0.3rem; }
+        .staff-title { color: #27ae60; font-weight: 600; margin-bottom: 1rem; font-size: 0.95rem; }
+        .staff-bio { color: #666; font-size: 0.95rem; line-height: 1.6; }
+
+        .footer { background-color: #2c5aa0; color: #fff; padding: 3rem 2rem; margin-top: 4rem; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .copyright { grid-column: 1 / -1; text-align: center; color: rgba(255,255,255,0.7); padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
     </style>
 </head>
 <body>
@@ -160,47 +163,27 @@
     <main>
         <section>
             <div class="section-container">
-                <h2 data-content="aboutDrFast.pageTitle">About Dr. Fast</h2>
-                <div class="content-grid">
-                    <div class="content-image"></div>
-                    <div>
-                        <h3 data-content="aboutDrFast.mainTitle">Professional Excellence in Optometry</h3>
-                        <p data-content="aboutDrFast.mainText1">Dr. Fast is a dedicated optometrist with extensive experience in comprehensive eye care. With a passion for helping patients achieve and maintain healthy vision, Dr. Fast has built a reputation for providing personalized care and attention to every patient who walks through our doors.</p>
+                <h2 data-content="staff.pageTitle">Meet Our Team</h2>
+                <p class="subtitle" data-content="staff.subtitle">Our experienced and compassionate eye care professionals are dedicated to providing you with the best vision care.</p>
 
-                        <h3 style="margin-top: 2rem;" data-content="aboutDrFast.commitmentTitle">Our Commitment</h3>
-                        <p data-content="aboutDrFast.mainText2">At C Fast Optometry, we believe that quality eye care should be accessible and affordable. We use the latest technology and techniques to provide accurate diagnoses and effective treatments for a wide range of eye conditions.</p>
-
-                        <p data-content="aboutDrFast.mainText3">We take time to listen to our patients' concerns and develop treatment plans that work best for their individual needs. Whether you're here for a routine eye exam or specialty care, you can expect professional, compassionate service from our entire team.</p>
-
-                        <a href="book-appointment.html" class="btn btn-primary" style="margin-top: 2rem;">Schedule Your Visit</a>
+                <div class="staff-grid" id="staffList">
+                    <div class="staff-card">
+                        <div class="staff-image">👤</div>
+                        <div class="staff-content">
+                            <h3 class="staff-name">[Name]</h3>
+                            <p class="staff-title">[Title]</p>
+                            <p class="staff-bio">[Bio]</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section style="background-color: #f5f5f5;">
-            <div class="section-container">
-                <h2 data-content="aboutDrFast.whyChooseTitle">Why Choose Our Practice</h2>
-                <ul style="max-width: 800px; margin: 2rem auto; list-style: none;" id="whyChooseList">
-                    <li style="margin-bottom: 1.5rem;">
-                        <strong style="color: #2c5aa0;">Comprehensive Eye Care</strong>
-                        <p style="margin: 0;">Complete range of services from eye exams to specialty treatments</p>
-                    </li>
-                </ul>
             </div>
         </section>
     </main>
 
     <footer class="footer">
         <div class="footer-container">
-            <div>
-                <h3 style="color: #fff; margin-bottom: 1rem;">C Fast Optometry</h3>
-                <p>Gildman Glasses - Professional Eye Care</p>
-            </div>
-            <div>
-                <a href="contact.html" style="color: rgba(255,255,255,0.8); display: block; margin-bottom: 0.5rem;">Contact</a>
-                <a href="hours-directions.html" style="color: rgba(255,255,255,0.8); display: block;">Hours & Directions</a>
-            </div>
+            <div><h3 style="color: #fff; margin-bottom: 1rem;">C Fast Optometry</h3><p>Professional Eye Care</p></div>
+            <div><a href="contact.html" style="color: rgba(255,255,255,0.8); display: block;">Contact</a></div>
             <p class="copyright">&copy; 2025 C Fast Optometry. All rights reserved.</p>
         </div>
     </footer>
@@ -219,19 +202,23 @@
                     element.textContent = value;
                 }
             });
-            populateWhyChooseList();
+            populateStaff();
         }
 
-        function populateWhyChooseList() {
-            const list = document.getElementById('whyChooseList');
-            if (!list) return;
-            const items = getNestedValue(siteData, 'aboutDrFast.whyChooseItems');
-            if (!items) return;
-            list.innerHTML = items.map(item => `
-                <li style="margin-bottom: 1.5rem;">
-                    <strong style="color: #2c5aa0;">${item.title}</strong>
-                    <p style="margin: 0;">${item.description}</p>
-                </li>
+        function populateStaff() {
+            const container = document.getElementById('staffList');
+            if (!container) return;
+            const members = getNestedValue(siteData, 'staff.members');
+            if (!members) return;
+            container.innerHTML = members.map(member => `
+                <div class="staff-card">
+                    <div class="staff-image">📷</div>
+                    <div class="staff-content">
+                        <h3 class="staff-name">${member.name}</h3>
+                        <p class="staff-title">${member.title}</p>
+                        <p class="staff-bio">${member.bio}</p>
+                    </div>
+                </div>
             `).join('');
         }
 
