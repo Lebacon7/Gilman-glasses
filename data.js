@@ -7,7 +7,7 @@
 const siteData = {
   // Global/Header Footer Data
   global: {
-    businessName: "Gildman Glasses",
+    businessName: "Gilman Glasses",
     tagline: "C Fast Optometry",
     phone: "(123) 456-7890",
     email: "info@cfastoptometry.com",
