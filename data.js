@@ -1,5 +1,5 @@
 /**
- * C Fast Optometry - Content Data File
+ * Gilman Glasses - Content Data File
  * All text and content organized by page
  * Easy to update without modifying HTML files
  */
@@ -30,11 +30,11 @@ const siteData = {
   // Home Page (index.html)
   home: {
     heroTitle: "Professional Eye Care You Can Trust",
-    heroSubtitle: "Expert optometry services for the whole family at C Fast Optometry",
+    heroSubtitle: "Expert optometry services for the whole family at Gilman Glasses",
     heroCTA1: "Schedule Your Eye Exam Today",
     heroCTA2: "Learn More",
-    welcomeTitle: "Welcome to C Fast Optometry",
-    welcomeText1: "At C Fast Optometry, we specialize in providing comprehensive eye care services to our community. Dr. Fast is dedicated to ensuring every patient receives personalized attention and the highest quality of care.",
+    welcomeTitle: "Welcome to Gilman Glasses",
+    welcomeText1: "At Gilman Glasses, we specialize in providing comprehensive eye care services to our community. Dr. Fast is dedicated to ensuring every patient receives personalized attention and the highest quality of care.",
     welcomeText2: "With state-of-the-art technology and a passion for patient care, we offer a full range of optometry services for patients of all ages. From routine eye exams to specialty treatments, we're here to help you maintain healthy vision.",
     welcomeText3: "Visit our About page to learn more about Dr. Fast's experience, qualifications, and our practice philosophy.",
     welcomeButtonText: "Learn About Dr. Fast",
@@ -61,7 +61,7 @@ const siteData = {
         link: "eye-disease-treatment.html"
       }
     ],
-    whyChooseTitle: "Why Choose C Fast Optometry?",
+    whyChooseTitle: "Why Choose Gilman Glasses?",
     benefits: [
       {
         title: "Patient-Centered Care",
@@ -95,7 +95,7 @@ const siteData = {
     mainTitle: "Professional Excellence in Optometry",
     mainText1: "Dr. Fast is a dedicated optometrist with extensive experience in comprehensive eye care. With a passion for helping patients achieve and maintain healthy vision, Dr. Fast has built a reputation for providing personalized care and attention to every patient who walks through our doors.",
     commitmentTitle: "Our Commitment",
-    mainText2: "At C Fast Optometry, we believe that quality eye care should be accessible and affordable. We use the latest technology and techniques to provide accurate diagnoses and effective treatments for a wide range of eye conditions.",
+    mainText2: "At Gilman Glasses, we believe that quality eye care should be accessible and affordable. We use the latest technology and techniques to provide accurate diagnoses and effective treatments for a wide range of eye conditions.",
     mainText3: "We take time to listen to our patients' concerns and develop treatment plans that work best for their individual needs. Whether you're here for a routine eye exam or specialty care, you can expect professional, compassionate service from our entire team.",
     whyChooseTitle: "Why Choose Our Practice",
     whyChooseItems: [
@@ -527,7 +527,7 @@ const siteData = {
   // Pay Bill (pay-bill.html)
   payBill: {
     pageTitle: "Pay Your Bill",
-    subtitle: "Thank you for choosing C Fast Optometry. Please select your preferred payment method.",
+    subtitle: "Thank you for choosing Gilman Glasses. Please select your preferred payment method.",
     paymentOptions: [
       {
         title: "Online Payment",
@@ -563,58 +563,58 @@ const siteData = {
         imageAlt: "Dr. Fast, Optometrist"
       },
       {
-        name: "[Team Member Name]",
+        name: "Sarah Mitchell",
         title: "Optician",
-        bio: "Expert in eyeglass fitting and lens selection with a passion for helping patients find the perfect frames.",
-        imageAlt: "Team member - Optician"
+        bio: "With 8 years of experience in eyeglass fitting and lens selection, Sarah is passionate about helping every patient find the perfect frames that match their style and vision needs.",
+        imageAlt: "Sarah Mitchell - Optician"
       },
       {
-        name: "[Team Member Name]",
+        name: "Marcus Johnson",
         title: "Optometry Technician",
-        bio: "Skilled in patient care and diagnostic testing, ensuring every patient receives thorough eye examinations.",
-        imageAlt: "Team member - Technician"
+        bio: "Marcus brings dedication and precision to every eye exam. His expertise in diagnostic testing ensures every patient receives thorough, accurate evaluations of their eye health.",
+        imageAlt: "Marcus Johnson - Optometry Technician"
       },
       {
-        name: "[Team Member Name]",
+        name: "Jennifer Lee",
         title: "Front Desk Specialist",
-        bio: "Friendly and professional, dedicated to making your visit smooth and welcoming from the moment you arrive.",
-        imageAlt: "Team member - Front Desk"
+        bio: "Jennifer welcomes every patient with a warm smile and professional service. Her attention to detail ensures your visit to Gilman Glasses is smooth and enjoyable from start to finish.",
+        imageAlt: "Jennifer Lee - Front Desk Specialist"
       },
       {
-        name: "[Team Member Name]",
-        title: "Optician",
-        bio: "Knowledgeable in contact lens fitting and specialized lens options for unique vision needs.",
-        imageAlt: "Team member - Contact Lens Specialist"
+        name: "David Chen",
+        title: "Optician, Contact Lens Specialist",
+        bio: "David's expertise in contact lens fitting helps patients find the most comfortable and effective lens solutions for their unique vision needs and lifestyle requirements.",
+        imageAlt: "David Chen - Contact Lens Specialist"
       },
       {
-        name: "[Team Member Name]",
+        name: "Amanda Rodriguez",
         title: "Patient Services Coordinator",
-        bio: "Here to assist with insurance questions, scheduling, and ensuring your complete satisfaction with our services.",
-        imageAlt: "Team member - Patient Services"
+        bio: "Amanda goes above and beyond to assist with insurance questions, appointment scheduling, and ensuring complete patient satisfaction with all our services.",
+        imageAlt: "Amanda Rodriguez - Patient Services Coordinator"
       },
       {
-        name: "[Team Member Name]",
+        name: "James Williams",
         title: "Optometry Technician",
-        bio: "Trained in the latest diagnostic equipment and committed to providing accurate and detailed eye exams.",
-        imageAlt: "Team member - Tech"
+        bio: "James stays current with the latest diagnostic equipment and techniques. His commitment to accuracy helps provide comprehensive, detailed eye examinations for all patients.",
+        imageAlt: "James Williams - Optometry Technician"
       },
       {
-        name: "[Team Member Name]",
-        title: "Frame Specialist",
-        bio: "Fashion-forward and detail-oriented, helping you select frames that suit your style and vision needs perfectly.",
-        imageAlt: "Team member - Frame Specialist"
+        name: "Victoria Park",
+        title: "Frame Specialist & Style Consultant",
+        bio: "Victoria combines fashion expertise with vision science knowledge. She helps patients select frames that enhance their appearance while perfectly correcting their vision.",
+        imageAlt: "Victoria Park - Frame Specialist"
       },
       {
-        name: "[Team Member Name]",
+        name: "Robert Martinez",
         title: "Administrative Assistant",
-        bio: "Ensures smooth office operations and is always ready to help with your needs and questions.",
-        imageAlt: "Team member - Admin"
+        bio: "Robert ensures smooth office operations and handles administrative tasks with precision. He's always ready to help with patient questions and scheduling needs.",
+        imageAlt: "Robert Martinez - Administrative Assistant"
       },
       {
-        name: "[Team Member Name]",
-        title: "Optician",
-        bio: "Passionate about lens technology and helping patients understand their prescription and vision options.",
-        imageAlt: "Team member - Optician"
+        name: "Lisa Thompson",
+        title: "Optician, Lens Technology Specialist",
+        bio: "Lisa is passionate about helping patients understand their prescriptions and the benefits of different lens technologies. She makes informed vision care decisions easy and accessible.",
+        imageAlt: "Lisa Thompson - Lens Technology Specialist"
       }
     ]
   }
