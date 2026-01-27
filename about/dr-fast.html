@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pay Your Bill | Gilman Glasses</title>
-        <style>
+    <meta name="description" content="Learn about Dr. Fast's background, experience, and commitment to patient care at C Fast Optometry.">
+    <title>About Dr. Fast | Gilman Glasses</title>
+    <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #333; background-color: #fff; }
@@ -58,6 +59,15 @@
         .btn-outline:hover { background-color: #f0ebe5; }
         .btn-large { padding: 1.5rem 2rem; font-size: 1.1rem; }
 
+        section { padding: 4rem 2rem; }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        section h2 { text-align: center; margin-bottom: 3rem; }
+        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+        .content-image { min-height: 400px; background-color: #f0ebe5; border-radius: 12px; }
+        .footer { background-color: #af5a4b; color: #fff; padding: 3rem 2rem; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .copyright { grid-column: 1 / -1; text-align: center; color: rgba(255,255,255,0.7); padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+
         @media (max-width: 768px) {
             h1 { font-size: 2rem; } h2 { font-size: 1.5rem; } h3 { font-size: 1.25rem; }
             .header-container { padding: 1.5rem; gap: 1.5rem; flex-wrap: wrap; }
@@ -79,33 +89,16 @@
             .mobile-menu-toggle.active .hamburger:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
             .header-ctas { flex-direction: column; width: 100%; order: 4; gap: 1rem; }
             .header-ctas .btn { width: 100%; }
+            .content-grid { grid-template-columns: 1fr; }
+            section { padding: 3rem 1.5rem; }
             .btn { padding: 1rem 1.5rem; font-size: 0.95rem; }
         }
-
-        section { padding: 4rem 2rem; }
-        .section-container { max-width: 1200px; margin: 0 auto; }
-
-        .payment-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .payment-card { background-color: #f9f9f9; padding: 2rem; border-radius: 8px; border: 1px solid #ddd; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .payment-card:hover { transform: translateY(-4px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
-        .payment-card h3 { margin-bottom: 1rem; color: #af5a4b; }
-        .payment-card p { color: #666; margin-bottom: 1rem; }
-        .payment-card .note { font-size: 0.9rem; color: #999; margin-bottom: 1.5rem; }
-        .payment-card .btn { width: 100%; }
-
-        .footer { background-color: #af5a4b; color: #fff; padding: 3rem 2rem; margin-top: 4rem; }
-        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .footer-container h3 { color: #fff; margin-bottom: 1rem; }
-        .footer-container p { color: rgba(255,255,255,0.8); margin-bottom: 0; }
-        .footer-container a { color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
-        .footer-container a:hover { color: #fff; }
-        .copyright { grid-column: 1 / -1; text-align: center; color: rgba(255,255,255,0.7); padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); margin: 0; }
 
         @media (max-width: 480px) {
             h1 { font-size: 1.75rem; } h2 { font-size: 1.25rem; } h3 { font-size: 1.1rem; }
             body { font-size: 15px; }
-            .btn { padding: 0.75rem 1.5rem; font-size: 0.9rem; }
             section { padding: 2rem 1rem; }
+            .btn { padding: 0.75rem 1.5rem; font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -114,8 +107,8 @@
 
     <header class="header" role="banner">
         <div class="header-container">
-            <a href="index.html" class="logo">
-                <img src="logo-1.png" alt="Gilman Glasses Logo" class="logo-image">
+            <a href="../index.html" class="logo">
+                <img src="../logo-1.png" alt="Gilman Glasses Logo" class="logo-image">
                 <div class="brand-info">
                     <h1 class="brand-name" data-content="global.businessName">Gilman Glasses</h1>
                 </div>
@@ -137,30 +130,30 @@
                     <li class="nav-item dropdown">
                         <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="services-menu">Services</button>
                         <ul class="dropdown-menu" id="services-menu" role="menu">
-                            <li><a href="eye-exams.html" class="dropdown-link">Comprehensive Eye Exams</a></li>
-                            <li><a href="glasses-frames.html" class="dropdown-link">Glasses & Frames</a></li>
-                            <li><a href="contact-lenses.html" class="dropdown-link">Contact Lenses</a></li>
-                            <li><a href="eye-disease-treatment.html" class="dropdown-link">Eye Disease Treatment</a></li>
-                            <li><a href="specialty-services.html" class="dropdown-link">Specialty Services</a></li>
+                            <li><a href="../services/eye-exams.html" class="dropdown-link">Comprehensive Eye Exams</a></li>
+                            <li><a href="../services/glasses-frames.html" class="dropdown-link">Glasses & Frames</a></li>
+                            <li><a href="../services/contact-lenses.html" class="dropdown-link">Contact Lenses</a></li>
+                            <li><a href="../services/eye-disease-treatment.html" class="dropdown-link">Eye Disease Treatment</a></li>
+                            <li><a href="../services/specialty-services.html" class="dropdown-link">Specialty Services</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item dropdown">
                         <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="resources-menu">Patient Resources</button>
                         <ul class="dropdown-menu" id="resources-menu" role="menu">
-                            <li><a href="insurance-payment.html" class="dropdown-link">Insurance & Payment</a></li>
-                            <li><a href="patient-forms.html" class="dropdown-link">Patient Forms</a></li>
-                            <li><a href="faq.html" class="dropdown-link">FAQ</a></li>
-                            <li><a href="contact.html" class="dropdown-link">Contact Us</a></li>
-                            <li><a href="hours-directions.html" class="dropdown-link">Hours & Directions</a></li>
+                            <li><a href="../resources/insurance-payment.html" class="dropdown-link">Insurance & Payment</a></li>
+                            <li><a href="../resources/patient-forms.html" class="dropdown-link">Patient Forms</a></li>
+                            <li><a href="../resources/faq.html" class="dropdown-link">FAQ</a></li>
+                            <li><a href="../resources/contact.html" class="dropdown-link">Contact Us</a></li>
+                            <li><a href="../resources/hours-directions.html" class="dropdown-link">Hours & Directions</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
 
             <div class="header-ctas">
-                <a href="book-appointment.html" class="btn btn-primary">Book Appointment</a>
-                <a href="pay-bill.html" class="btn btn-secondary">Pay Bill</a>
+                <a href="../appointments/book-appointment.html" class="btn btn-primary">Book Appointment</a>
+                <a href="../appointments/pay-bill.html" class="btn btn-secondary">Pay Bill</a>
             </div>
 
             <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation menu">
@@ -174,19 +167,33 @@
     <main id="main-content" role="main">
         <section>
             <div class="section-container">
-                <h2 data-content="payBill.pageTitle">Pay Your Bill</h2>
+                <h2 data-content="aboutDrFast.pageTitle">About Dr. Fast</h2>
+                <div class="content-grid">
+                    <div class="content-image"></div>
+                    <div>
+                        <h3 data-content="aboutDrFast.mainTitle">Professional Excellence in Optometry</h3>
+                        <p data-content="aboutDrFast.mainText1">Dr. Fast is a dedicated optometrist with extensive experience in comprehensive eye care. With a passion for helping patients achieve and maintain healthy vision, Dr. Fast has built a reputation for providing personalized care and attention to every patient who walks through our doors.</p>
 
-                <p data-content="payBill.subtitle" style="text-align: center; margin-bottom: 2rem; color: #666;">
-                    Thank you for choosing C Fast Optometry. Please select your preferred payment method.
-                </p>
+                        <h3 style="margin-top: 2rem;" data-content="aboutDrFast.commitmentTitle">Our Commitment</h3>
+                        <p data-content="aboutDrFast.mainText2">At C Fast Optometry, we believe that quality eye care should be accessible and affordable. We use the latest technology and techniques to provide accurate diagnoses and effective treatments for a wide range of eye conditions.</p>
 
-                <div class="payment-options" id="paymentOptions">
-                    <!-- Payment options will be populated from data.js -->
+                        <p data-content="aboutDrFast.mainText3">We take time to listen to our patients' concerns and develop treatment plans that work best for their individual needs. Whether you're here for a routine eye exam or specialty care, you can expect professional, compassionate service from our entire team.</p>
+
+                        <a href="../appointments/book-appointment.html" class="btn btn-primary" style="margin-top: 2rem;">Schedule Your Visit</a>
+                    </div>
                 </div>
+            </div>
+        </section>
 
-                <p id="questionsText" style="text-align: center; margin-top: 2rem; padding: 1.5rem; background-color: #f0ebe5; border-radius: 8px;">
-                    <!-- Questions text will be populated from data.js -->
-                </p>
+        <section style="background-color: #f1eee1;">
+            <div class="section-container">
+                <h2 data-content="aboutDrFast.whyChooseTitle">Why Choose Our Practice</h2>
+                <ul style="max-width: 800px; margin: 2rem auto; list-style: none;" id="whyChooseList">
+                    <li style="margin-bottom: 1.5rem;">
+                        <strong style="color: #af5a4b;">Comprehensive Eye Care</strong>
+                        <p style="margin: 0;">Complete range of services from eye exams to specialty treatments</p>
+                    </li>
+                </ul>
             </div>
         </section>
     </main>
@@ -194,7 +201,7 @@
     <footer class="footer">
         <div class="footer-container">
             <div><h3 data-content="global.businessName" style="color: #fff; margin-bottom: 1rem;">Gilman Glasses</h3><p>Professional Eye Care by Dr. Fast</p></div>
-            <div><a href="contact.html" style="color: rgba(255,255,255,0.8); display: block;">Contact</a></div>
+            <div><a href="../resources/contact.html" style="color: rgba(255,255,255,0.8); display: block;">Contact</a></div>
             <div>
                 <p class="copyright">&copy; <span data-content="global.year">2025</span> <span data-content="global.businessName">Gilman Glasses</span>. All rights reserved.</p>
                 <p style="margin: 0; font-size: 0.9rem;">C FAST OPTOMETRY</p>
@@ -202,52 +209,34 @@
         </div>
     </footer>
 
-    <script src="data.js"></script>
+    <script src="../data.js"></script>
     <script>
-        // Populate content from data.js
-        
         function getNestedValue(obj, path) {
-            return path.split('.').reduce((current, prop) => current?.[prop], obj);
+            return path.split('.').reduce((current, prop) => current && current[prop], obj);
         }
 
         function populateContent() {
-            const pageData = siteData.payBill;
-            const globalData = siteData.global;
-
-            // Populate all elements with data-content attributes
             document.querySelectorAll('[data-content]').forEach(element => {
                 const path = element.getAttribute('data-content');
                 const value = getNestedValue(siteData, path);
-                if (value) element.textContent = value;
+                if (value) {
+                    element.textContent = value;
+                }
             });
+            populateWhyChooseList();
+        }
 
-            // Populate payment options
-            const paymentOptionsContainer = document.getElementById('paymentOptions');
-            if (paymentOptionsContainer && pageData.paymentOptions) {
-                paymentOptionsContainer.innerHTML = pageData.paymentOptions.map((option, index) => {
-                    let buttonHref = '#';
-                    if (index === 1) {
-                        // Payment by Phone - use phone number
-                        buttonHref = `tel:${globalData.phone.replace(/[^0-9]/g, '')}`;
-                    } else if (index === 2) {
-                        // In-Office Payment - link to directions
-                        buttonHref = 'hours-directions.html';
-                    }
-
-                    return `<div class="payment-option">
-                        <h3>${option.title}</h3>
-                        <p>${option.description}</p>
-                        <p style="font-size: 0.9rem; color: #999;">${option.note}</p>
-                        <a href="${buttonHref}" class="btn">${option.buttonText}</a>
-                    </div>`;
-                }).join('');
-            }
-
-            // Populate questions text
-            const questionsText = document.getElementById('questionsText');
-            if (questionsText && pageData.questionsText) {
-                questionsText.innerHTML = `${pageData.questionsText} <a href="contact.html" style="color: #af5a4b; font-weight: 600;">Contact us</a> for assistance.`;
-            }
+        function populateWhyChooseList() {
+            const list = document.getElementById('whyChooseList');
+            if (!list) return;
+            const items = getNestedValue(siteData, 'aboutDrFast.whyChooseItems');
+            if (!items) return;
+            list.innerHTML = items.map(item => `
+                <li style="margin-bottom: 1.5rem;">
+                    <strong style="color: #af5a4b;">${item.title}</strong>
+                    <p style="margin: 0;">${item.description}</p>
+                </li>
+            `).join('');
         }
 
         function initializeDropdowns() {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Gilman Glasses</title>
+    <title>Eye Disease Treatment | Gilman Glasses</title>
         <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -105,8 +105,8 @@
 
     <header class="header" role="banner">
         <div class="header-container">
-            <a href="index.html" class="logo">
-                <img src="logo-1.png" alt="Gilman Glasses Logo" class="logo-image">
+            <a href="../index.html" class="logo">
+                <img src="../logo-1.png" alt="Gilman Glasses Logo" class="logo-image">
                 <div class="brand-info">
                     <h1 class="brand-name" data-content="global.businessName">Gilman Glasses</h1>
                 </div>
@@ -117,11 +117,11 @@
                     <li class="nav-item dropdown">
                         <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="about-menu">About Me</button>
                         <ul class="dropdown-menu" id="about-menu" role="menu">
-                            <li><a href="about-dr-fast.html" class="dropdown-link">About Dr. Fast</a></li>
-                            <li><a href="staff.html" class="dropdown-link">Meet Our Team</a></li>
-                            <li><a href="qualifications.html" class="dropdown-link">Qualifications</a></li>
-                            <li><a href="philosophy.html" class="dropdown-link">Our Philosophy</a></li>
-                            <li><a href="testimonials.html" class="dropdown-link">Testimonials</a></li>
+                            <li><a href="../about/dr-fast.html" class="dropdown-link">About Dr. Fast</a></li>
+                            <li><a href="../about/staff.html" class="dropdown-link">Meet Our Team</a></li>
+                            <li><a href="../about/qualifications.html" class="dropdown-link">Qualifications</a></li>
+                            <li><a href="../about/philosophy.html" class="dropdown-link">Our Philosophy</a></li>
+                            <li><a href="../about/testimonials.html" class="dropdown-link">Testimonials</a></li>
                         </ul>
                     </li>
 
@@ -139,19 +139,19 @@
                     <li class="nav-item dropdown">
                         <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="resources-menu">Patient Resources</button>
                         <ul class="dropdown-menu" id="resources-menu" role="menu">
-                            <li><a href="insurance-payment.html" class="dropdown-link">Insurance & Payment</a></li>
-                            <li><a href="patient-forms.html" class="dropdown-link">Patient Forms</a></li>
-                            <li><a href="faq.html" class="dropdown-link">FAQ</a></li>
-                            <li><a href="contact.html" class="dropdown-link">Contact Us</a></li>
-                            <li><a href="hours-directions.html" class="dropdown-link">Hours & Directions</a></li>
+                            <li><a href="../resources/insurance-payment.html" class="dropdown-link">Insurance & Payment</a></li>
+                            <li><a href="../resources/patient-forms.html" class="dropdown-link">Patient Forms</a></li>
+                            <li><a href="../resources/faq.html" class="dropdown-link">FAQ</a></li>
+                            <li><a href="../resources/contact.html" class="dropdown-link">Contact Us</a></li>
+                            <li><a href="../resources/hours-directions.html" class="dropdown-link">Hours & Directions</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
 
             <div class="header-ctas">
-                <a href="book-appointment.html" class="btn btn-primary">Book Appointment</a>
-                <a href="pay-bill.html" class="btn btn-secondary">Pay Bill</a>
+                <a href="../appointments/book-appointment.html" class="btn btn-primary">Book Appointment</a>
+                <a href="../appointments/pay-bill.html" class="btn btn-secondary">Pay Bill</a>
             </div>
 
             <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation menu">
@@ -165,14 +165,19 @@
     <main id="main-content" role="main">
         <section>
             <div class="section-container">
-                <h2 data-content="contact.pageTitle">Contact Us</h2>
+                <h2 data-content="eyeDiseasetreatment.pageTitle">Eye Disease Treatment & Management</h2>
 
-                <div class="contact-grid" id="contactGrid">
-                    <!-- Contact methods will be populated from data.js -->
+                <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;" data-content="eyeDiseasetreatment.description">Early detection and treatment of eye diseases can help preserve your vision. Dr. Fast provides comprehensive diagnosis and management of common eye conditions.</p>
+
+                <div class="feature-grid" id="treatmentList">
+                    <div class="feature">
+                        <h3>Glaucoma</h3>
+                        <p>A condition characterized by increased intraocular pressure that can damage the optic nerve. Early detection through comprehensive eye exams and treatment can help prevent vision loss.</p>
+                    </div>
                 </div>
 
                 <p style="text-align: center; margin-top: 2rem;">
-                    <a href="book-appointment.html" class="btn">Schedule Your Appointment</a>
+                    <a href="../appointments/book-appointment.html" class="btn">Schedule Comprehensive Exam</a>
                 </p>
             </div>
         </section>
@@ -181,7 +186,7 @@
     <footer class="footer">
         <div class="footer-container">
             <div><h3 data-content="global.businessName" style="color: #fff; margin-bottom: 1rem;">Gilman Glasses</h3><p>Professional Eye Care by Dr. Fast</p></div>
-            <div><a href="contact.html" style="color: rgba(255,255,255,0.8); display: block;">Contact</a></div>
+            <div><a href="../resources/contact.html" style="color: rgba(255,255,255,0.8); display: block;">Contact</a></div>
             <div>
                 <p class="copyright">&copy; <span data-content="global.year">2025</span> <span data-content="global.businessName">Gilman Glasses</span>. All rights reserved.</p>
                 <p style="margin: 0; font-size: 0.9rem;">C FAST OPTOMETRY</p>
@@ -189,9 +194,36 @@
         </div>
     </footer>
 
-    <script src="data.js"></script>
+    <script src="../data.js"></script>
     <script>
-        // Populate content from data.js
+        function getNestedValue(obj, path) {
+            return path.split('.').reduce((current, prop) => current && current[prop], obj);
+        }
+
+        function populateContent() {
+            document.querySelectorAll('[data-content]').forEach(element => {
+                const path = element.getAttribute('data-content');
+                const value = getNestedValue(siteData, path);
+                if (value) {
+                    element.textContent = value;
+                }
+            });
+            populateTreatments();
+        }
+
+        function populateTreatments() {
+            const container = document.getElementById('treatmentList');
+            if (!container) return;
+            const items = getNestedValue(siteData, 'eyeDiseasetreatment.treatments');
+            if (!items) return;
+            container.innerHTML = items.map(item => `
+                <div class="feature">
+                    <h3>${item.title}</h3>
+                    <p>${item.description}</p>
+                </div>
+            `).join('');
+        }
+
         
         function initializeDropdowns() {
             const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
@@ -236,42 +268,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             populateContent();
             initializeDropdowns();
-        } {
-            const pageData = siteData.contact;
-            const globalData = siteData.global;
-
-            // Populate all elements with data-content attributes
-            document.querySelectorAll('[data-content]').forEach(element => {
-                const path = element.getAttribute('data-content');
-                const value = path.split('.').reduce((obj, key) => obj?.[key], siteData);
-                if (value) element.textContent = value;
-            });
-
-            // Populate contact methods
-            const contactGrid = document.getElementById('contactGrid');
-            if (contactGrid && pageData && globalData) {
-                contactGrid.innerHTML = `
-                    <div class="contact-method">
-                        <h3>Phone</h3>
-                        <p><a href="tel:${globalData.phone.replace(/[^0-9]/g, '')}" style="font-weight: 600; font-size: 1.1rem;">${globalData.phone}</a></p>
-                        <p>${pageData.phoneDescription}</p>
-                    </div>
-
-                    <div class="contact-method">
-                        <h3>Email</h3>
-                        <p><a href="mailto:${globalData.email}" style="font-weight: 600; font-size: 1.1rem;">${globalData.email}</a></p>
-                        <p>${pageData.emailDescription}</p>
-                    </div>
-
-                    <div class="contact-method">
-                        <h3>Visit Us</h3>
-                        <p>${globalData.businessName}<br>
-                        ${globalData.address}<br>
-                        ${globalData.city}, ${globalData.state} ${globalData.zip}</p>
-                        <p>${pageData.visitDescription}</p>
-                    </div>
-                `;
-            }
         });
     </script>
 </body>

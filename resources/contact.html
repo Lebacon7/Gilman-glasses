@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Lenses | Gilman Glasses</title>
+    <title>Contact Us | Gilman Glasses</title>
         <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -105,8 +105,8 @@
 
     <header class="header" role="banner">
         <div class="header-container">
-            <a href="index.html" class="logo">
-                <img src="logo-1.png" alt="Gilman Glasses Logo" class="logo-image">
+            <a href="../index.html" class="logo">
+                <img src="../logo-1.png" alt="Gilman Glasses Logo" class="logo-image">
                 <div class="brand-info">
                     <h1 class="brand-name" data-content="global.businessName">Gilman Glasses</h1>
                 </div>
@@ -117,22 +117,22 @@
                     <li class="nav-item dropdown">
                         <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="about-menu">About Me</button>
                         <ul class="dropdown-menu" id="about-menu" role="menu">
-                            <li><a href="about-dr-fast.html" class="dropdown-link">About Dr. Fast</a></li>
-                            <li><a href="staff.html" class="dropdown-link">Meet Our Team</a></li>
-                            <li><a href="qualifications.html" class="dropdown-link">Qualifications</a></li>
-                            <li><a href="philosophy.html" class="dropdown-link">Our Philosophy</a></li>
-                            <li><a href="testimonials.html" class="dropdown-link">Testimonials</a></li>
+                            <li><a href="../about/dr-fast.html" class="dropdown-link">About Dr. Fast</a></li>
+                            <li><a href="../about/staff.html" class="dropdown-link">Meet Our Team</a></li>
+                            <li><a href="../about/qualifications.html" class="dropdown-link">Qualifications</a></li>
+                            <li><a href="../about/philosophy.html" class="dropdown-link">Our Philosophy</a></li>
+                            <li><a href="../about/testimonials.html" class="dropdown-link">Testimonials</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item dropdown">
                         <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="services-menu">Services</button>
                         <ul class="dropdown-menu" id="services-menu" role="menu">
-                            <li><a href="eye-exams.html" class="dropdown-link">Comprehensive Eye Exams</a></li>
-                            <li><a href="glasses-frames.html" class="dropdown-link">Glasses & Frames</a></li>
-                            <li><a href="contact-lenses.html" class="dropdown-link">Contact Lenses</a></li>
-                            <li><a href="eye-disease-treatment.html" class="dropdown-link">Eye Disease Treatment</a></li>
-                            <li><a href="specialty-services.html" class="dropdown-link">Specialty Services</a></li>
+                            <li><a href="../services/eye-exams.html" class="dropdown-link">Comprehensive Eye Exams</a></li>
+                            <li><a href="../services/glasses-frames.html" class="dropdown-link">Glasses & Frames</a></li>
+                            <li><a href="../services/contact-lenses.html" class="dropdown-link">Contact Lenses</a></li>
+                            <li><a href="../services/eye-disease-treatment.html" class="dropdown-link">Eye Disease Treatment</a></li>
+                            <li><a href="../services/specialty-services.html" class="dropdown-link">Specialty Services</a></li>
                         </ul>
                     </li>
 
@@ -150,8 +150,8 @@
             </nav>
 
             <div class="header-ctas">
-                <a href="book-appointment.html" class="btn btn-primary">Book Appointment</a>
-                <a href="pay-bill.html" class="btn btn-secondary">Pay Bill</a>
+                <a href="../appointments/book-appointment.html" class="btn btn-primary">Book Appointment</a>
+                <a href="../appointments/pay-bill.html" class="btn btn-secondary">Pay Bill</a>
             </div>
 
             <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation menu">
@@ -165,23 +165,14 @@
     <main id="main-content" role="main">
         <section>
             <div class="section-container">
-                <h2 data-content="contactLenses.pageTitle">Contact Lenses</h2>
+                <h2 data-content="contact.pageTitle">Contact Us</h2>
 
-                <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;" data-content="contactLenses.description">Contact lenses offer freedom, comfort, and excellent vision correction. Dr. Fast provides professional contact lens fitting and can help you find the perfect lenses for your lifestyle and visual needs.</p>
-
-                <div class="contact-types" id="contactTypesList">
-                    <div class="type">
-                        <h3>Soft Contact Lenses</h3>
-                        <p>Comfortable, easy to wear daily contact lenses for most vision correction needs.</p>
-                    </div>
+                <div class="contact-grid" id="contactGrid">
+                    <!-- Contact methods will be populated from data.js -->
                 </div>
 
-                <p style="max-width: 800px; margin: 2rem auto; padding: 1.5rem; background-color: #f0ebe5; border-radius: 8px; border-left: 4px solid #2b4744;">
-                    <strong data-content="contactLenses.fittingTitle">Contact Lens Fitting:</strong> <span data-content="contactLenses.fittingDescription">A proper contact lens fitting is essential for comfort and safety. Dr. Fast will perform a thorough fitting to ensure your lenses provide optimal vision and comfort while protecting your eye health.</span>
-                </p>
-
                 <p style="text-align: center; margin-top: 2rem;">
-                    <a href="book-appointment.html" class="btn">Schedule Fitting Appointment</a>
+                    <a href="../appointments/book-appointment.html" class="btn">Schedule Your Appointment</a>
                 </p>
             </div>
         </section>
@@ -198,36 +189,9 @@
         </div>
     </footer>
 
-    <script src="data.js"></script>
+    <script src="../data.js"></script>
     <script>
-        function getNestedValue(obj, path) {
-            return path.split('.').reduce((current, prop) => current && current[prop], obj);
-        }
-
-        function populateContent() {
-            document.querySelectorAll('[data-content]').forEach(element => {
-                const path = element.getAttribute('data-content');
-                const value = getNestedValue(siteData, path);
-                if (value) {
-                    element.textContent = value;
-                }
-            });
-            populateContactTypes();
-        }
-
-        function populateContactTypes() {
-            const container = document.getElementById('contactTypesList');
-            if (!container) return;
-            const items = getNestedValue(siteData, 'contactLenses.types');
-            if (!items) return;
-            container.innerHTML = items.map(item => `
-                <div class="type">
-                    <h3>${item.title}</h3>
-                    <p>${item.description}</p>
-                </div>
-            `).join('');
-        }
-
+        // Populate content from data.js
         
         function initializeDropdowns() {
             const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
@@ -272,6 +236,42 @@
         document.addEventListener('DOMContentLoaded', function() {
             populateContent();
             initializeDropdowns();
+        } {
+            const pageData = siteData.contact;
+            const globalData = siteData.global;
+
+            // Populate all elements with data-content attributes
+            document.querySelectorAll('[data-content]').forEach(element => {
+                const path = element.getAttribute('data-content');
+                const value = path.split('.').reduce((obj, key) => obj?.[key], siteData);
+                if (value) element.textContent = value;
+            });
+
+            // Populate contact methods
+            const contactGrid = document.getElementById('contactGrid');
+            if (contactGrid && pageData && globalData) {
+                contactGrid.innerHTML = `
+                    <div class="contact-method">
+                        <h3>Phone</h3>
+                        <p><a href="tel:${globalData.phone.replace(/[^0-9]/g, '')}" style="font-weight: 600; font-size: 1.1rem;">${globalData.phone}</a></p>
+                        <p>${pageData.phoneDescription}</p>
+                    </div>
+
+                    <div class="contact-method">
+                        <h3>Email</h3>
+                        <p><a href="mailto:${globalData.email}" style="font-weight: 600; font-size: 1.1rem;">${globalData.email}</a></p>
+                        <p>${pageData.emailDescription}</p>
+                    </div>
+
+                    <div class="contact-method">
+                        <h3>Visit Us</h3>
+                        <p>${globalData.businessName}<br>
+                        ${globalData.address}<br>
+                        ${globalData.city}, ${globalData.state} ${globalData.zip}</p>
+                        <p>${pageData.visitDescription}</p>
+                    </div>
+                `;
+            }
         });
     </script>
 </body>

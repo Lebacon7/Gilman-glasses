@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insurance & Payment | Gilman Glasses</title>
+    <title>Testimonials | Gilman Glasses</title>
         <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -105,8 +105,8 @@
 
     <header class="header" role="banner">
         <div class="header-container">
-            <a href="index.html" class="logo">
-                <img src="logo-1.png" alt="Gilman Glasses Logo" class="logo-image">
+            <a href="../index.html" class="logo">
+                <img src="../logo-1.png" alt="Gilman Glasses Logo" class="logo-image">
                 <div class="brand-info">
                     <h1 class="brand-name" data-content="global.businessName">Gilman Glasses</h1>
                 </div>
@@ -117,7 +117,7 @@
                     <li class="nav-item dropdown">
                         <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="about-menu">About Me</button>
                         <ul class="dropdown-menu" id="about-menu" role="menu">
-                            <li><a href="about-dr-fast.html" class="dropdown-link">About Dr. Fast</a></li>
+                            <li><a href="dr-fast.html" class="dropdown-link">About Dr. Fast</a></li>
                             <li><a href="staff.html" class="dropdown-link">Meet Our Team</a></li>
                             <li><a href="qualifications.html" class="dropdown-link">Qualifications</a></li>
                             <li><a href="philosophy.html" class="dropdown-link">Our Philosophy</a></li>
@@ -128,30 +128,30 @@
                     <li class="nav-item dropdown">
                         <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="services-menu">Services</button>
                         <ul class="dropdown-menu" id="services-menu" role="menu">
-                            <li><a href="eye-exams.html" class="dropdown-link">Comprehensive Eye Exams</a></li>
-                            <li><a href="glasses-frames.html" class="dropdown-link">Glasses & Frames</a></li>
-                            <li><a href="contact-lenses.html" class="dropdown-link">Contact Lenses</a></li>
-                            <li><a href="eye-disease-treatment.html" class="dropdown-link">Eye Disease Treatment</a></li>
-                            <li><a href="specialty-services.html" class="dropdown-link">Specialty Services</a></li>
+                            <li><a href="../services/eye-exams.html" class="dropdown-link">Comprehensive Eye Exams</a></li>
+                            <li><a href="../services/glasses-frames.html" class="dropdown-link">Glasses & Frames</a></li>
+                            <li><a href="../services/contact-lenses.html" class="dropdown-link">Contact Lenses</a></li>
+                            <li><a href="../services/eye-disease-treatment.html" class="dropdown-link">Eye Disease Treatment</a></li>
+                            <li><a href="../services/specialty-services.html" class="dropdown-link">Specialty Services</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item dropdown">
                         <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="resources-menu">Patient Resources</button>
                         <ul class="dropdown-menu" id="resources-menu" role="menu">
-                            <li><a href="insurance-payment.html" class="dropdown-link">Insurance & Payment</a></li>
-                            <li><a href="patient-forms.html" class="dropdown-link">Patient Forms</a></li>
-                            <li><a href="faq.html" class="dropdown-link">FAQ</a></li>
-                            <li><a href="contact.html" class="dropdown-link">Contact Us</a></li>
-                            <li><a href="hours-directions.html" class="dropdown-link">Hours & Directions</a></li>
+                            <li><a href="../resources/insurance-payment.html" class="dropdown-link">Insurance & Payment</a></li>
+                            <li><a href="../resources/patient-forms.html" class="dropdown-link">Patient Forms</a></li>
+                            <li><a href="../resources/faq.html" class="dropdown-link">FAQ</a></li>
+                            <li><a href="../resources/contact.html" class="dropdown-link">Contact Us</a></li>
+                            <li><a href="../resources/hours-directions.html" class="dropdown-link">Hours & Directions</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
 
             <div class="header-ctas">
-                <a href="book-appointment.html" class="btn btn-primary">Book Appointment</a>
-                <a href="pay-bill.html" class="btn btn-secondary">Pay Bill</a>
+                <a href="../appointments/book-appointment.html" class="btn btn-primary">Book Appointment</a>
+                <a href="../appointments/pay-bill.html" class="btn btn-secondary">Pay Bill</a>
             </div>
 
             <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation menu">
@@ -165,41 +165,17 @@
     <main id="main-content" role="main">
         <section>
             <div class="section-container">
-                <h2 data-content="insurancePayment.pageTitle">Insurance & Payment Options</h2>
+                <h2 data-content="testimonials.pageTitle">Patient Testimonials</h2>
 
-                <div style="max-width: 900px; margin: 0 auto;">
-                    <div class="info-box">
-                        <h3>Insurance Coverage</h3>
-                        <p data-content="insurancePayment.insuranceInfo">We accept most major health insurance plans. We are an in-network provider for many insurance companies, which can help reduce your out-of-pocket costs. Please bring your insurance card to your appointment.</p>
-                        <p data-content="insurancePayment.insuranceQuestion">If you have questions about your coverage or whether we participate in your plan, please contact us before your visit.</p>
-                    </div>
-
-                    <div class="info-box">
-                        <h3>Vision Insurance</h3>
-                        <p data-content="insurancePayment.visionInsuranceInfo">We accept vision insurance plans that cover eye exams, glasses, and contact lenses. Vision insurance benefits typically provide discounts on eyeglasses and contact lenses, as well as coverage for annual eye exams.</p>
-                    </div>
-
-                    <div class="info-box">
-                        <h3>Payment Methods</h3>
-                        <p>We accept the following payment methods:
-                        <ul id="paymentMethodsList" style="list-style: none; padding-left: 0; margin: 1rem 0;">
-                            <!-- Payment methods will be populated from data.js -->
-                        </ul></p>
-                    </div>
-
-                    <div class="info-box">
-                        <h3>Financial Assistance</h3>
-                        <p data-content="insurancePayment.financialAssistance">We understand that eye care is an important investment in your health. We offer flexible payment plans to help make quality eye care accessible and affordable for all patients. Contact us to discuss payment options.</p>
-                    </div>
-
-                    <div class="info-box">
-                        <h3>Billing Questions</h3>
-                        <p data-content="insurancePayment.billingQuestion">If you have questions about your bill or insurance coverage, please don't hesitate to contact us. Our staff is happy to help explain charges and discuss payment options.</p>
+                <div class="testimonials-grid" id="testimonialsList">
+                    <div class="testimonial">
+                        <p>"Dr. Fast was incredibly thorough with my eye exam and took time to explain everything. I felt completely comfortable and well-informed."</p>
+                        <div class="testimonial-author">Sarah M.</div>
                     </div>
                 </div>
 
-                <p style="text-align: center; margin-top: 2rem;">
-                    <a href="contact.html" class="btn">Contact Us for Billing Questions</a>
+                <p style="text-align: center; margin-top: 3rem;">
+                    <a href="../appointments/book-appointment.html" class="btn">Schedule Your Visit Today</a>
                 </p>
             </div>
         </section>
@@ -208,7 +184,7 @@
     <footer class="footer">
         <div class="footer-container">
             <div><h3 data-content="global.businessName" style="color: #fff; margin-bottom: 1rem;">Gilman Glasses</h3><p>Professional Eye Care by Dr. Fast</p></div>
-            <div><a href="contact.html" style="color: rgba(255,255,255,0.8); display: block;">Contact</a></div>
+            <div><a href="../resources/contact.html" style="color: rgba(255,255,255,0.8); display: block;">Contact</a></div>
             <div>
                 <p class="copyright">&copy; <span data-content="global.year">2025</span> <span data-content="global.businessName">Gilman Glasses</span>. All rights reserved.</p>
                 <p style="margin: 0; font-size: 0.9rem;">C FAST OPTOMETRY</p>
@@ -216,9 +192,36 @@
         </div>
     </footer>
 
-    <script src="data.js"></script>
+    <script src="../data.js"></script>
     <script>
-        // Populate content from data.js
+        function getNestedValue(obj, path) {
+            return path.split('.').reduce((current, prop) => current && current[prop], obj);
+        }
+
+        function populateContent() {
+            document.querySelectorAll('[data-content]').forEach(element => {
+                const path = element.getAttribute('data-content');
+                const value = getNestedValue(siteData, path);
+                if (value) {
+                    element.textContent = value;
+                }
+            });
+            populateTestimonials();
+        }
+
+        function populateTestimonials() {
+            const container = document.getElementById('testimonialsList');
+            if (!container) return;
+            const items = getNestedValue(siteData, 'testimonials.items');
+            if (!items) return;
+            container.innerHTML = items.map(item => `
+                <div class="testimonial">
+                    <p>"${item.quote}"</p>
+                    <div class="testimonial-author">${item.author}</div>
+                </div>
+            `).join('');
+        }
+
         
         function initializeDropdowns() {
             const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
@@ -258,25 +261,6 @@
                     document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('active'));
                 }
             });
-        }
-
-        function populateContent() {
-            const pageData = siteData.insurancePayment;
-
-            // Populate all elements with data-content attributes
-            document.querySelectorAll('[data-content]').forEach(element => {
-                const path = element.getAttribute('data-content');
-                const value = path.split('.').reduce((obj, key) => obj?.[key], siteData);
-                if (value) element.textContent = value;
-            });
-
-            // Populate payment methods list
-            const methodsList = document.getElementById('paymentMethodsList');
-            if (methodsList && pageData.paymentMethods) {
-                methodsList.innerHTML = pageData.paymentMethods.map(method =>
-                    `<li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem;"><span style="position: absolute; left: 0; color: #2b4744;">✓</span> ${method}</li>`
-                ).join('');
-            }
         }
 
         document.addEventListener('DOMContentLoaded', function() {

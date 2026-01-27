@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comprehensive Eye Exams | Gilman Glasses</title>
-        <style>
+    <title>Meet Our Team | Gilman Glasses</title>
+    <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #333; background-color: #fff; }
@@ -54,20 +54,6 @@
         .btn-primary:hover { background-color: #654a3f; border-color: #654a3f; box-shadow: 0 10px 15px rgba(0,0,0,0.1); transform: translateY(-2px); }
         .btn-secondary { background-color: #2b4744; color: #fff; border-color: #2b4744; }
         .btn-secondary:hover { background-color: #1a3033; border-color: #1a3033; box-shadow: 0 10px 15px rgba(0,0,0,0.1); transform: translateY(-2px); }
-        .btn-outline { background-color: transparent; color: #af5a4b; border-color: #af5a4b; }
-        .btn-outline:hover { background-color: #f0ebe5; }
-        .btn-large { padding: 1.5rem 2rem; font-size: 1.1rem; }
-
-        section { padding: 4rem 2rem; }
-        .section-container { max-width: 1200px; margin: 0 auto; }
-
-        .footer { background-color: #af5a4b; color: #fff; padding: 3rem 2rem; margin-top: 4rem; }
-        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .footer-container h3 { color: #fff; margin-bottom: 1rem; }
-        .footer-container p { color: rgba(255,255,255,0.8); margin-bottom: 0; }
-        .footer-container a { color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
-        .footer-container a:hover { color: #fff; }
-        .copyright { grid-column: 1 / -1; text-align: center; color: rgba(255,255,255,0.7); padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); margin: 0; }
 
         @media (max-width: 768px) {
             h1 { font-size: 2rem; } h2 { font-size: 1.5rem; } h3 { font-size: 1.25rem; }
@@ -98,6 +84,25 @@
             body { font-size: 15px; }
             .btn { padding: 0.75rem 1.5rem; font-size: 0.9rem; }
         }
+
+        section { padding: 4rem 2rem; }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        section h2 { text-align: center; margin-bottom: 1rem; }
+        .subtitle { text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+
+        .staff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .staff-card { background-color: #f9f9f9; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .staff-card:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.15); }
+        .staff-image { width: 100%; height: 280px; background: linear-gradient(135deg, #f0ebe5 0%, #d4e0f0 100%); display: flex; align-items: center; justify-content: center; color: #af5a4b; font-size: 3rem; }
+        .staff-image img { width: 100%; height: 100%; object-fit: cover; }
+        .staff-content { padding: 2rem; }
+        .staff-name { font-size: 1.3rem; color: #af5a4b; margin-bottom: 0.3rem; }
+        .staff-title { color: #2b4744; font-weight: 600; margin-bottom: 1rem; font-size: 0.95rem; }
+        .staff-bio { color: #666; font-size: 0.95rem; line-height: 1.6; }
+
+        .footer { background-color: #af5a4b; color: #fff; padding: 3rem 2rem; margin-top: 4rem; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .copyright { grid-column: 1 / -1; text-align: center; color: rgba(255,255,255,0.7); padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
     </style>
 </head>
 <body>
@@ -105,8 +110,8 @@
 
     <header class="header" role="banner">
         <div class="header-container">
-            <a href="index.html" class="logo">
-                <img src="logo-1.png" alt="Gilman Glasses Logo" class="logo-image">
+            <a href="../index.html" class="logo">
+                <img src="../logo-1.png" alt="Gilman Glasses Logo" class="logo-image">
                 <div class="brand-info">
                     <h1 class="brand-name" data-content="global.businessName">Gilman Glasses</h1>
                 </div>
@@ -117,7 +122,7 @@
                     <li class="nav-item dropdown">
                         <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="about-menu">About Me</button>
                         <ul class="dropdown-menu" id="about-menu" role="menu">
-                            <li><a href="about-dr-fast.html" class="dropdown-link">About Dr. Fast</a></li>
+                            <li><a href="dr-fast.html" class="dropdown-link">About Dr. Fast</a></li>
                             <li><a href="staff.html" class="dropdown-link">Meet Our Team</a></li>
                             <li><a href="qualifications.html" class="dropdown-link">Qualifications</a></li>
                             <li><a href="philosophy.html" class="dropdown-link">Our Philosophy</a></li>
@@ -128,30 +133,30 @@
                     <li class="nav-item dropdown">
                         <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="services-menu">Services</button>
                         <ul class="dropdown-menu" id="services-menu" role="menu">
-                            <li><a href="eye-exams.html" class="dropdown-link">Comprehensive Eye Exams</a></li>
-                            <li><a href="glasses-frames.html" class="dropdown-link">Glasses & Frames</a></li>
-                            <li><a href="contact-lenses.html" class="dropdown-link">Contact Lenses</a></li>
-                            <li><a href="eye-disease-treatment.html" class="dropdown-link">Eye Disease Treatment</a></li>
-                            <li><a href="specialty-services.html" class="dropdown-link">Specialty Services</a></li>
+                            <li><a href="../services/eye-exams.html" class="dropdown-link">Comprehensive Eye Exams</a></li>
+                            <li><a href="../services/glasses-frames.html" class="dropdown-link">Glasses & Frames</a></li>
+                            <li><a href="../services/contact-lenses.html" class="dropdown-link">Contact Lenses</a></li>
+                            <li><a href="../services/eye-disease-treatment.html" class="dropdown-link">Eye Disease Treatment</a></li>
+                            <li><a href="../services/specialty-services.html" class="dropdown-link">Specialty Services</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item dropdown">
                         <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="resources-menu">Patient Resources</button>
                         <ul class="dropdown-menu" id="resources-menu" role="menu">
-                            <li><a href="insurance-payment.html" class="dropdown-link">Insurance & Payment</a></li>
-                            <li><a href="patient-forms.html" class="dropdown-link">Patient Forms</a></li>
-                            <li><a href="faq.html" class="dropdown-link">FAQ</a></li>
-                            <li><a href="contact.html" class="dropdown-link">Contact Us</a></li>
-                            <li><a href="hours-directions.html" class="dropdown-link">Hours & Directions</a></li>
+                            <li><a href="../resources/insurance-payment.html" class="dropdown-link">Insurance & Payment</a></li>
+                            <li><a href="../resources/patient-forms.html" class="dropdown-link">Patient Forms</a></li>
+                            <li><a href="../resources/faq.html" class="dropdown-link">FAQ</a></li>
+                            <li><a href="../resources/contact.html" class="dropdown-link">Contact Us</a></li>
+                            <li><a href="../resources/hours-directions.html" class="dropdown-link">Hours & Directions</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
 
             <div class="header-ctas">
-                <a href="book-appointment.html" class="btn btn-primary">Book Appointment</a>
-                <a href="pay-bill.html" class="btn btn-secondary">Pay Bill</a>
+                <a href="../appointments/book-appointment.html" class="btn btn-primary">Book Appointment</a>
+                <a href="../appointments/pay-bill.html" class="btn btn-secondary">Pay Bill</a>
             </div>
 
             <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation menu">
@@ -165,29 +170,12 @@
     <main id="main-content" role="main">
         <section>
             <div class="section-container">
-                <h2 data-content="eyeExams.pageTitle">Comprehensive Eye Exams</h2>
+                <h2 data-content="staff.pageTitle">Meet Our Team</h2>
+                <p class="subtitle" data-content="staff.subtitle">Our experienced and compassionate eye care professionals are dedicated to providing you with the best vision care.</p>
 
-                <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;" data-content="eyeExams.description">Early detection of eye health problems is key to maintaining good vision throughout your life. Our comprehensive eye exams include state-of-the-art diagnostic testing to assess your vision and eye health.</p>
-
-                <div class="feature-grid" id="examFeaturesList">
-                    <div class="feature">
-                        <h3>Visual Acuity Testing</h3>
-                        <p>Measure how clearly you can see at various distances to determine if you need vision correction.</p>
-                    </div>
+                <div class="staff-grid" id="staffList">
+                    <!-- Staff members will be populated from data.js -->
                 </div>
-
-                <p style="text-align: center; margin-top: 2rem;">
-                    <a href="book-appointment.html" class="btn">Schedule Your Eye Exam</a>
-                </p>
-            </div>
-        </section>
-
-        <section class="service-section">
-            <div class="section-container">
-                <h3 style="text-align: center;" data-content="eyeExams.frequencyTitle">When Should You Get an Eye Exam?</h3>
-                <ul style="max-width: 700px; margin: 1.5rem auto; list-style: none;" id="frequencyList">
-                    <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: #2b4744; font-weight: bold;">•</span> Adults with no vision problems: Every 1-2 years</li>
-                </ul>
             </div>
         </section>
     </main>
@@ -195,7 +183,7 @@
     <footer class="footer">
         <div class="footer-container">
             <div><h3 data-content="global.businessName" style="color: #fff; margin-bottom: 1rem;">Gilman Glasses</h3><p>Professional Eye Care by Dr. Fast</p></div>
-            <div><a href="contact.html" style="color: rgba(255,255,255,0.8); display: block;">Contact</a></div>
+            <div><a href="../resources/contact.html" style="color: rgba(255,255,255,0.8); display: block;">Contact</a></div>
             <div>
                 <p class="copyright">&copy; <span data-content="global.year">2025</span> <span data-content="global.businessName">Gilman Glasses</span>. All rights reserved.</p>
                 <p style="margin: 0; font-size: 0.9rem;">C FAST OPTOMETRY</p>
@@ -203,7 +191,7 @@
         </div>
     </footer>
 
-    <script src="data.js"></script>
+    <script src="../data.js"></script>
     <script>
         function getNestedValue(obj, path) {
             return path.split('.').reduce((current, prop) => current && current[prop], obj);
@@ -217,36 +205,26 @@
                     element.textContent = value;
                 }
             });
-            populateFeatures();
-            populateFrequency();
+            populateStaff();
         }
 
-        function populateFeatures() {
-            const container = document.getElementById('examFeaturesList');
+        function populateStaff() {
+            const container = document.getElementById('staffList');
             if (!container) return;
-            const items = getNestedValue(siteData, 'eyeExams.features');
-            if (!items) return;
-            container.innerHTML = items.map(item => `
-                <div class="feature">
-                    <h3>${item.title}</h3>
-                    <p>${item.description}</p>
+            const members = getNestedValue(siteData, 'staff.members');
+            if (!members) return;
+            container.innerHTML = members.map(member => `
+                <div class="staff-card">
+                    <div class="staff-image">📷</div>
+                    <div class="staff-content">
+                        <h3 class="staff-name">${member.name}</h3>
+                        <p class="staff-title">${member.title}</p>
+                        <p class="staff-bio">${member.bio}</p>
+                    </div>
                 </div>
             `).join('');
         }
 
-        function populateFrequency() {
-            const container = document.getElementById('frequencyList');
-            if (!container) return;
-            const items = getNestedValue(siteData, 'eyeExams.frequency');
-            if (!items) return;
-            container.innerHTML = items.map(item => `
-                <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
-                    <span style="position: absolute; left: 0; color: #2b4744; font-weight: bold;">•</span> ${item}
-                </li>
-            `).join('');
-        }
-
-        
         function initializeDropdowns() {
             const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
             const mobileToggle = document.getElementById('mobile-menu-toggle');
