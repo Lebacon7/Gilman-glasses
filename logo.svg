@@ -1,0 +1,60 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer circle border (Crimson) -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#af5a4b" stroke-width="8"/>
+
+  <!-- Background circle (Cream) -->
+  <circle cx="100" cy="100" r="90" fill="#f1eee1"/>
+
+  <!-- Glasses frame (Dark Teal) -->
+  <g id="glasses">
+    <!-- Left lens -->
+    <circle cx="65" cy="95" r="22" fill="#b9cdcc" stroke="#2b4744" stroke-width="3"/>
+    <!-- Right lens -->
+    <circle cx="135" cy="95" r="22" fill="#b9cdcc" stroke="#2b4744" stroke-width="3"/>
+    <!-- Bridge -->
+    <rect x="87" y="92" width="26" height="6" fill="#2b4744"/>
+    <!-- Left frame top -->
+    <path d="M 43 75 Q 50 70 65 73" fill="none" stroke="#af5a4b" stroke-width="4" stroke-linecap="round"/>
+    <!-- Right frame top -->
+    <path d="M 135 73 Q 150 70 157 75" fill="none" stroke="#af5a4b" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Mountain reflection in left lens -->
+  <g clip-path="url(#lensClip1)">
+    <path d="M 45 100 L 55 85 L 65 95 L 70 75 L 75 90 L 85 95" fill="none" stroke="#2b4744" stroke-width="1.5" opacity="0.6"/>
+  </g>
+
+  <!-- Mountain reflection in right lens -->
+  <g clip-path="url(#lensClip2)">
+    <path d="M 120 100 L 130 85 L 140 95 L 145 75 L 150 90 L 155 95" fill="none" stroke="#2b4744" stroke-width="1.5" opacity="0.6"/>
+  </g>
+
+  <!-- Clipping paths for lenses -->
+  <defs>
+    <clipPath id="lensClip1">
+      <circle cx="65" cy="95" r="22"/>
+    </clipPath>
+    <clipPath id="lensClip2">
+      <circle cx="135" cy="95" r="22"/>
+    </clipPath>
+  </defs>
+
+  <!-- Top text: GILMAN -->
+  <text x="100" y="55" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#2b4744" letter-spacing="2">
+    GILMAN
+  </text>
+
+  <!-- Top text: GLASSES -->
+  <text x="100" y="72" font-family="Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#2b4744" letter-spacing="1">
+    GLASSES
+  </text>
+
+  <!-- Bottom text: Independent Optical (italic) -->
+  <text x="100" y="135" font-family="Georgia, serif" font-size="11" font-style="italic" text-anchor="middle" fill="#657d77">
+    Independent Optical
+  </text>
+
+  <!-- Decorative dots -->
+  <circle cx="85" cy="143" r="1.5" fill="#2b4744"/>
+  <circle cx="115" cy="143" r="1.5" fill="#2b4744"/>
+</svg>
