@@ -322,7 +322,6 @@
             }
 
             // Populate or call text
-            const globalData = siteData.global;
             const orCallText = document.getElementById('orCallText');
             if (orCallText && pageData.orCallText && globalData.phone) {
                 orCallText.innerHTML = `${pageData.orCallText} <a href="tel:${globalData.phone.replace(/[^0-9]/g, '')}" style="color: #af5a4b; font-weight: 600;">${globalData.phone}</a> to schedule your appointment.`;

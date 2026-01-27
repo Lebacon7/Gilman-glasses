@@ -203,6 +203,50 @@
     <script>
         // Populate content from data.js
         
+        function getNestedValue(obj, path) {
+            return path.split('.').reduce((current, prop) => current?.[prop], obj);
+        }
+
+        function populateContent() {
+            const pageData = siteData.payBill;
+            const globalData = siteData.global;
+
+            // Populate all elements with data-content attributes
+            document.querySelectorAll('[data-content]').forEach(element => {
+                const path = element.getAttribute('data-content');
+                const value = getNestedValue(siteData, path);
+                if (value) element.textContent = value;
+            });
+
+            // Populate payment options
+            const paymentOptionsContainer = document.getElementById('paymentOptions');
+            if (paymentOptionsContainer && pageData.paymentOptions) {
+                paymentOptionsContainer.innerHTML = pageData.paymentOptions.map((option, index) => {
+                    let buttonHref = '#';
+                    if (index === 1) {
+                        // Payment by Phone - use phone number
+                        buttonHref = `tel:${globalData.phone.replace(/[^0-9]/g, '')}`;
+                    } else if (index === 2) {
+                        // In-Office Payment - link to directions
+                        buttonHref = 'hours-directions.html';
+                    }
+
+                    return `<div class="payment-option">
+                        <h3>${option.title}</h3>
+                        <p>${option.description}</p>
+                        <p style="font-size: 0.9rem; color: #999;">${option.note}</p>
+                        <a href="${buttonHref}" class="btn">${option.buttonText}</a>
+                    </div>`;
+                }).join('');
+            }
+
+            // Populate questions text
+            const questionsText = document.getElementById('questionsText');
+            if (questionsText && pageData.questionsText) {
+                questionsText.innerHTML = `${pageData.questionsText} <a href="contact.html" style="color: #af5a4b; font-weight: 600;">Contact us</a> for assistance.`;
+            }
+        }
+
         function initializeDropdowns() {
             const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
             const mobileToggle = document.getElementById('mobile-menu-toggle');
@@ -246,44 +290,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             populateContent();
             initializeDropdowns();
-        } {
-            const pageData = siteData.payBill;
-            const globalData = siteData.global;
-
-            // Populate all elements with data-content attributes
-            document.querySelectorAll('[data-content]').forEach(element => {
-                const path = element.getAttribute('data-content');
-                const value = path.split('.').reduce((obj, key) => obj?.[key], siteData);
-                if (value) element.textContent = value;
-            });
-
-            // Populate payment options
-            const paymentOptionsContainer = document.getElementById('paymentOptions');
-            if (paymentOptionsContainer && pageData.paymentOptions) {
-                paymentOptionsContainer.innerHTML = pageData.paymentOptions.map((option, index) => {
-                    let buttonHref = '#';
-                    if (index === 1) {
-                        // Payment by Phone - use phone number
-                        buttonHref = `tel:${globalData.phone.replace(/[^0-9]/g, '')}`;
-                    } else if (index === 2) {
-                        // In-Office Payment - link to directions
-                        buttonHref = 'hours-directions.html';
-                    }
-
-                    return `<div class="payment-option">
-                        <h3>${option.title}</h3>
-                        <p>${option.description}</p>
-                        <p style="font-size: 0.9rem; color: #999;">${option.note}</p>
-                        <a href="${buttonHref}" class="btn">${option.buttonText}</a>
-                    </div>`;
-                }).join('');
-            }
-
-            // Populate questions text
-            const questionsText = document.getElementById('questionsText');
-            if (questionsText && pageData.questionsText) {
-                questionsText.innerHTML = `${pageData.questionsText} <a href="contact.html" style="color: #af5a4b; font-weight: 600;">Contact us</a> for assistance.`;
-            }
         });
     </script>
 </body>
