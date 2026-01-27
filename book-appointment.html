@@ -23,7 +23,9 @@
 
         .header { background-color: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
         .header-container { max-width: 1200px; margin: 0 auto; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
-        .logo { flex-shrink: 0; display: flex; align-items: center; gap: 1.5rem; }
+        .logo { flex-shrink: 0; display: flex; align-items: center; gap: 1.5rem; text-decoration: none; color: inherit; }
+        a.logo { text-decoration: none; }
+        a.logo:hover { text-decoration: none; }
         .logo-image { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
         .brand-info { display: flex; flex-direction: column; gap: 0; }
         .brand-name { font-size: 1.75rem; font-weight: 700; color: #af5a4b; margin: 0; line-height: 1; }
@@ -114,13 +116,13 @@
 
     <header class="header" role="banner">
         <div class="header-container">
-            <div class="logo">
+            <a href="index.html" class="logo">
                 <img src="logo-1.png" alt="Gilman Glasses Logo" class="logo-image">
                 <div class="brand-info">
                     <h1 class="brand-name" data-content="global.businessName">Gilman Glasses</h1>
                     <p class="brand-tagline" data-content="global.tagline">Independent Optical</p>
                 </div>
-            </div>
+            </a>
 
             <nav class="main-nav" role="navigation" aria-label="Main Navigation">
                 <ul class="nav-list">
@@ -235,10 +237,7 @@
         <div class="footer-container">
             <div><h3 data-content="global.businessName">Gilman Glasses</h3><p>Professional Eye Care by Dr. Fast</p></div>
             <div><a href="contact.html">Contact Us</a><a href="hours-directions.html" style="display: block; margin-top: 0.5rem;">Hours & Directions</a></div>
-            <div class="copyright">
-                <p>&copy; <span data-content="global.year">2025</span> <span data-content="global.businessName">Gilman Glasses</span>. All rights reserved.</p>
-                <p style="margin-bottom: 0;">C Fast Optometry</p>
-            </div>
+            <p class="copyright">&copy; <span data-content="global.year">2025</span> <span data-content="global.businessName">Gilman Glasses</span>. All rights reserved.</p>
         </div>
     </footer>
 
