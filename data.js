@@ -9,8 +9,8 @@ const siteData = {
   global: {
     businessName: "Gilman Glasses",
     tagline: "C Fast Optometry",
-    phone: "(123) 456-7890",
-    email: "info@cfastoptometry.com",
+    phone: "(425) 626-1836",
+    email: "info@gilmanglasses.com",
     address: "[Street Address]",
     city: "[City]",
     state: "[State]",

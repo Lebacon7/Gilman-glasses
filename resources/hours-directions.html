@@ -61,6 +61,22 @@
         section { padding: 4rem 2rem; }
         .section-container { max-width: 1200px; margin: 0 auto; }
 
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin: 2rem 0; align-items: start; }
+        .info-box { background-color: #f9f9f9; padding: 2rem; border-radius: 12px; border: 1px solid #ddd; }
+        .info-box h3 { color: #af5a4b; margin-bottom: 1.5rem; font-size: 1.3rem; font-weight: 700; }
+        .hours-table { width: 100%; border-collapse: collapse; }
+        .hours-table tr { border-bottom: 1px solid #e0e0e0; }
+        .hours-table td { padding: 0.75rem 0; color: #666; }
+        .hours-table td:first-child { font-weight: 600; color: #333; width: 40%; }
+        .contact-item { margin-bottom: 1.5rem; }
+        .contact-label { font-weight: 700; color: #af5a4b; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .contact-value { color: #333; font-size: 1.1rem; margin-top: 0.3rem; }
+        .contact-value a { color: #af5a4b; text-decoration: none; font-weight: 600; }
+        .contact-value a:hover { text-decoration: underline; }
+
+        .map-container { width: 100%; height: 500px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 3rem 0; }
+        .map-container iframe { width: 100%; height: 100%; border: none; }
+
         .footer { background-color: #af5a4b; color: #fff; padding: 3rem 2rem; margin-top: 4rem; }
         .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
         .footer-container h3 { color: #fff; margin-bottom: 1rem; }
@@ -75,6 +91,8 @@
             .logo { gap: 1rem; }
             .logo-image { width: 80px; height: 80px; }
             .brand-name { font-size: 1.5rem; }
+            .info-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .map-container { height: 400px; }
             .main-nav { position: absolute; top: 100%; left: 0; right: 0; background-color: #fff; box-shadow: 0 10px 15px rgba(0,0,0,0.1); max-height: 0; overflow: hidden; transition: max-height 0.3s ease; z-index: 999; }
             .main-nav.active { max-height: 500px; }
             .nav-list { flex-direction: column; gap: 0; padding: 2rem 1.5rem; }
@@ -183,6 +201,10 @@
                     </div>
                 </div>
 
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2681.7619842215004!2d-122.2171!3d47.6062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490!2d-122.2171!3d47.6062!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
                 <p id="emergencyInfo" style="text-align: center; margin-top: 2rem; padding: 1.5rem; background-color: #f0ebe5; border-radius: 8px;">
                     <!-- Emergency info will be populated from data.js -->
                 </p>
@@ -249,17 +271,18 @@
             });
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            populateContent();
-            initializeDropdowns();
-        } {
+        function getNestedValue(obj, path) {
+            return path.split('.').reduce((current, prop) => current?.[prop], obj);
+        }
+
+        function populateContent() {
             const pageData = siteData.hoursDirections;
             const globalData = siteData.global;
 
             // Populate all elements with data-content attributes
             document.querySelectorAll('[data-content]').forEach(element => {
                 const path = element.getAttribute('data-content');
-                const value = path.split('.').reduce((obj, key) => obj?.[key], siteData);
+                const value = getNestedValue(siteData, path);
                 if (value) element.textContent = value;
             });
 
@@ -273,16 +296,26 @@
                 }).join('');
             }
 
-            // Populate contact info
+            // Populate contact info with improved styling
             const contactInfo = document.getElementById('contactInfo');
             if (contactInfo && globalData) {
                 contactInfo.innerHTML = `
-                    <p><strong>Phone:</strong> <a href="tel:${globalData.phone.replace(/[^0-9]/g, '')}">${globalData.phone}</a></p>
-                    <p><strong>Email:</strong> <a href="mailto:${globalData.email}">${globalData.email}</a></p>
-                    <p><strong>Address:</strong><br>
-                    ${globalData.businessName}<br>
-                    ${globalData.address}<br>
-                    ${globalData.city}, ${globalData.state} ${globalData.zip}</p>
+                    <div class="contact-item">
+                        <div class="contact-label">Phone</div>
+                        <div class="contact-value"><a href="tel:${globalData.phone.replace(/[^0-9]/g, '')}">${globalData.phone}</a></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value"><a href="mailto:${globalData.email}">${globalData.email}</a></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">Address</div>
+                        <div class="contact-value">
+                            ${globalData.businessName}<br>
+                            ${globalData.address}<br>
+                            ${globalData.city}, ${globalData.state} ${globalData.zip}
+                        </div>
+                    </div>
                 `;
             }
 
@@ -291,6 +324,11 @@
             if (emergencyInfo && pageData.emergencyInfo && globalData.phone) {
                 emergencyInfo.innerHTML = `${pageData.emergencyInfo} <a href="tel:${globalData.phone.replace(/[^0-9]/g, '')}" style="color: #af5a4b; font-weight: 600;">${globalData.phone}</a>`;
             }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            populateContent();
+            initializeDropdowns();
         });
     </script>
 </body>
