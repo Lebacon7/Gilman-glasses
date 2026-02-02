@@ -93,6 +93,13 @@
         .payment-card .note { font-size: 0.9rem; color: #999; margin-bottom: 1.5rem; }
         .payment-card .btn { width: 100%; }
 
+        .payment-form-section { background-color: #f9f9f9; padding: 2rem; border-radius: 8px; border: 1px solid #ddd; margin-top: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; text-align: center; }
+        .payment-form-section h3 { color: #af5a4b; margin-bottom: 1rem; font-size: 1.25rem; }
+        .payment-form-section p { color: #666; margin-bottom: 1.5rem; font-size: 0.95rem; }
+        .authorize-form { display: flex; justify-content: center; }
+        .authorize-form input[type="submit"] { background-color: #af5a4b; color: #fff; border: none; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.3s ease; }
+        .authorize-form input[type="submit"]:hover { background-color: #654a3f; transform: translateY(-2px); box-shadow: 0 6px 12px rgba(175, 90, 75, 0.3); }
+
         .footer { background-color: #af5a4b; color: #fff; padding: 3rem 2rem; margin-top: 4rem; }
         .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
         .footer-container h3 { color: #fff; margin-bottom: 1rem; }
@@ -106,6 +113,8 @@
             body { font-size: 15px; }
             .btn { padding: 0.75rem 1.5rem; font-size: 0.9rem; }
             section { padding: 2rem 1rem; }
+            .payment-form-section { padding: 1.5rem; margin-top: 2rem; }
+            .authorize-form input[type="submit"] { width: 100%; padding: 0.9rem 1.5rem; font-size: 0.95rem; }
         }
     </style>
 </head>
@@ -182,6 +191,15 @@
 
                 <div class="payment-options" id="paymentOptions">
                     <!-- Payment options will be populated from data.js -->
+                </div>
+
+                <div class="payment-form-section">
+                    <h3>Pay Online</h3>
+                    <p>Pay your bill securely using our online payment system.</p>
+                    <form name="PrePage" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx" class="authorize-form">
+                        <input type="hidden" name="LinkId" value="463c5226-039e-403a-ae0a-540e0fffa1cf" />
+                        <input type="submit" value="Pay Now" />
+                    </form>
                 </div>
 
                 <p id="questionsText" style="text-align: center; margin-top: 2rem; padding: 1.5rem; background-color: #f0ebe5; border-radius: 8px;">
