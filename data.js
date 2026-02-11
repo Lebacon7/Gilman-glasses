@@ -34,7 +34,7 @@ const siteData = {
     heroCTA1: "Schedule Your Eye Exam Today",
     heroCTA2: "Learn More",
     welcomeTitle: "Welcome to Gilman Glasses",
-    welcomeText1: "At Gilman Glasses, we specialize in providing comprehensive eye care services to our community. Dr. Fast is dedicated to ensuring every patient receives personalized attention and the highest quality of care.",
+    welcomeText1: "At Gilman Glasses, we specialize in providing comprehensive eye care services to our community. Our team is dedicated to ensuring every patient receives personalized attention and the highest quality of care.",
     welcomeText2: "With state-of-the-art technology and a passion for patient care, we offer a full range of optometry services for patients of all ages. From routine eye exams to specialty treatments, we're here to help you maintain healthy vision.",
     welcomeText3: "Visit our About page to learn more about our practice, team, and philosophy.",
     welcomeButtonText: "Meet Our Team",
@@ -91,9 +91,9 @@ const siteData = {
 
   // About Dr. Fast (about-dr-fast.html)
   aboutDrFast: {
-    pageTitle: "About Dr. Fast",
-    mainTitle: "Professional Excellence in Optometry",
-    mainText1: "Dr. Fast is a dedicated optometrist with extensive experience in comprehensive eye care. With a passion for helping patients achieve and maintain healthy vision, Dr. Fast has built a reputation for providing personalized care and attention to every patient who walks through our doors.",
+    pageTitle: "Meet Our Team",
+    mainTitle: "Our Dedicated Team of Eye Care Professionals",
+    mainText1: "At Gilman Glasses, we have a dedicated team with extensive experience in comprehensive eye care. With a passion for helping patients achieve and maintain healthy vision, our practice has built a reputation for providing personalized care and attention to every patient who walks through our doors.",
     commitmentTitle: "Our Commitment",
     mainText2: "At Gilman Glasses, we believe that quality eye care should be accessible and affordable. We use the latest technology and techniques to provide accurate diagnoses and effective treatments for a wide range of eye conditions.",
     mainText3: "We take time to listen to our patients' concerns and develop treatment plans that work best for their individual needs. Whether you're here for a routine eye exam or specialty care, you can expect professional, compassionate service from our entire team.",
