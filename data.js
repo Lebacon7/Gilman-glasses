@@ -36,8 +36,8 @@ const siteData = {
     welcomeTitle: "Welcome to Gilman Glasses",
     welcomeText1: "At Gilman Glasses, we specialize in providing comprehensive eye care services to our community. Dr. Fast is dedicated to ensuring every patient receives personalized attention and the highest quality of care.",
     welcomeText2: "With state-of-the-art technology and a passion for patient care, we offer a full range of optometry services for patients of all ages. From routine eye exams to specialty treatments, we're here to help you maintain healthy vision.",
-    welcomeText3: "Visit our About page to learn more about Dr. Fast's experience, qualifications, and our practice philosophy.",
-    welcomeButtonText: "Learn About Dr. Fast",
+    welcomeText3: "Visit our About page to learn more about our practice, team, and philosophy.",
+    welcomeButtonText: "Meet Our Team",
     servicesTitle: "Our Services",
     serviceCards: [
       {
