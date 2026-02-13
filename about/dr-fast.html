@@ -65,8 +65,15 @@
         .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
         .content-image { min-height: 400px; background-color: #f0ebe5; border-radius: 12px; }
         .footer { background-color: #af5a4b; color: #fff; padding: 3rem 2rem; }
-        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem 3rem; }
-        .copyright { grid-column: 1 / -1; text-align: center; color: rgba(255,255,255,0.7); padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; position: relative; z-index: 1; }
+        .copyright { grid-column: 1 / -1; text-align: center; color: rgba(255,255,255,0.75); padding-top: 2rem; border-top: 2px solid rgba(255,255,255,0.15); margin: 0; font-size: 0.85rem; letter-spacing: 0.3px; }
+        .footer-container > div { padding: 0.5rem 0; }
+        .footer-container h3 { color: #fff; margin-bottom: 1.2rem; font-size: 1.3rem; font-weight: 700; letter-spacing: 0.5px; }
+        .footer-container p { color: rgba(255,255,255,0.85); margin-bottom: 0.8rem; font-size: 0.95rem; line-height: 1.6; }
+        .footer-container a { color: rgba(255,255,255,0.85); text-decoration: none; font-weight: 500; transition: all 0.3s ease; display: inline-block; padding: 0.5rem 0; border-bottom: 2px solid transparent; }
+        .footer-container a:hover { color: #fff; border-bottom-color: #f1eee1; transform: translateX(4px); }
+        .copyright p { margin-bottom: 0.5rem; color: rgba(255,255,255,0.8); }
+        .copyright p:last-child { font-weight: 600; font-size: 0.9rem; color: rgba(255,255,255,0.9); }
 
         @media (max-width: 768px) {
             h1 { font-size: 2rem; } h2 { font-size: 1.5rem; } h3 { font-size: 1.25rem; }
@@ -280,8 +287,16 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            populateContent();
-            initializeDropdowns();
+            try {
+                populateContent();
+            } catch (error) {
+                console.error('Error populating content:', error);
+            }
+            try {
+                initializeDropdowns();
+            } catch (error) {
+                console.error('Error initializing dropdowns:', error);
+            }
         });
     </script>
 </body>
