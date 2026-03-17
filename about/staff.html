@@ -234,16 +234,19 @@
             if (!container) return;
             const members = getNestedValue(siteData, 'staff.members');
             if (!members) return;
-            container.innerHTML = members.map(member => `
+            container.innerHTML = members.map((member, index) => {
+                const staffImage = index + 1;
+                return `
                 <div class="staff-card">
-                    <div class="staff-image">📷</div>
+                    <div class="staff-image"><img src="../images/staff-${staffImage}.jpg" alt="${member.name}" style="width: 100%; height: 100%; object-fit: cover;"></div>
                     <div class="staff-content">
                         <h3 class="staff-name">${member.name}</h3>
                         <p class="staff-title">${member.title}</p>
                         <p class="staff-bio">${member.bio}</p>
                     </div>
                 </div>
-            `).join('');
+            `;}
+            ).join('');
         }
 
         function initializeDropdowns() {
