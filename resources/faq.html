@@ -212,61 +212,9 @@
     </footer>
 
     <script src="../data.js"></script>
+    <script src="../scripts/dropdown.js"></script>
     <script>
-        // Populate content from data.js
-        
-        function initializeDropdowns() {
-            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-            const mobileToggle = document.getElementById('mobile-menu-toggle');
-            const mainNav = document.querySelector('.main-nav');
-
-            dropdownToggles.forEach(toggle => {
-                toggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                    dropdownToggles.forEach(t => t.setAttribute('aria-expanded', 'false'));
-                    document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('active'));
-                    if (!isExpanded) {
-                        this.setAttribute('aria-expanded', 'true');
-                        document.getElementById(this.getAttribute('aria-controls')).classList.add('active');
-                    }
-                });
-            });
-
-            mobileToggle.addEventListener('click', function() {
-                const isActive = mobileToggle.classList.contains('active');
-                mobileToggle.classList.toggle('active');
-                mainNav.classList.toggle('active');
-                mobileToggle.setAttribute('aria-expanded', !isActive);
-            });
-
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.dropdown')) {
-                    dropdownToggles.forEach(t => t.setAttribute('aria-expanded', 'false'));
-                    document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('active'));
-                }
-            });
-
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    dropdownToggles.forEach(t => t.setAttribute('aria-expanded', 'false'));
-                    document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('active'));
-                }
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            try {
-                populateContent();
-            } catch (error) {
-                console.error('Error populating content:', error);
-            }
-            try {
-                initializeDropdowns();
-            } catch (error) {
-                console.error('Error initializing dropdowns:', error);
-            }
-        } {
+        function populateContent() {
             const pageData = siteData.faq;
 
             // Populate all elements with data-content attributes
@@ -280,11 +228,19 @@
             const faqContainer = document.getElementById('faqContainer');
             if (faqContainer && pageData.faqs) {
                 faqContainer.innerHTML = pageData.faqs.map(faq =>
-                    `<div class="faq-item">
-                        <h3>${faq.question}</h3>
+                    `<div class="faq-item" style="margin-bottom: 2rem; padding: 1.5rem; background-color: #f0ebe5; border-radius: 8px; border-left: 4px solid #af5a4b;">
+                        <h3 style="margin-bottom: 0.5rem;">${faq.question}</h3>
                         <p>${faq.answer}</p>
                     </div>`
                 ).join('');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                populateContent();
+            } catch (error) {
+                console.error('Error populating content:', error);
             }
         });
     </script>
