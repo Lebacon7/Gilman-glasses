@@ -562,60 +562,6 @@ const siteData = {
         bio: "Dr. Fast is a licensed optometrist with over 15 years of experience in comprehensive eye care. Dedicated to patient satisfaction and the latest in eye care technology.",
         imageAlt: "Dr. Fast, Optometrist"
       },
-      {
-        name: "Sarah Mitchell",
-        title: "Optician",
-        bio: "With 8 years of experience in eyeglass fitting and lens selection, Sarah is passionate about helping every patient find the perfect frames that match their style and vision needs.",
-        imageAlt: "Sarah Mitchell - Optician"
-      },
-      {
-        name: "Marcus Johnson",
-        title: "Optometry Technician",
-        bio: "Marcus brings dedication and precision to every eye exam. His expertise in diagnostic testing ensures every patient receives thorough, accurate evaluations of their eye health.",
-        imageAlt: "Marcus Johnson - Optometry Technician"
-      },
-      {
-        name: "Jennifer Lee",
-        title: "Front Desk Specialist",
-        bio: "Jennifer welcomes every patient with a warm smile and professional service. Her attention to detail ensures your visit to Gilman Glasses is smooth and enjoyable from start to finish.",
-        imageAlt: "Jennifer Lee - Front Desk Specialist"
-      },
-      {
-        name: "David Chen",
-        title: "Optician, Contact Lens Specialist",
-        bio: "David's expertise in contact lens fitting helps patients find the most comfortable and effective lens solutions for their unique vision needs and lifestyle requirements.",
-        imageAlt: "David Chen - Contact Lens Specialist"
-      },
-      {
-        name: "Amanda Rodriguez",
-        title: "Patient Services Coordinator",
-        bio: "Amanda goes above and beyond to assist with insurance questions, appointment scheduling, and ensuring complete patient satisfaction with all our services.",
-        imageAlt: "Amanda Rodriguez - Patient Services Coordinator"
-      },
-      {
-        name: "James Williams",
-        title: "Optometry Technician",
-        bio: "James stays current with the latest diagnostic equipment and techniques. His commitment to accuracy helps provide comprehensive, detailed eye examinations for all patients.",
-        imageAlt: "James Williams - Optometry Technician"
-      },
-      {
-        name: "Victoria Park",
-        title: "Frame Specialist & Style Consultant",
-        bio: "Victoria combines fashion expertise with vision science knowledge. She helps patients select frames that enhance their appearance while perfectly correcting their vision.",
-        imageAlt: "Victoria Park - Frame Specialist"
-      },
-      {
-        name: "Robert Martinez",
-        title: "Administrative Assistant",
-        bio: "Robert ensures smooth office operations and handles administrative tasks with precision. He's always ready to help with patient questions and scheduling needs.",
-        imageAlt: "Robert Martinez - Administrative Assistant"
-      },
-      {
-        name: "Lisa Thompson",
-        title: "Optician, Lens Technology Specialist",
-        bio: "Lisa is passionate about helping patients understand their prescriptions and the benefits of different lens technologies. She makes informed vision care decisions easy and accessible.",
-        imageAlt: "Lisa Thompson - Lens Technology Specialist"
-      }
     ]
   }
 };
