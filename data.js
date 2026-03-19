@@ -11,7 +11,7 @@ const siteData = {
     tagline: "C Fast Optometry",
     phone: "(425) 626-1836",
     email: "info@gilmanglasses.com",
-    address: "392-498 NW Juniper St, Unit 45",
+    address: "317 NW Gilman Blvd, Suite #45",
     city: "Issaquah",
     state: "WA",
     zip: "98027",
