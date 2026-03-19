@@ -562,6 +562,12 @@ const siteData = {
         bio: "Dr. Fast is a licensed optometrist with over 15 years of experience in comprehensive eye care. Dedicated to patient satisfaction and the latest in eye care technology.",
         imageAlt: "Dr. Fast, Optometrist"
       },
+      {
+        name: "mike",
+        title: "Optometrist, Owner",
+        bio: "Dr. Fast is a licensed optometrist with over 15 years of experience in comprehensive eye care. Dedicated to patient satisfaction and the latest in eye care technology.",
+        imageAlt: "Dr. Fast, Optometrist"
+      },
     ]
   }
 };
