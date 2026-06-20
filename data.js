@@ -399,28 +399,13 @@ const siteData = {
     subtitle: "Please complete the following forms before your visit. You can download and fill them out at home, or arrive early to complete them in our office.",
     forms: [
       {
-        title: "New Patient Registration Form",
+        title: "New Patient Registration (Online)",
         description: "Required for all new patients. Includes contact information, medical history, and emergency contacts."
-      },
-      {
-        title: "Vision & Eye Health History",
-        description: "Detailed information about your vision problems, previous eye conditions, and family eye health history."
-      },
-      {
-        title: "Medical History Form",
-        description: "General health information including current medications, allergies, and any medical conditions that may affect your vision."
+        downloadLink: "https://app.eyecloudpro.com/site/!signin_anon?sid=AE0E4975B2451AD5BFE95AC6B4D85E60"
       },
       {
         title: "Contact Lens Fitting Agreement",
         description: "Required for patients interested in contact lenses. Includes fitting guidelines and care instructions."
-      },
-      {
-        title: "Insurance Information Form",
-        description: "Please provide your insurance information to help us process your claim efficiently."
-      },
-      {
-        title: "HIPAA Privacy Notice",
-        description: "Our privacy policy regarding your protected health information and how we handle your personal data."
       }
     ],
     troubleInfo: "Having trouble with forms? Contact us and we'll be happy to help!"
@@ -436,7 +421,7 @@ const siteData = {
       },
       {
         question: "Do you accept insurance?",
-        answer: "We are an open access clinic, so we can bill or help bill most medical insurance and vision plans. Please bring your insurance card to your appointment if possible. Contact us if you're unsure about your coverage."
+        answer: "We are an open access clinic, so we can bill or help bill most medical insurance and vision plans. Please bring your insurance card to your appointment if possible. If you want to know specifics about your coverage, please give us 24-48 hours to lookup benefits, and understand ultimately your responsiblity to understand your benefits prior (We encourage all patients to contact their insurers for more information if they are concerned, as the insurer is responsible for reporting the information to their customer."
       },
       {
         question: "How long does an eye exam take?",
