@@ -17,13 +17,13 @@ const siteData = {
     zip: "98027",
     year: 2025,
     hours: {
-      monday: "9:00 AM - 5:00 PM",
-      tuesday: "9:00 AM - 5:00 PM",
-      wednesday: "9:00 AM - 5:00 PM",
-      thursday: "9:00 AM - 5:00 PM",
-      friday: "9:00 AM - 5:00 PM",
-      saturday: "10:00 AM - 3:00 PM",
-      sunday: "Closed"
+      monday: "Closed",
+      tuesday: "10:00 AM - 6:00 PM",
+      wednesday: "10:00 AM - 6:00 PM",
+      thursday: "10:00 AM - 6:00 PM",
+      friday: "10:00 AM - 6:00 PM",
+      saturday: "10:00 AM - 5:00 PM",
+      sunday: "12:01 PM - 5:00 PM"
     }
   },
 
@@ -80,8 +80,8 @@ const siteData = {
         description: "Flexible scheduling to fit your busy lifestyle."
       },
       {
-        title: "Insurance Friendly",
-        description: "We accept most major insurance plans."
+        title: "Insurance Helpful",
+        description: "We either bill or will help you bill your insurer for your benefits."
       }
     ],
     ctaTitle: "Ready to Improve Your Vision?",
@@ -113,7 +113,7 @@ const siteData = {
       },
       {
         title: "Convenient Hours",
-        description: "Flexible scheduling to accommodate your lifestyle"
+        description: "Open on the weekends, and late on the weekdays"
       }
     ]
   },
@@ -124,11 +124,11 @@ const siteData = {
     credentials: [
       {
         title: "Doctor of Optometry (OD)",
-        description: "Earned from an accredited optometry school with advanced training in comprehensive eye care, including diagnosis and treatment of eye diseases."
+        description: "Earned from the Illinois College of Optometry (ICO) in 2009"
       },
       {
         title: "Licensed Optometrist",
-        description: "Fully licensed to practice optometry with the authority to conduct comprehensive eye exams, prescribe eyeglasses and contact lenses, and diagnose and treat certain eye diseases."
+        description: "Fully licensed in Washington state to practice optometry with the authority to conduct comprehensive eye exams, prescribe eyeglasses and contact lenses, and diagnose and treat certain eye diseases."
       },
       {
         title: "Board Certified",
@@ -139,12 +139,8 @@ const siteData = {
         description: "Advanced training in specialty areas including contact lens fitting, pediatric eye care, and management of eye diseases such as glaucoma and diabetic retinopathy."
       },
       {
-        title: "Professional Memberships",
-        description: "Active member of professional optometry organizations committed to advancing the profession and ensuring patient safety and satisfaction."
-      },
-      {
         title: "Years of Experience",
-        description: "Extensive experience providing comprehensive eye care to patients of all ages with a focus on personalized, compassionate care."
+        description: "Over 15 years of professional experience providing comprehensive eye care to patients of all ages with a focus on personalized, compassionate care."
       }
     ]
   },
@@ -222,11 +218,11 @@ const siteData = {
       },
       {
         title: "Eye Pressure Testing",
-        description: "Screen for glaucoma by measuring the pressure inside your eyes using advanced equipment."
+        description: "No more anxiety of air puffs! We screen glaucoma by measuring the pressure inside your eyes using advanced equipment that does not require the airpuff!"
       },
       {
         title: "Retinal Examination",
-        description: "Detailed inspection of the retina to check for any signs of disease or abnormality."
+        description: "Detailed inspection of the retina to check for any signs of disease or abnormality. This includes Optos screening photos at no additional cost."
       },
       {
         title: "Visual Field Testing",
@@ -253,7 +249,7 @@ const siteData = {
       },
       {
         frequency: "People with eye conditions:",
-        timing: "As recommended by Dr. Fast"
+        timing: "Every year or earlier - as recommended by a optometrist or physician (some conditions, such as glaucoma, if not monitored for frequently can set in and cause permanent vision loss)"
       }
     ]
   },
@@ -261,15 +257,15 @@ const siteData = {
   // Glasses & Frames (glasses-frames.html)
   glassesFrames: {
     pageTitle: "Glasses & Frames",
-    subtitle: "We offer a wide selection of fashionable and high-quality eyeglass frames to suit every style, face shape, and budget. Our expert staff can help you find frames that not only look great but also provide optimal vision correction.",
+    subtitle: "We offer a wide selection of fashionable and high-quality eyeglass frames to suit every style, face shape, and budget. Our expert staff can help you find frames that not only look great but also help you see great.",
     features: [
       {
-        title: "Designer Frames",
-        description: "Latest styles from top designers to keep you looking your best while correcting your vision."
+        title: "Independent Frames",
+        description: "We offer over 1,000 different frames from a variety of talented eyeglass frame designers that cannot be found in most locations."
       },
       {
-        title: "Budget-Friendly Options",
-        description: "Quality eyeglasses at affordable prices without compromising on style or durability."
+        title: "Priced Fairly",
+        description: "Quality eyeglasses at affordable prices without cokmpromising on style or durability."
       },
       {
         title: "Specialty Lenses",
@@ -285,7 +281,7 @@ const siteData = {
       },
       {
         title: "Children's Frames",
-        description: "Durable and stylish frames designed specifically for children's needs and active lifestyles."
+        description: "Durable and stylish frames designed specifically for children's needs and active lifestyles. One frame line we offer even extends a Lost Frame benefit!"
       }
     ]
   },
@@ -314,10 +310,6 @@ const siteData = {
       {
         title: "Specialty Lenses",
         description: "Custom options for keratoconus, post-surgical eyes, and other special needs."
-      },
-      {
-        title: "Extended Wear",
-        description: "Lenses that can be worn continuously for extended periods with proper care."
       }
     ],
     fittingInfo: "Contact Lens Fitting: A proper contact lens fitting is essential for comfort and safety. Dr. Fast will perform a thorough fitting to ensure your lenses provide optimal vision and comfort while protecting your eye health."
@@ -393,7 +385,6 @@ const siteData = {
     insuranceQuestion: "If you have questions about your coverage or whether we participate in your plan, please contact us before your visit.",
     visionInsuranceInfo: "We accept vision insurance plans that cover eye exams, glasses, and contact lenses. Vision insurance benefits typically provide discounts on eyeglasses and contact lenses, as well as coverage for annual eye exams.",
     paymentMethods: [
-      "Cash",
       "Debit/Credit Cards",
       "Health Savings Accounts (HSA)",
       "Flexible Spending Accounts (FSA)"
@@ -445,7 +436,7 @@ const siteData = {
       },
       {
         question: "Do you accept insurance?",
-        answer: "Yes, we accept most major health and vision insurance plans. Please bring your insurance card to your appointment. Contact us if you're unsure about your coverage."
+        answer: "We are an open access clinic, so we can bill or help bill most medical insurance and vision plans. Please bring your insurance card to your appointment if possible. Contact us if you're unsure about your coverage."
       },
       {
         question: "How long does an eye exam take?",
@@ -453,7 +444,7 @@ const siteData = {
       },
       {
         question: "Can I get a prescription for glasses and contacts from the same exam?",
-        answer: "Yes, your eye exam prescription can be used for both glasses and contacts. However, contact lens fitting requires additional measurements and fitting."
+        answer: "Yes, your eye exam prescription can be used for both glasses and contacts. However, contact lens evaluation requires additional measurements and fitting. The exam will cost a bit more, but will be cheaper than having a contact lens evaluation at a later time."
       },
       {
         question: "What should I bring to my appointment?",
@@ -468,8 +459,8 @@ const siteData = {
         answer: "Glasses prescriptions are typically valid for one year. Outdated prescriptions may not provide optimal vision correction."
       },
       {
-        question: "What is my prescription number?",
-        answer: "We'll provide you with a copy of your prescription after your exam. You can use this to purchase glasses or contacts from any retailer."
+        question: "Where can I get my prescription?",
+        answer: "We'll provide you with a copy of your prescription after your exam (usually via email, but print is available as well). You can use this to purchase glasses or contacts from any retailer."
       }
     ]
   },
@@ -486,7 +477,7 @@ const siteData = {
   contact: {
     pageTitle: "Contact Us",
     phoneDescription: "Call us during business hours to speak with our staff or schedule an appointment.",
-    emailDescription: "Send us an email with your questions or appointment requests. We'll respond within 24 hours.",
+    emailDescription: "Send us an email with your questions or appointment requests. We'll try to respond within 24 hours (we are closed Mondays).",
     visitDescription: "Visit us in person during our business hours."
   },
 
@@ -497,7 +488,7 @@ const siteData = {
     serviceOptions: [
       { value: "exam", label: "Comprehensive Eye Exam" },
       { value: "glasses", label: "Glasses Fitting" },
-      { value: "contacts", label: "Contact Lens Fitting" },
+      { value: "contacts", label: "Contact Lens Evaluation" },
       { value: "followup", label: "Follow-up Visit" },
       { value: "other", label: "Other" }
     ],
