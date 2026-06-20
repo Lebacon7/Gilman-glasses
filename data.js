@@ -539,9 +539,9 @@ const siteData = {
         imageAlt: "Dr. Fast, Optometrist"
       },
       {
-        name: "mike",
-        title: "Optometrist, Owner",
-        bio: "Dr. Fast is a licensed optometrist with over 15 years of experience in comprehensive eye care. Dedicated to patient satisfaction and the latest in eye care technology.",
+        name: "Mike",
+        title: "General Manager / Owner",
+        bio: "Mike, Dr. Fast's husband, is the swiss army knife of our store and handles a lot of the non-optometry functions, but can operate as a optometric tech from time to time.",
         imageAlt: "Dr. Fast, Optometrist"
       },
     ]
