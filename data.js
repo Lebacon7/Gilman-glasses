@@ -34,7 +34,7 @@ const siteData = {
     heroCTA1: "Schedule Your Eye Exam Today",
     heroCTA2: "Learn More",
     welcomeTitle: "Welcome to Gilman Glasses",
-    welcomeText1: "At Gilman Glasses, we specialize in providing comprehensive eye care services to our community. Our team is dedicated to ensuring every patient receives personalized attention and the highest quality of care.",
+    welcomeText1: "At Gilman Glasses, we specialize in finding the perfect frame for you. Our optometrist is dedicated to making sure you have, the healthiest eyes possible and creating the perfect prescription so you can see clearly.",
     welcomeText2: "With state-of-the-art technology and a passion for patient care, we offer a full range of optometry services for patients of all ages. From routine eye exams to specialty treatments, we're here to help you maintain healthy vision.",
     welcomeText3: "Visit our About page to learn more about our practice, team, and philosophy.",
     welcomeButtonText: "Meet Our Team",
