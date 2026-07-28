@@ -29,7 +29,7 @@ const siteData = {
 
   // Home Page (index.html)
   home: {
-    heroTitle: "Professional Eye Care You Can Trust",
+    heroTitle: "See Soemthing Different",
     heroSubtitle: "Expert optometry services for the whole family at Gilman Glasses",
     heroCTA1: "Schedule Your Eye Exam Today",
     heroCTA2: "Learn More",
